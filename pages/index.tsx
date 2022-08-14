@@ -49,7 +49,7 @@ const Home: NextPage = () => {
 				</div>
 
 				<div className="text_heading"><h2>Über mich</h2></div>
-				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank"><span>Technischen Universität Darmstadt</span></a>.
+				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>.
 						Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign.
 						Weiter unten sind ein paar meiner Projekte verlinkt.</p>
 				<div className="whatido_box">
@@ -171,143 +171,66 @@ const Home: NextPage = () => {
 					<ProjectCard.Tags tags="Frontend, Bootstrap, PHP" />
 				</ProjectCard>
 
-				<ProjectCard item="123">
-					<ProjectCard.Title text="Spargelhof Mönich Webseite" />
-					<ProjectCard.Subtitle text="Die neue Webseite des Spargelhofs Mönich" />
-					<ProjectCard.Description text="Der Spargelhof Mönich aus Griesheim brauchte eine neue Webseite. Neben den üblichen Seiten habe ich hierfür noch eine intuitive und maßgeschneiderte Content-Management-Lösung mit PHP sowie einen Verkaufsstellen-Finder gebaut." />
-					<ProjectCard.Tags tags="Frontend, Bootstrap, PHP" />
+				<ProjectCard color="orange" image="bilder/proj/proj_RobotControlGUI.png" link="https://github.com/rabakilgur/ThorRobotGUI" right>
+					<ProjectCard.Title text="Thor Robot GUI" />
+					<ProjectCard.Subtitle text={<>Benutzeroberfläche zur Steuerung des <i>Thor</i> Roboters</>} />
+					<ProjectCard.Description text={<>Zusammen mit dem FabLab Darmstadt habe ich den 3D-gedruckten Open-Source 6-Achsen-Roboter <i>Thor</i> gebaut und modifiziert. Um ihn anzusteuern habe ich das <i>Thor Robot GUI</i> geschrieben: Eine Electron App mit der man den Roboter präsize steuern kann.</>} />
+					<ProjectCard.Tags tags="Node, Electron, Robotik" />
 				</ProjectCard>
 
-				<div className="projcard projcard-orange" onClick={() => window.open('https://github.com/rabakilgur/ThorRobotGUI')}>
-					<div className="projcard-innerbox">
-						<div className="projcard-img" style={{ backgroundImage: "url('bilder/proj/proj_RobotControlGUI.png')" }}></div>
-						<div className="projcard-textbox">
-							<div className="projcard-title">Thor Robot GUI</div>
-							<div className="projcard-subtitle">Benutzeroberfläche zur Steuerung des <i>Thor</i> Roboters</div>
-							<div className="projcard-bar"></div>
-							<div className="projcard-description">Zusammen mit dem FabLab Darmstadt habe ich den 3D-gedruckten Open-Source 6-Achsen-Roboter <i>Thor</i> gebaut und modifiziert. Um ihn anzusteuern habe ich das <i>Thor Robot GUI</i> geschrieben: Eine Electron App mit der man den Roboter präsize steuern kann.</div>
-							<div className="projcard-tagbox">
-								<span className="projcard-tag">Node</span>
-								<span className="projcard-tag">Electron</span>
-								<span className="projcard-tag">Roboter</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<ProjectCard color="blue" image="bilder/proj/proj_DiceProjectApp.png" link="https://robin-garbe.de/p/dice_project">
+					<ProjectCard.Title text="Dice Project App" />
+					<ProjectCard.Subtitle text="Eine Würfel-App für iOS, Android, und das Web" />
+					<ProjectCard.Description text="Die Würfel-App die ich auf meinem Handy hatte wurde nach einer Softwareaktualisierung nicht mehr unterstützt, also habe ich mich entschieden, einfach meine eigene App zu schreiben. Dies war mein erstes Projekt in Richtung App-Development." />
+					<ProjectCard.Tags tags="PhoneGap, Hybrid App, Framework 7" />
+				</ProjectCard>
 
-				<div className="projcard projcard-blue" onClick={() => window.open('https://robin-garbe.de/p/dice_project/')}>
-					<div className="projcard-innerbox">
-						<div className="projcard-img" style={{ backgroundImage: "url('bilder/proj/proj_DiceProjectApp.png')" }}></div>
-						<div className="projcard-textbox">
-							<div className="projcard-title">Dice Project App</div>
-							<div className="projcard-subtitle">Eine Würfel-App für iOS, Android, und das Web</div>
-							<div className="projcard-bar"></div>
-							<div className="projcard-description">Die Würfel-App die ich auf meinem Handy hatte wurde nach einer Softwareaktualisierung nicht mehr unterstützt, also habe ich mich entschieden, einfach meine eigene App zu schreiben. Dies war mein erstes Projekt in Richtung App-Development.</div>
-							<div className="projcard-tagbox">
-								<span className="projcard-tag">PhoneGap</span>
-								<span className="projcard-tag">Hybrid App</span>
-								<span className="projcard-tag">Framework 7</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div className="projcard projcard-grey" onClick={() => window.open('https://github.com/rabakilgur/OPC_Factory_Control_Panel')}>
-					<div className="projcard-innerbox">
-						<div className="projcard-img" style={{ backgroundImage: "url('bilder/proj/proj_OPCFactoryControlPanel.png')" }}></div>
-						<div className="projcard-textbox">
-							<div className="projcard-title">OPC Factory Control Panel</div>
-							<div className="projcard-subtitle">Ein Programm zur Steurung von Maschinen via OPC-UA</div>
-							<div className="projcard-bar"></div>
-							<div className="projcard-description">Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist.</div>
-							<div className="projcard-tagbox">
-								<span className="projcard-tag">Node</span>
-								<span className="projcard-tag">Electron</span>
-								<span className="projcard-tag">OPC-UA</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<ProjectCard color="grey" image="bilder/proj/proj_OPCFactoryControlPanel.png" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
+					<ProjectCard.Title text="OPC Factory Control Panel" />
+					<ProjectCard.Subtitle text="Ein Programm zur Steurung von Maschinen via OPC-UA" />
+					<ProjectCard.Description text="Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist." />
+					<ProjectCard.Tags tags="Node, Electron, OPC-UA" />
+				</ProjectCard>
 
 				<div className="text_heading"><h2>Einige kleine Projekte</h2></div>
-				<div className="projcard-container">
 
-					<div className="projcard projcard-red" onClick={() => window.open('https://codepen.io/rabakilgur/pen/oPxrLp')}>
-						<div className="projcard-innerbox">
-							<div className="projcard-img projcard-img-darker" style={{ backgroundImage: "url('bilder/proj/proj_SvgArcDiagram.png')" }}></div>
-							<div className="projcard-textbox">
-								<div className="projcard-title">Ringdiagramme mit konischem Farbverlauf</div>
-								<div className="projcard-subtitle">Mit HTML Custom Elements und einem Cross-Browser fallback</div>
-								<div className="projcard-bar"></div>
-								<div className="projcard-description">Ich habe mir schon vor einer Weile überlegt, wie man schöne SVG Graphen mit JavaScript erstellen kann, und als ich mich in konische Gradienten eingelesen habe, habe ich die Herausforderung angenommen :D</div>
-								<div className="projcard-tagbox">
-									<span className="projcard-tag">Custom Element</span>
-									<span className="projcard-tag">CSS</span>
-								</div>
-							</div>
-						</div>
-					</div>
+				<ProjectCard color="red" image="bilder/proj/proj_SvgArcDiagram.png" link="https://codepen.io/rabakilgur/pen/oPxrLp" darkenImage>
+					<ProjectCard.Title text="Ringdiagramme mit konischem Farbverlauf" />
+					<ProjectCard.Subtitle text="Mit HTML Custom Elements und einem Cross-Browser Fallback" />
+					<ProjectCard.Description text="Ich habe mir schon vor einer Weile überlegt, wie man schöne SVG Graphen mit JavaScript erstellen kann, und als ich mich in konische Gradienten eingelesen habe, habe ich die Herausforderung angenommen :D" />
+					<ProjectCard.Tags tags="Custom Element, CSS" />
+				</ProjectCard>
 
-					<div className="projcard projcard-purple" onClick={() => window.open('https://codepen.io/rabakilgur/pen/PmVyrp')}>
-						<div className="projcard-innerbox">
-							<div className="projcard-img projcard-img-darker" style={{ backgroundImage: "url('bilder/proj/proj_CKEditor.png')" }}></div>
-							<div className="projcard-textbox">
-								<div className="projcard-title">Angepasster CKEditor</div>
-								<div className="projcard-subtitle">CKEditor v4 mit Vue.js v2</div>
-								<div className="projcard-bar"></div>
-								<div className="projcard-description">Ich habe für ein Projekt auf der Arbeit nach einem benutzerfreundlichen Editor gesucht der HTML-formatierten Text ausgibt, ohne mit unnützen Funktionen überladen zu sein. Der CKEditor v4 war eine gute Lösung, also habe ich den Editor mit Vue.js v2 an meinen Fall angepasst.</div>
-								<div className="projcard-tagbox">
-									<span className="projcard-tag">HTML</span>
-									<span className="projcard-tag">CKEditor</span>
-									<span className="projcard-tag">Vue.js</span>
-								</div>
-							</div>
-						</div>
-					</div>
+				<ProjectCard color="purple" image="bilder/proj/proj_CKEditor.png" link="https://codepen.io/rabakilgur/pen/PmVyrp" darkenImage right>
+					<ProjectCard.Title text="Angepasster CKEditor" />
+					<ProjectCard.Subtitle text="CKEditor v4 mit Vue.js v2" />
+					<ProjectCard.Description text="Ich habe für ein Projekt auf der Arbeit nach einem benutzerfreundlichen Editor gesucht der HTML-formatierten Text ausgibt, ohne mit unnützen Funktionen überladen zu sein. Der CKEditor v4 war eine gute Lösung, also habe ich den Editor mit Vue.js v2 an meinen Fall angepasst." />
+					<ProjectCard.Tags tags="HTML, CKEditor, Vue.js" />
+				</ProjectCard>
 
-					<div className="projcard projcard-yellow" onClick={() => window.open('https://robin-garbe.de/p/star-rating/withPHP.php')}>
-						<div className="projcard-innerbox">
-							<div className="projcard-img" style={{ backgroundImage: "url('bilder/proj/proj_StarRating.png')" }}></div>
-							<div className="projcard-textbox">
-								<div className="projcard-title">CSS 5-Stern-Bewertungsskala</div>
-								<div className="projcard-subtitle">Mit SVG Grafiken und PHP Backend</div>
-								<div className="projcard-bar"></div>
-								<div className="projcard-description">Das hier ist schon ein ziemlich altes Projekt von mir, welches ich später um verschiedene Funktionen (wie z.B. einer Datenbankanbindung) erweitert habe. Allerdings suche ich immer noch nach einem Platz, an dem ich die Bewertungsskala sinnvoll einsetzen kann...</div>
-								<div className="projcard-tagbox">
-									<span className="projcard-tag">SVG</span>
-									<span className="projcard-tag">CSS</span>
-								</div>
-							</div>
-						</div>
-					</div>
+				<ProjectCard color="yellow" image="bilder/proj/proj_StarRating.png" link="https://robin-garbe.de/p/star-rating/withPHP.php">
+					<ProjectCard.Title text="5-Stern-Bewertungsskala" />
+					<ProjectCard.Subtitle text="Mit SVG Grafiken und PHP Backend" />
+					<ProjectCard.Description text="Das hier ist schon ein ziemlich altes Projekt von mir, welches ich später um verschiedene Funktionen (wie z.B. einer Datenbankanbindung) erweitert habe. Allerdings suche ich immer noch nach einem Platz, an dem ich die Bewertungsskala sinnvoll einsetzen kann..." />
+					<ProjectCard.Tags tags="SVG, CSS, PHP" />
+				</ProjectCard>
 
-					<div className="projcard projcard-green" onClick={() => window.open('https://codepen.io/rabakilgur/pen/WgRWge')}>
-						<div className="projcard-innerbox">
-							<div className="projcard-img projcard-img-darker" style={{ backgroundImage: "url('bilder/proj/proj_ShowHidePassword.png')" }}></div>
-							<div className="projcard-textbox">
-								<div className="projcard-title">Passwort Eingabefeld mit Effekt</div>
-								<div className="projcard-subtitle">Dynamischer Effekt beim Anzeigen / Verbergen</div>
-								<div className="projcard-bar"></div>
-								<div className="projcard-description">Auf Codepen experimentieren gerade viele Leute mit <i>Splitting.js</i>, und als ich dort auf die Idee gebracht wurde, dies auf ein Passwort-Textfeld anzuwenden, habe ich mich gleich daran gesetzt.</div>
-								<div className="projcard-tagbox">
-									<span className="projcard-tag">Splitting.js</span>
-									<span className="projcard-tag">CSS</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div> {/* /projcard-container */}
+				<ProjectCard color="green" image="bilder/proj/proj_ShowHidePassword.png" link="https://codepen.io/rabakilgur/pen/WgRWge" darkenImage right>
+					<ProjectCard.Title text="Passwort Eingabefeld mit Effekt" />
+					<ProjectCard.Subtitle text="Dynamischer Effekt beim Anzeigen / Verbergen" />
+					<ProjectCard.Description text={<>Auf Codepen experimentieren gerade viele Leute mit <i>Splitting.js</i>, und als ich dort auf die Idee gebracht wurde, dies auf ein Passwort-Textfeld anzuwenden, habe ich mich gleich daran gesetzt.</>} />
+					<ProjectCard.Tags tags="Splitting.js, CSS" />
+				</ProjectCard>
 
 				<div className="text_heading"><h2>Links</h2></div>
 				<div className="blob_box">
-					<a className="blob link_CodePen" href="https://codepen.io/rabakilgur" target="_blank">
+					<a className="blob link_CodePen" href="https://codepen.io/rabakilgur" target="_blank" rel="noreferrer">
 						<span>CodePen</span>
 					</a>
-					<a className="blob link_GitHub" href="https://github.com/rabakilgur" target="_blank">
+					<a className="blob link_GitHub" href="https://github.com/rabakilgur" target="_blank" rel="noreferrer">
 						<span>GitHub</span>
 					</a>
-					<a className="blob link_Telegram" href="https://t.me/rabakilgur" target="_blank">
+					<a className="blob link_Telegram" href="https://t.me/rabakilgur" target="_blank" rel="noreferrer">
 						<span>Telegram</span>
 					</a>
 				</div>
@@ -328,7 +251,7 @@ const Home: NextPage = () => {
 					<div>
 						<i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#0088FF" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg></i>
 						<span className="contact_heading">Hier bin ich:</span>
-						<span className="contact_link"><a href="https://www.google.com/maps/place/Darmstadt/@49.8748499,8.5847819,12z" target="_blank">Darmstadt</a></span>
+						<span className="contact_link"><a href="https://www.google.com/maps/place/Darmstadt/@49.8748499,8.5847819,12z" target="_blank" rel="noreferrer">Darmstadt</a></span>
 					</div>
 				</div>
 
@@ -339,7 +262,7 @@ const Home: NextPage = () => {
 
 				{/* <between-logo shadow="standard" border-color="#ddd" z-index="20" scale="0.8"></between-logo> */}
 
-				<script src="https://robin-garbe.de/index.js"></script>
+				{/* <script src="https://robin-garbe.de/index.js"></script> */}
 			</Container>
 		</>
 	);

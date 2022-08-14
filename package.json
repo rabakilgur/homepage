@@ -6,7 +6,8 @@
 		"dev": "next dev -p 8080",
 		"build": "next build",
 		"start": "next start -p 80",
-		"lint": "next lint"
+		"lint": "next lint",
+		"export": "next build && next export"
 	},
 	"dependencies": {
 		"@nextui-org/react": "^1.0.0-beta.9",
