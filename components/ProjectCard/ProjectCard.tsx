@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import S from "./ProjectCard.module.scss";
 
 const ProjectCard = ({ color, image, link, item, darkenImage, right, ...props }: { color?: string, image?: string, link?: string, item?: any, darkenImage?: Boolean, right?: Boolean, [prop: string]: any }) => {
@@ -26,6 +26,9 @@ ProjectCard.Subtitle = Object.assign(({ text, ...props }: { text: string | Eleme
 }, { displayName: "ProjectCardSubitle" });
 
 ProjectCard.Description = Object.assign(({ text, ...props }: { text: string | Element | ReactElement, [prop: string]: any }) => {
+
+	// TODO add ellipsis to description
+
 	return (
 		<>
 			<div className={S.projcardBar}></div>

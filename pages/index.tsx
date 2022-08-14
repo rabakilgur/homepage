@@ -2,6 +2,7 @@ import { Card, Container, Text } from "@nextui-org/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
+import ScrambleText from "../components/TextScramble/TextScramble";
 import S from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -9,7 +10,7 @@ const Home: NextPage = () => {
 		<>
 			<header>
 				<canvas id="canvas"></canvas>
-				<h1><span className="scramble_text">Hallo</span><span>ich bin</span><span>Robin Garbe</span></h1>
+				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000 }}>
 				<div className="text_heading"><h2>Meine Erfahrung</h2></div>
@@ -257,7 +258,7 @@ const Home: NextPage = () => {
 
 
 				<footer>
-					<p>Copyright © 2021<br />Made with ♥ by Robin Garbe</p>
+					<p>Copyright © 2022<br />Made with ♥ by Robin Garbe</p>
 				</footer>
 
 				{/* <between-logo shadow="standard" border-color="#ddd" z-index="20" scale="0.8"></between-logo> */}
