@@ -1,0 +1,33 @@
+[click] {
+  border: 0;
+  outline: 0;
+  background: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+[click] .touch {
+  background: rgba(100, 100, 100, 0.1);
+  pointer-events: none;
+  border-radius: 100%;
+}
+[click].blue .touch {
+  background: rgba(0, 0, 255, 0.2);
+}
+[click].red .touch {
+  background: rgba(255, 0, 0, 0.2);
+}
+[click].green .touch {
+  background: rgba(0, 255, 0, 0.2);
+}
+[click]:focus, [click] :active {
+  -moz-outline-style: none;
+}
+[click][disabled], [click] .disabled, [click] [disabled]:active, [click] .disabled:active {
+  background: #eee;
+  color: #aaa;
+  box-shadow: none !important;
+}
