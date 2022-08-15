@@ -1,6 +1,7 @@
 import { Card, Container, Text } from "@nextui-org/react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import ParticleWave from "../components/ParticleWave/ParticleWave";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import ScrambleText from "../components/TextScramble/TextScramble";
 import S from "../styles/Home.module.css";
@@ -9,7 +10,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<header>
-				<canvas id="canvas"></canvas>
+				<ParticleWave />
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000 }}>
