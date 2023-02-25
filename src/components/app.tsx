@@ -1,17 +1,12 @@
 import { h } from "preact";
-
-import Header from "./header";
-
-// Code-splitting is automated for `routes` directory
-import Home from "../routes/home";
+import { NextUIProvider } from "@nextui-org/react";
+import Homepage from "./Homepage/Homepage";
 
 const App = () => (
 	<div id="app">
-		<Header />
-		<main>
-			<Home />
-		</main>
+		<NextUIProvider>
+			<Homepage />
+		</NextUIProvider>
 	</div>
 );
-
 export default App;

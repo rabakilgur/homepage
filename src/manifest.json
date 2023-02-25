@@ -1,11 +1,11 @@
 {
-	"name": "homepage",
-	"short_name": "homepage",
+	"name": "Robin Garbe - Webseite",
+	"short_name": "Robin Garbe Webseite",
 	"start_url": "/",
 	"display": "standalone",
 	"orientation": "portrait",
 	"background_color": "#fff",
-	"theme_color": "#673ab8",
+	"theme_color": "#0088ff",
 	"icons": [
 		{
 			"src": "/assets/icons/android-chrome-192x192.png",
