@@ -4,6 +4,7 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import ParticleWave from "../ParticleWave/ParticleWave";
 import ScrambleText from "../TextScramble/TextScramble";
 import Heading from "../Heading/Heading";
+import Timeline from "../Timeline/Timeline";
 
 const Homepage = () => {
 	return (
@@ -14,40 +15,12 @@ const Homepage = () => {
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000 }}>
 				<Heading>Meine Erfahrung</Heading>
-				<div className="timeline-container">
-					<ul className="timeline timeline-split">
-						<li className="timeline-item">
-							<div className="timeline-info">
-								<span>Mär 2020 - heute</span>
-							</div>
-							<div className="timeline-marker"></div>
-							<div className="timeline-content">
-								<h3 className="timeline-title">ARZ Darmstadt</h3>
-								<p>Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH</p>
-							</div>
-						</li>
-						<li className="timeline-item">
-							<div className="timeline-info">
-								<span>Nov 2015 - Mär 2019</span>
-							</div>
-							<div className="timeline-marker"></div>
-							<div className="timeline-content">
-								<h3 className="timeline-title">EKHN</h3>
-								<p>Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau</p>
-							</div>
-						</li>
-						<li className="timeline-item marker-outline">
-							<div className="timeline-info">
-								<span>Okt 2015 - heute</span>
-							</div>
-							<div className="timeline-marker"></div>
-							<div className="timeline-content">
-								<h3 className="timeline-title">Studium an der TU Darmstadt</h3>
-								<p>Student im Bachelor of Science im Fachbereich Informatik</p>
-							</div>
-						</li>
-					</ul>
-				</div>
+				<Timeline>
+					<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - heute" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
+					<Timeline.Item title="ARZ Darmstadt" info="Mär 2020 - Mär 2022" text="Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH" />
+					<Timeline.Item title="EKHN" info="Nov 2015 - Mär 2019" text="Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau" />
+					<Timeline.Item title="Studium an der TU Darmstadt" info="Okt 2015 - heute" text="Student im Bachelor of Science im Fachbereich Informatik" marker="outlined" />
+				</Timeline>
 
 				<Heading>Über mich</Heading>
 				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>.

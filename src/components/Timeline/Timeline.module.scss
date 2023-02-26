@@ -1,0 +1,218 @@
+// @types
+
+$primary-color: #0088ff;
+$primary-color-hover: scale-color($primary-color, $lightness: 32%);
+
+.timelineContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 0 10px;
+}
+
+/*==================================
+TIMELINE
+==================================*/
+
+/*-- GENERAL STYLES
+------------------------------*/
+.timeline {
+	line-height: 1.4em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 1000px;
+	h1, h2, h3, h4, h5, h6 {
+		line-height: inherit;
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-weight: 500;
+	}
+}
+
+/*----- TIMELINE ITEM -----*/
+
+.timelineItem {
+	padding-left: 40px;
+	position: relative;
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+/*----- TIMELINE INFO -----*/
+
+.timelineInfo {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin: 0 0 .5em 0;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: #768390;
+}
+/*----- TIMELINE MARKER -----*/
+
+.timelineMarker {
+	position: absolute;
+	top: 0; bottom: 0; left: 0;
+	width: 15px;
+	&:before {
+		background: $primary-color;
+		border: 3px solid transparent;
+		border-radius: 100%;
+		content: "";
+		display: block;
+		height: 15px;
+		position: absolute;
+		top: 4px; left: 0;
+		width: 15px;
+		transition: background 0.3s ease-in-out,
+			border 0.3s ease-in-out;
+	}
+	&::after {
+		content: "";
+		width: 3px;
+		background: #CCD5DB;
+		display: block;
+		position: absolute;
+		top: 24px; bottom: 0; left: 6px;
+	}
+	.timelineItem:last-child &::after {
+		content: none;
+	}
+}
+
+/*----- TIMELINE CONTENT -----*/
+
+.timelineContent {
+	padding-bottom: 40px;
+	p {
+		color: #768390;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/*----------------------------------------------
+MOD: TIMELINE SPLIT
+----------------------------------------------*/
+
+.timelineSplit {
+	@media (min-width: 768px) {
+		.timeline {
+			display: table;
+		}
+		.timelineItem {
+			display: table-row;
+			padding: 0;
+		}
+		.timelineInfo,
+		.timelineMarker,
+		.timelineContent,
+		.period .timelineInfo {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.timelineMarker {
+			position: relative;
+		}
+		.timelineContent {
+			padding-left: 30px;
+		}
+		.timelineInfo {
+			padding-right: 30px;
+		}
+		.period .timelineTitle {
+			position: relative;
+			left: -45px;
+		}
+	}
+}
+
+/*----------------------------------------------
+MOD: TIMELINE CENTERED
+----------------------------------------------*/
+
+.timelineCentered {
+	@extend .timelineSplit;
+	@media (min-width: 992px) {
+		&,
+		.timelineItem,
+		.timelineInfo,
+		.timelineMarker,
+		.timelineContent {
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+		.timelineItem {
+			padding-bottom: 40px;
+			overflow: hidden;
+		}
+		.timelineMarker {
+			position: absolute;
+			left: 50%;
+			margin-left: -7.5px;
+		}
+		.timelineInfo,
+		.timelineContent {
+			width: 50%;
+		}
+		> .timelineItem:nth-child(odd) .timelineInfo {
+			float: left;
+			text-align: right;
+			padding-right: 30px;
+		}
+		> .timelineItem:nth-child(odd) .timelineContent {
+			float: right;
+			text-align: left;
+			padding-left: 30px;
+		}
+		> .timelineItem:nth-child(even) .timelineInfo {
+			float: right;
+			text-align: left;
+			padding-left: 30px;
+		}
+		> .timelineItem:nth-child(even) .timelineContent {
+			float: left;
+			text-align: right;
+			padding-right: 30px;
+		}
+		> .timelineItem.period .timelineContent {
+			float: none;
+			padding: 0;
+			width: 100%;
+			text-align: center;
+		}
+		.timelineItem.period {
+			padding: 50px 0 90px;
+		}
+		.period .timelineMarker::after {
+			height: 30px;
+			bottom: 0;
+			top: auto;
+		}
+		.period .timelineTitle {
+			left: auto;
+		}
+	}
+}
+
+/*----------------------------------------------
+MOD: MARKER OUTLINE
+----------------------------------------------*/
+
+.markerOutline {
+	.timelineMarker {
+		&:before {
+			background: transparent;
+			border-color: $primary-color;
+		}
+	}
+	.timelineItem:hover .timelineMarker:before {
+		background: $primary-color;
+	}
+}
+
