@@ -1,19 +1,29 @@
+import gsap, { Power2 } from "gsap";
+
 // Helper function to get a random value from [low, high]
-function random(low, high) {
-	return Math.random() * (high - low) + low;
-}
+const random = (low, high) => Math.random() * (high - low) + low;
 
 export default class Visual {
-	constructor(canvas) {
+	canvas: HTMLCanvasElement;
+	context: CanvasRenderingContext2D;
+	canvasWidth: number;
+	canvasHeight: number;
+	particleLength: number;
+	particles: any[];
+	particleMaxRadius: number;
+	handleMouseMoveBind: any;
+	handleResizeBind: any;
+
+	constructor(canvas: HTMLCanvasElement) {
 		this.canvas = canvas;
-		this.context = this.canvas.getContext('2d');
+		this.context = this.canvas.getContext("2d");
 		this.canvasWidth = 0;
 		this.canvasHeight = 0;
 		this.particleLength = 150;
 		this.particles = [];
 		this.particleMaxRadius = 8;
 
-		// this.handleMouseMoveBind = this.handleMouseMove.bind(this);
+		this.handleMouseMoveBind = this.handleMouseMove.bind(this);
 		this.handleResizeBind = this.handleResize.bind(this);
 
 		this.initialize();
@@ -29,36 +39,36 @@ export default class Visual {
 	}
 
 	bind() {
-		document.body.addEventListener('mousemove', this.handleMouseMoveBind, false);
-		window.addEventListener('resize', this.handleResizeBind, false);
+		document.body.addEventListener("mousemove", this.handleMouseMoveBind, false);
+		window.addEventListener("resize", this.handleResizeBind, false);
 	}
 
 	unbind() {
-		document.body.removeEventListener('mousemove', this.handleMouseMoveBind, false);
-		window.removeEventListener('resize', this.handleResizeBind, false);
+		document.body.removeEventListener("mousemove", this.handleMouseMoveBind, false);
+		window.removeEventListener("resize", this.handleResizeBind, false);
 	}
 
-	// handleMouseMove(e) {
-	// 	this.enlargeParticle(e.clientX, e.clientY + document.body.scrollTop);
-	// }
+	handleMouseMove(e: MouseEvent) {
+		this.enlargeParticle(e.clientX, e.clientY + document.body.scrollTop);
+	}
 
 	handleResize() {
 		this.resizeCanvas();
 	}
 
 	resizeCanvas() {
-		console.log("resize canvas");
 		this.canvasWidth = this.canvas.offsetWidth;
 		this.canvasHeight = this.canvas.offsetHeight;
 		this.canvas.width = this.canvasWidth * window.devicePixelRatio;
 		this.canvas.height = this.canvasHeight * window.devicePixelRatio;
-		this.context = this.canvas.getContext('2d');
+		this.context = this.canvas.getContext("2d");
 		this.context.scale(window.devicePixelRatio, window.devicePixelRatio);
 	}
 
-	createParticle(id, isRecreate) {
+	createParticle(id: number, isRecreate?: boolean) {
 		const radius = random(1, this.particleMaxRadius);
-		const x = isRecreate ? -radius - random(this.particleMaxRadius * 2, this.canvasWidth) : random(0, this.canvasWidth);
+		// const x = isRecreate ? - radius - random(this.particleMaxRadius * 2, this.canvasWidth) : random(0, this.canvasWidth);
+		const x = isRecreate ? 0 - radius : random(0, this.canvasWidth);
 		let y = random(this.canvasHeight / 2 - 150, this.canvasHeight / 2 + 150);
 		y += random(-100, 100);
 		y = Math.min(y, this.canvasHeight - 200 - 48 );  // canvasHeight - max_amplitude - max_inflated_radius
@@ -75,7 +85,7 @@ export default class Visual {
 			endAngle: Math.PI * 2,
 			alpha: alpha,
 			color: { r: 0, g: random(70, 180), b: 255 },
-			speed: (alpha + 1) * 0.5,
+			speed: (alpha + 1) * 0.2,
 			amplitude: random(50, 200),
 			isBurst: false
 		};
@@ -98,24 +108,27 @@ export default class Visual {
 	}
 
 	enlargeParticle(clientX, clientY) {
-		// this.particles.forEach(particle => {
-		// 	if (particle.isBurst) return;
+		this.particles.forEach(particle => {
+			if (particle.isBurst) return;
 
-		// 	const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
+			const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
 
-		// 	if (distance <= 100) {
-		// 		const scaling = (100 - distance) / 2.5;
-		// 		gsap.to(particle, 0.5, {
-		// 			radius: particle.defaultRadius + scaling,
-		// 			ease: Power2.easeOut
-		// 		});
-		// 	} else {
-		// 		gsap.to(particle, 0.5, {
-		// 			radius: particle.defaultRadius,
-		// 			ease: Power2.easeOut
-		// 		});
-		// 	}
-		// });
+			if (distance <= 100) {
+				// const scaling = (100 - distance) / 2.5;
+				const scaling = (100 - distance) / 4;
+				gsap.to(particle, {
+					radius: particle.defaultRadius + scaling,
+					ease: Power2.easeOut,
+					duration: 0.5
+				});
+			} else {
+				gsap.to(particle, {
+					radius: particle.defaultRadius,
+					ease: Power2.easeOut,
+					duration: 0.5
+				});
+			}
+		});
 	}
 
 	render() {
