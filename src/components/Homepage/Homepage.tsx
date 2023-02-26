@@ -3,6 +3,7 @@ import { Card, Container, Text } from "@nextui-org/react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import ParticleWave from "../ParticleWave/ParticleWave";
 import ScrambleText from "../TextScramble/TextScramble";
+import Heading from "../Heading/Heading";
 
 const Homepage = () => {
 	return (
@@ -12,7 +13,7 @@ const Homepage = () => {
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000 }}>
-				<div className="text_heading"><h2>Meine Erfahrung</h2></div>
+				<Heading>Meine Erfahrung</Heading>
 				<div className="timeline-container">
 					<ul className="timeline timeline-split">
 						<li className="timeline-item">
@@ -48,7 +49,7 @@ const Homepage = () => {
 					</ul>
 				</div>
 
-				<div className="text_heading"><h2>Über mich</h2></div>
+				<Heading>Über mich</Heading>
 				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>.
 						Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign.
 						Weiter unten sind ein paar meiner Projekte verlinkt.</p>
@@ -162,67 +163,67 @@ const Homepage = () => {
 					</div>
 				</div>
 
-				<div className="text_heading"><h2>Projekte</h2></div>
+				<Heading>Projekte</Heading>
 
-				<ProjectCard color="yellow" image="bilder/proj/proj_MoenichWebsite.png" link="http://www.spargelhof-moenich.de/">
+				<ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.png" link="http://www.spargelhof-moenich.de/">
 					<ProjectCard.Title text="Spargelhof Mönich Webseite" />
 					<ProjectCard.Subtitle text="Die neue Webseite des Spargelhofs Mönich" />
 					<ProjectCard.Description text="Der Spargelhof Mönich aus Griesheim brauchte eine neue Webseite. Neben den üblichen Seiten habe ich hierfür noch eine intuitive und maßgeschneiderte Content-Management-Lösung mit PHP sowie einen Verkaufsstellen-Finder gebaut." />
 					<ProjectCard.Tags tags="Frontend, Bootstrap, PHP" />
 				</ProjectCard>
 
-				<ProjectCard color="orange" image="bilder/proj/proj_RobotControlGUI.png" link="https://github.com/rabakilgur/ThorRobotGUI" right>
+				<ProjectCard color="orange" image="assets/proj/proj_RobotControlGUI.png" link="https://github.com/rabakilgur/ThorRobotGUI" right>
 					<ProjectCard.Title text="Thor Robot GUI" />
 					<ProjectCard.Subtitle text={<>Benutzeroberfläche zur Steuerung des <i>Thor</i> Roboters</>} />
 					<ProjectCard.Description text={<>Zusammen mit dem FabLab Darmstadt habe ich den 3D-gedruckten Open-Source 6-Achsen-Roboter <i>Thor</i> gebaut und modifiziert. Um ihn anzusteuern habe ich das <i>Thor Robot GUI</i> geschrieben: Eine Electron App mit der man den Roboter präsize steuern kann.</>} />
 					<ProjectCard.Tags tags="Node, Electron, Robotik" />
 				</ProjectCard>
 
-				<ProjectCard color="blue" image="bilder/proj/proj_DiceProjectApp.png" link="https://robin-garbe.de/p/dice_project">
+				<ProjectCard color="blue" image="assets/proj/proj_DiceProjectApp.png" link="https://robin-garbe.de/p/dice_project">
 					<ProjectCard.Title text="Dice Project App" />
 					<ProjectCard.Subtitle text="Eine Würfel-App für iOS, Android, und das Web" />
 					<ProjectCard.Description text="Die Würfel-App die ich auf meinem Handy hatte wurde nach einer Softwareaktualisierung nicht mehr unterstützt, also habe ich mich entschieden, einfach meine eigene App zu schreiben. Dies war mein erstes Projekt in Richtung App-Development." />
 					<ProjectCard.Tags tags="PhoneGap, Hybrid App, Framework 7" />
 				</ProjectCard>
 
-				<ProjectCard color="grey" image="bilder/proj/proj_OPCFactoryControlPanel.png" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
+				<ProjectCard color="grey" image="assets/proj/proj_OPCFactoryControlPanel.png" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
 					<ProjectCard.Title text="OPC Factory Control Panel" />
 					<ProjectCard.Subtitle text="Ein Programm zur Steurung von Maschinen via OPC-UA" />
 					<ProjectCard.Description text="Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist." />
 					<ProjectCard.Tags tags="Node, Electron, OPC-UA" />
 				</ProjectCard>
 
-				<div className="text_heading"><h2>Einige kleine Projekte</h2></div>
+				<Heading>Einige kleine Projekte</Heading>
 
-				<ProjectCard color="red" image="bilder/proj/proj_SvgArcDiagram.png" link="https://codepen.io/rabakilgur/pen/oPxrLp" darkenImage>
+				<ProjectCard color="red" image="assets/proj/proj_SvgArcDiagram.png" link="https://codepen.io/rabakilgur/pen/oPxrLp" darkenImage>
 					<ProjectCard.Title text="Ringdiagramme mit konischem Farbverlauf" />
 					<ProjectCard.Subtitle text="Mit HTML Custom Elements und einem Cross-Browser Fallback" />
 					<ProjectCard.Description text="Ich habe mir schon vor einer Weile überlegt, wie man schöne SVG Graphen mit JavaScript erstellen kann, und als ich mich in konische Gradienten eingelesen habe, habe ich die Herausforderung angenommen :D" />
 					<ProjectCard.Tags tags="Custom Element, CSS" />
 				</ProjectCard>
 
-				<ProjectCard color="purple" image="bilder/proj/proj_CKEditor.png" link="https://codepen.io/rabakilgur/pen/PmVyrp" darkenImage right>
+				<ProjectCard color="purple" image="assets/proj/proj_CKEditor.png" link="https://codepen.io/rabakilgur/pen/PmVyrp" darkenImage right>
 					<ProjectCard.Title text="Angepasster CKEditor" />
 					<ProjectCard.Subtitle text="CKEditor v4 mit Vue.js v2" />
 					<ProjectCard.Description text="Ich habe für ein Projekt auf der Arbeit nach einem benutzerfreundlichen Editor gesucht der HTML-formatierten Text ausgibt, ohne mit unnützen Funktionen überladen zu sein. Der CKEditor v4 war eine gute Lösung, also habe ich den Editor mit Vue.js v2 an meinen Fall angepasst." />
 					<ProjectCard.Tags tags="HTML, CKEditor, Vue.js" />
 				</ProjectCard>
 
-				<ProjectCard color="yellow" image="bilder/proj/proj_StarRating.png" link="https://robin-garbe.de/p/star-rating/withPHP.php">
+				<ProjectCard color="yellow" image="assets/proj/proj_StarRating.png" link="https://robin-garbe.de/p/star-rating/withPHP.php">
 					<ProjectCard.Title text="5-Stern-Bewertungsskala" />
 					<ProjectCard.Subtitle text="Mit SVG Grafiken und PHP Backend" />
 					<ProjectCard.Description text="Das hier ist schon ein ziemlich altes Projekt von mir, welches ich später um verschiedene Funktionen (wie z.B. einer Datenbankanbindung) erweitert habe. Allerdings suche ich immer noch nach einem Platz, an dem ich die Bewertungsskala sinnvoll einsetzen kann..." />
 					<ProjectCard.Tags tags="SVG, CSS, PHP" />
 				</ProjectCard>
 
-				<ProjectCard color="green" image="bilder/proj/proj_ShowHidePassword.png" link="https://codepen.io/rabakilgur/pen/WgRWge" darkenImage right>
+				<ProjectCard color="green" image="assets/proj/proj_ShowHidePassword.png" link="https://codepen.io/rabakilgur/pen/WgRWge" darkenImage right>
 					<ProjectCard.Title text="Passwort Eingabefeld mit Effekt" />
 					<ProjectCard.Subtitle text="Dynamischer Effekt beim Anzeigen / Verbergen" />
 					<ProjectCard.Description text={<>Auf Codepen experimentieren gerade viele Leute mit <i>Splitting.js</i>, und als ich dort auf die Idee gebracht wurde, dies auf ein Passwort-Textfeld anzuwenden, habe ich mich gleich daran gesetzt.</>} />
 					<ProjectCard.Tags tags="Splitting.js, CSS" />
 				</ProjectCard>
 
-				<div className="text_heading"><h2>Links</h2></div>
+				<Heading>Links</Heading>
 				<div className="blob_box">
 					<a className="blob link_CodePen" href="https://codepen.io/rabakilgur" target="_blank" rel="noreferrer">
 						<span>CodePen</span>
@@ -236,7 +237,7 @@ const Homepage = () => {
 				</div>
 
 
-				<div className="text_heading"><h2>Kontakt</h2></div>
+				<Heading>Kontakt</Heading>
 				<div id="contact_section">
 					<div>
 						<i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#0088FF" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></i>

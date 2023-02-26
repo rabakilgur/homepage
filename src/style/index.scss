@@ -21,7 +21,7 @@ body {
 }
 body {
 	font-style: normal;
-	font-family: 'Open-Sans',"Verdana","sans-serif","Arial";
+	font-family: "Verdana", "sans-serif", "Arial";
 	font-size: 16px;
 	line-height: 1.5;
 	margin: 0;
@@ -53,79 +53,50 @@ header {
 	height: 80vh;
 	min-height: 400px;
 	user-select: none;
-}
-header > h1 {
-	position: absolute;
-	z-index: 2;
-	top: 50%;
-	left: 50%;
-	width: calc(100% - 20px);
-	margin: 0;
-	text-align: center;
-	font-size: 250%;
-	transform: translate(-50%, -50%);
-	opacity: 1;
-	/*mix-blend-mode: difference;*/
-	--shadow_color: #ffffffcc;
-	text-shadow: 0 0 6px var(--shadow_color),
-					 0 0 12px var(--shadow_color),
-					 0 0 18px var(--shadow_color),
-					 0 0 24px var(--shadow_color);
+	> h1 {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		width: calc(100% - 20px);
+		margin: 0;
+		text-align: center;
+		font-size: 250%;
+		transform: translate(-50%, -50%);
+		opacity: 1;
+		/*mix-blend-mode: difference;*/
+		--shadow_color: #ffffffcc;
+		text-shadow: 0 0 6px var(--shadow_color),
+						0 0 12px var(--shadow_color),
+						0 0 18px var(--shadow_color),
+						0 0 24px var(--shadow_color);
+		> span {
+			display: inline-block;
+			text-align: center;
+			&:first-child{
+				display: block;
+				font-size: 150%;
+				height: 1.5em;
+			}
+			&:not(:last-child) {
+				opacity: 0.8;
+			}
+			&:last-child {
+				color: #0088FF;
+				&::before {
+					content: "";
+					display: inline-block;
+					width: 0.225em;
+				}
+			}
+		}
+	}
 }
 .scramble_dud {
   opacity: 0.5;
 }
-header > h1 > span {
-	display: inline-block;
-	text-align: center;
-}
-header > h1 > span:first-child{
-	display: block;
-	font-size: 150%;
-	height: 1.5em;
-}
-header > h1 > span:not(:last-child) {
-	opacity: 0.8;
-}
-header > h1 > span:last-child {
-	color: #0088FF;
-}
-header > h1 > span:last-child::before {
-	content: "i";
-	opacity: 0;
-}
-header + .text_heading {
-	margin-top: 0;
-}
 
 
-.text_heading,
-.text_heading > h2 {
-	font-family: Voces, 'Open-Sans',"Verdana","sans-serif","Arial";
-	font-weight: bold;
-	font-size: 42px;
-	margin: 0;
-	text-align: center;
-}
-.text_heading {
-	margin: 20px 0;
-}
-.text_heading > h2 {
-	display: inline;
-}
-.text_heading::before {
-	content: "<";
-	display: inline;
-}
-.text_heading::after {
-	content: ">";
-	display: inline;
-}
-.text_heading > h2::after {
-	content: "/";
-	display: inline;
-	color: #0088FF;
-}
 body > p {
 	width: 1000px;
 	max-width: calc(100% - 20px);
@@ -241,7 +212,7 @@ center.whatido_box {
 	right: -8%;
 	bottom: 20%;
 	text-align: center;
-	font-family: Voces, 'Open-Sans',"Verdana","sans-serif","Arial";
+	font-family: Voces, "Verdana", "sans-serif", "Arial";
 	pointer-events: none;
 	color: white;
 	font-size: 150%;
