@@ -1,7 +1,27 @@
 import gsap, { Power2 } from "gsap";
 
+type Particle = {
+	id: number;
+	x: number;
+	y: number;
+	startY: number;
+	radius: number;
+	defaultRadius: number;
+	startAngle: number;
+	endAngle: number;
+	alpha: number;
+	color: {
+		 r: number;
+		 g: number;
+		 b: number;
+	};
+	speed: number;
+	amplitude: number;
+	isBurst: boolean;
+};
+
 // Helper function to get a random value from [low, high]
-const random = (low, high) => Math.random() * (high - low) + low;
+const random = (low: number, high: number) => Math.random() * (high - low) + low;
 
 export default class Visual {
 	canvas: HTMLCanvasElement;
@@ -9,10 +29,10 @@ export default class Visual {
 	canvasWidth: number;
 	canvasHeight: number;
 	particleLength: number;
-	particles: any[];
+	particles: Particle[];
 	particleMaxRadius: number;
-	handleMouseMoveBind: any;
-	handleResizeBind: any;
+	handleMouseMoveBind: typeof this.handleMouseMove;
+	handleResizeBind: typeof this.handleResize;
 
 	constructor(canvas: HTMLCanvasElement) {
 		this.canvas = canvas;
@@ -102,12 +122,12 @@ export default class Visual {
 		});
 	}
 
-	moveParticle(particle) {
+	moveParticle(particle: Particle) {
 		particle.x += particle.speed;
 		particle.y = particle.startY + particle.amplitude * Math.sin(((particle.x / 5) * Math.PI) / 180);
 	}
 
-	enlargeParticle(clientX, clientY) {
+	enlargeParticle(clientX: number, clientY: number) {
 		this.particles.forEach(particle => {
 			if (particle.isBurst) return;
 
@@ -132,18 +152,20 @@ export default class Visual {
 	}
 
 	render() {
-		// canvas
+		// Init canvas:
 		this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
 
-		// draw particle
+		// Draw/update particles:
 		this.drawParticles();
 
-		// create particles
+		// Recreate particles that moved off the screen:
 		this.particles.forEach(particle => {
 			if (particle.x - particle.radius >= this.canvasWidth) {
 				this.particles[particle.id] = this.createParticle(particle.id, true);
 			}
 		});
+
+		// Calculate next frame:
 		requestAnimationFrame(this.render.bind(this));
 	}
 }
