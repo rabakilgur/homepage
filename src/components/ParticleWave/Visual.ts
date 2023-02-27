@@ -33,6 +33,7 @@ export default class Visual {
 	particleMaxRadius: number;
 	handleMouseMoveBind: typeof this.handleMouseMove;
 	handleResizeBind: typeof this.handleResize;
+	lastFrameTimestamp: DOMHighResTimeStamp;
 
 	constructor(canvas: HTMLCanvasElement) {
 		this.canvas = canvas;
@@ -47,7 +48,7 @@ export default class Visual {
 		this.handleResizeBind = this.handleResize.bind(this);
 
 		this.initialize();
-		this.render();
+		this.render(0);
 	}
 
 	initialize() {
@@ -111,9 +112,9 @@ export default class Visual {
 		};
 	}
 
-	drawParticles() {
+	drawParticles(tslf: DOMHighResTimeStamp) {
 		this.particles.forEach(particle => {
-			this.moveParticle(particle);
+			this.moveParticle(particle, tslf);
 
 			this.context.beginPath();
 			this.context.fillStyle = `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, ${particle.alpha})`;
@@ -122,8 +123,8 @@ export default class Visual {
 		});
 	}
 
-	moveParticle(particle: Particle) {
-		particle.x += particle.speed;
+	moveParticle(particle: Particle, tslf: DOMHighResTimeStamp) {
+		particle.x += particle.speed * tslf / 6;
 		particle.y = particle.startY + particle.amplitude * Math.sin(((particle.x / 5) * Math.PI) / 180);
 	}
 
@@ -151,12 +152,17 @@ export default class Visual {
 		});
 	}
 
-	render() {
+	render(timestamp: DOMHighResTimeStamp) {
+		if (!this.lastFrameTimestamp) this.lastFrameTimestamp = timestamp;
+		let tslf = timestamp - this.lastFrameTimestamp;
+
+		// console.log(timestamp, this.lastFrameTimestamp, tslf);
+
 		// Init canvas:
 		this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
 
 		// Draw/update particles:
-		this.drawParticles();
+		this.drawParticles(tslf);
 
 		// Recreate particles that moved off the screen:
 		this.particles.forEach(particle => {
@@ -166,6 +172,7 @@ export default class Visual {
 		});
 
 		// Calculate next frame:
+		this.lastFrameTimestamp = timestamp;
 		requestAnimationFrame(this.render.bind(this));
 	}
 }
