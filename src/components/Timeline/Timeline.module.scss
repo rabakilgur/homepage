@@ -33,8 +33,9 @@ TIMELINE
 /*----- TIMELINE ITEM -----*/
 
 .timelineItem {
-	padding-left: 40px;
 	position: relative;
+	margin-bottom: 0;
+	padding-left: 40px;
 	&:last-child {
 		padding-bottom: 0;
 	}
@@ -86,7 +87,7 @@ TIMELINE
 /*----- TIMELINE CONTENT -----*/
 
 .timelineContent {
-	padding-bottom: 40px;
+	padding-bottom: 1.5em;
 	p {
 		color: #768390;
 		&:last-child {
@@ -120,9 +121,11 @@ MOD: TIMELINE SPLIT
 		}
 		.timelineContent {
 			padding-left: 30px;
+			transform: translateY(-0.5em);
 		}
 		.timelineInfo {
 			padding-right: 30px;
+			text-align: right;
 		}
 		.period .timelineTitle {
 			position: relative;

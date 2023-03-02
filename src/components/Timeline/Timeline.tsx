@@ -22,35 +22,3 @@ Timeline.Item = ({ title, info, text, marker }: { title: string, info: string, t
 );
 
 export default Timeline;
-/*
-<li className={S.timelineItem}>
-	<div className={S.timelineInfo}>
-		<span>Mär 2020 - heute</span>
-	</div>
-	<div className={S.timelineMarker}></div>
-	<div className={S.timelineContent}>
-		<h3 className={S.timelineTitle}>ARZ Darmstadt</h3>
-		<p>Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH</p>
-	</div>
-</li>
-<li className={S.timelineItem}>
-	<div className={S.timelineInfo}>
-		<span>Nov 2015 - Mär 2019</span>
-	</div>
-	<div className={S.timelineMarker}></div>
-	<div className={S.timelineContent}>
-		<h3 className={S.timelineTitle}>EKHN</h3>
-		<p>Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau</p>
-	</div>
-</li>
-<li className={C(S.timelineItem, S.markerOutline)}>
-	<div className={S.timelineInfo}>
-		<span>Okt 2015 - heute</span>
-	</div>
-	<div className={S.timelineMarker}></div>
-	<div className={S.timelineContent}>
-		<h3 className={S.timelineTitle}>Studium an der TU Darmstadt</h3>
-		<p>Student im Bachelor of Science im Fachbereich Informatik</p>
-	</div>
-</li>
-*/

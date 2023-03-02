@@ -1,5 +1,4 @@
 import { Fragment, h } from "preact";
-// import { ReactElement, ReactNode, useEffect } from "react";
 import S from "./ProjectCard.module.scss";
 
 const ProjectCard = ({ color, image, link, item, darkenImage, right, ...props }: { color?: string, image?: string, link?: string, item?: any, darkenImage?: Boolean, right?: Boolean, [prop: string]: any }) => {
