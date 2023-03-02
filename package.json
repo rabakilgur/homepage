@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
     "serve": "sirv build --cors --single",
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch -p 8888",
     "lint": "eslint src",
     "test": "jest"
   },
@@ -21,6 +21,10 @@
     ]
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@use-it/event-listener": "^0.1.7",
     "classnames": "^2.3.2",

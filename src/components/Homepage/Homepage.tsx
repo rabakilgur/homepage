@@ -1,14 +1,65 @@
 import { Fragment, h } from "preact";
-import { Card, Container, Text } from "@nextui-org/react";
+import { Button, Card, Container, Switch, Text, useTheme } from "@nextui-org/react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import ParticleWave from "../ParticleWave/ParticleWave";
 import ScrambleText from "../TextScramble/TextScramble";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
+import useDarkMode from "../../vendor/hooks/useDarkMode";
+
+import "../../style/index.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Homepage = () => {
+	const darkMode = useDarkMode(false);
+	const { theme, type, isDark } = useTheme();
+
+	console.log(theme);
+
 	return (
 		<>
+			{/* <div
+				onClick={darkMode.toggle}
+				style={{
+					position: "absolute",
+					zIndex: 1000,
+					top: 14,
+					right: 16,
+					padding: "1em",
+					borderRadius: ""
+					cursor: "pointer",
+				}}
+			>
+				{darkMode.value ? "D" : "L"}
+			</div> */}
+			{/* <Switch
+				checked={darkMode.value}
+				size="xl"
+				iconOn={"L"}
+				iconOff={"D"}
+
+			/> */}
+
+			<Button
+				onClick={darkMode.toggle}
+				auto
+				light
+				style={{
+					position: "absolute",
+					zIndex: 1000,
+					top: 10,
+					right: 12,
+					aspectRatio: "1",
+					fontSize: "1.4em",
+				}}
+			>
+				{/* {darkMode.value ? <FontAwesomeIcon icon="fa-solid fa-moon" /> : <FontAwesomeIcon icon="fa-solid fa-brightness" />} */}
+				{darkMode.value ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
+			</Button>
+
+
+
 			<header>
 				<ParticleWave />
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
@@ -23,9 +74,7 @@ const Homepage = () => {
 				</Timeline>
 
 				<Heading>Über mich</Heading>
-				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>.
-						Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign.
-						Weiter unten sind ein paar meiner Projekte verlinkt.</p>
+				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>. Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign. Weiter unten sind ein paar meiner Projekte verlinkt.</p>
 				<div className="whatido_box">
 					<div className="flex">
 						<div className="flex_el50">

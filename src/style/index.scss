@@ -268,7 +268,12 @@ footer > p {
 	padding: 60px 0 40px;
 }
 
+/* NextUI Overrides: */
 
+p,
+small {
+	letter-spacing: initial;
+}
 
 
 
@@ -307,13 +312,3 @@ footer > p {
 		font-size: calc(50% + 3vmin);
 	}
 }
-
-// @media (prefers-color-scheme: dark) {
-// 	html {
-// 		color-scheme: dark;
-// 	}
-// 	body {
-// 		color: white;
-// 		background: black;
-// 	}
-// }
