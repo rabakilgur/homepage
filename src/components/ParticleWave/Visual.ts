@@ -28,8 +28,9 @@ export default class Visual {
 	context: CanvasRenderingContext2D;
 	canvasWidth: number;
 	canvasHeight: number;
-	particleLength: number;
+	particleCount: number;
 	particles: Particle[];
+	particleMinRadius: number;
 	particleMaxRadius: number;
 	handleMouseMoveBind: typeof this.handleMouseMove;
 	handleResizeBind: typeof this.handleResize;
@@ -40,9 +41,10 @@ export default class Visual {
 		this.context = this.canvas.getContext("2d");
 		this.canvasWidth = 0;
 		this.canvasHeight = 0;
-		this.particleLength = 150;
+		this.particleCount = 90;
 		this.particles = [];
-		this.particleMaxRadius = 8;
+		this.particleMinRadius = 2;
+		this.particleMaxRadius = 10;
 
 		this.handleMouseMoveBind = this.handleMouseMove.bind(this);
 		this.handleResizeBind = this.handleResize.bind(this);
@@ -53,7 +55,7 @@ export default class Visual {
 
 	initialize() {
 		this.resizeCanvas();
-		for (let i = 0; i < this.particleLength; i++) {
+		for (let i = 0; i < this.particleCount; i++) {
 			this.particles.push(this.createParticle(i));
 		}
 		this.bind();
@@ -87,7 +89,7 @@ export default class Visual {
 	}
 
 	createParticle(id: number, isRecreate?: boolean) {
-		const radius = random(1, this.particleMaxRadius);
+		const radius = random(this.particleMinRadius, this.particleMaxRadius);
 		// const x = isRecreate ? - radius - random(this.particleMaxRadius * 2, this.canvasWidth) : random(0, this.canvasWidth);
 		const x = isRecreate ? 0 - radius : random(0, this.canvasWidth);
 		let y = random(this.canvasHeight / 2 - 150, this.canvasHeight / 2 + 150);
@@ -106,7 +108,7 @@ export default class Visual {
 			endAngle: Math.PI * 2,
 			alpha: alpha,
 			color: { r: 0, g: random(70, 180), b: 255 },
-			speed: (alpha + 1) * 0.2,
+			speed: (alpha + 1) * 0.15,
 			amplitude: random(50, 200),
 			isBurst: false
 		};

@@ -1,5 +1,4 @@
 import { h } from "preact";
-// import { useEffect, useRef } from "react";
 import { useEffect, useRef } from "preact/hooks";
 import { styled } from "@nextui-org/react";
 import Visual from "./Visual";
