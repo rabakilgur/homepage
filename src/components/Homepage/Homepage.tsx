@@ -5,58 +5,22 @@ import ParticleWave from "../ParticleWave/ParticleWave";
 import ScrambleText from "../TextScramble/TextScramble";
 import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
-import useDarkMode from "../../vendor/hooks/useDarkMode";
-
 import "../../style/index.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const Homepage = () => {
-	const darkMode = useDarkMode(false);
 	const { theme, type, isDark } = useTheme();
 
-	console.log(theme);
+	// console.log(theme);
 
 	return (
 		<>
-			{/* <div
-				onClick={darkMode.toggle}
-				style={{
-					position: "absolute",
-					zIndex: 1000,
-					top: 14,
-					right: 16,
-					padding: "1em",
-					borderRadius: ""
-					cursor: "pointer",
-				}}
-			>
-				{darkMode.value ? "D" : "L"}
-			</div> */}
-			{/* <Switch
-				checked={darkMode.value}
-				size="xl"
-				iconOn={"L"}
-				iconOff={"D"}
-
-			/> */}
-
-			<Button
-				onClick={darkMode.toggle}
-				auto
-				light
-				style={{
-					position: "absolute",
-					zIndex: 1000,
-					top: 10,
-					right: 12,
-					aspectRatio: "1",
-					fontSize: "1.4em",
-				}}
-			>
-				{/* {darkMode.value ? <FontAwesomeIcon icon="fa-solid fa-moon" /> : <FontAwesomeIcon icon="fa-solid fa-brightness" />} */}
-				{darkMode.value ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
-			</Button>
+			<DarkModeToggle style={{
+				position: "absolute",
+				zIndex: 1000,
+				top: 10,
+				right: 12,
+			}} />
 
 
 
@@ -68,9 +32,10 @@ const Homepage = () => {
 				<Heading>Meine Erfahrung</Heading>
 				<Timeline>
 					<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - heute" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
+					<Timeline.Item title="Master-Studium an der TU Darmstadt" info="Apr 2022 - heute" text="Student des Master of Science für Internet- und Web-basierte Systeme" marker="outlined" />
 					<Timeline.Item title="ARZ Darmstadt" info="Mär 2020 - Mär 2022" text="Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH" />
 					<Timeline.Item title="EKHN" info="Nov 2015 - Mär 2019" text="Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau" />
-					<Timeline.Item title="Studium an der TU Darmstadt" info="Okt 2015 - heute" text="Student im Bachelor of Science im Fachbereich Informatik" marker="outlined" />
+					<Timeline.Item title="Bachelor-Studium an der TU Darmstadt" info="Okt 2015 - Mär 2022" text="Student im Bachelor of Science im Fachbereich Informatik" marker="outlined" />
 				</Timeline>
 
 				<Heading>Über mich</Heading>
