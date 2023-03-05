@@ -68,7 +68,7 @@ header {
 		transform: translate(-50%, -50%);
 		opacity: 1;
 		/*mix-blend-mode: difference;*/
-		--shadow_color: #ffffffcc;
+		--shadow_color: var(--nextui-colors-backgroundAlpha, #ffffffcc);
 		text-shadow: 0 0 6px var(--shadow_color),
 						0 0 12px var(--shadow_color),
 						0 0 18px var(--shadow_color),
@@ -82,7 +82,7 @@ header {
 				height: 1.5em;
 			}
 			&:not(:last-child) {
-				opacity: 0.8;
+				opacity: 0.9;
 			}
 			&:last-child {
 				color: #0088FF;
@@ -94,9 +94,6 @@ header {
 			}
 		}
 	}
-}
-.scramble_dud {
-  opacity: 0.5;
 }
 
 

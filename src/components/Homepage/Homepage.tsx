@@ -12,7 +12,7 @@ import Tooltip from "../Tooltip/Tooltip";
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
 
-	// console.log(theme);
+	console.log(theme);
 
 	return (
 		<>

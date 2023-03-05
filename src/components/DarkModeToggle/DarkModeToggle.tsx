@@ -9,7 +9,7 @@ export default function DarkModeToggle(props) {
 
 	return (
 		<Button
-			onClick={darkMode.toggle}
+			onPress={darkMode.toggle}
 			auto
 			light
 			style={{
