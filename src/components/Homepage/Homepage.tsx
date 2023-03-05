@@ -179,7 +179,7 @@ const Homepage = () => {
 				<ProjectCard color="grey" image="assets/proj/proj_OPCFactoryControlPanel.png" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
 					<ProjectCard.Title text="OPC Factory Control Panel" />
 					<ProjectCard.Subtitle text="Ein Programm zur Steurung von Maschinen via OPC-UA" />
-					<ProjectCard.Description text="Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist." />
+					<ProjectCard.Description text={<>Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist.</>} />
 					<ProjectCard.Tags tags="Node, Electron, OPC-UA" />
 				</ProjectCard>
 

@@ -191,12 +191,17 @@
 }
 .projcardDescription {
 	position: relative;
+	display: -webkit-box;
 	z-index: 1;
 	font-size: 17px;
 	color: #424242;
 	height: 125px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	line-clamp: 5;
+	-webkit-line-clamp: 5;
+	box-orient: vertical;
+	-webkit-box-orient: vertical;
 }
 .projcardTagbox {
 	position: absolute;
