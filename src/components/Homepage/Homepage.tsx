@@ -7,6 +7,7 @@ import Heading from "../Heading/Heading";
 import Timeline from "../Timeline/Timeline";
 import "../../style/index.scss";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import Tooltip from "../Tooltip/Tooltip";
 
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
@@ -15,14 +16,16 @@ const Homepage = () => {
 
 	return (
 		<>
-			<DarkModeToggle style={{
+			<div style={{
 				position: "absolute",
 				zIndex: 1000,
 				top: 10,
 				right: 12,
-			}} />
-
-
+			}}>
+				<Tooltip tt={isDark ? "Zu Light Mode wechseln" : "Zu Dark Mode wechseln"} placement="left">
+					<DarkModeToggle />
+				</Tooltip>
+			</div>
 
 			<header>
 				<ParticleWave />
@@ -35,11 +38,11 @@ const Homepage = () => {
 					<Timeline.Item title="Master-Studium an der TU Darmstadt" info="Apr 2022 - heute" text="Student des Master of Science für Internet- und Web-basierte Systeme" marker="outlined" />
 					<Timeline.Item title="ARZ Darmstadt" info="Mär 2020 - Mär 2022" text="Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH" />
 					<Timeline.Item title="EKHN" info="Nov 2015 - Mär 2019" text="Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau" />
-					<Timeline.Item title="Bachelor-Studium an der TU Darmstadt" info="Okt 2015 - Mär 2022" text="Student im Bachelor of Science im Fachbereich Informatik" marker="outlined" />
+					<Timeline.Item title="Bachelor-Studium an der TU Darmstadt" info="Okt 2015 - Mär 2022" text="Student im Bachelor of Science im Fachbereich Informatik mit abschließender Bachelorarbeit zum Thema „Potenzialanalyse von benutzergesteuerten Anpassungs- und Analysewerkzeugen für Wertschöpfungsketten“" marker="outlined" />
 				</Timeline>
 
 				<Heading>Über mich</Heading>
-				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>. Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign. Weiter unten sind ein paar meiner Projekte verlinkt.</p>
+				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Softwareingenieur beim <a href="https://www.arz-darmstadt.de/" target="_blank" rel="noreferrer"><span>ARZ Darmstadt</span></a> und Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>. Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign. Weiter unten sind ein paar meiner Projekte verlinkt.</p>
 				<div className="whatido_box">
 					<div className="flex">
 						<div className="flex_el50">

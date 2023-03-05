@@ -32,6 +32,9 @@ body {
 a {
 	color: #0088FF;
 	cursor: pointer;
+	&:has(span) {
+		text-decoration: underline !important;
+	}
 }
 a > span {
 	color: #555555;
@@ -86,7 +89,7 @@ header {
 				&::before {
 					content: "";
 					display: inline-block;
-					width: 0.225em;
+					width: 0.3em;
 				}
 			}
 		}
