@@ -167,9 +167,10 @@ export default class Visual {
 		this.drawParticles(tslf);
 
 		// Recreate particles that moved off the screen:
+		const mustRedrawAll = this.particles.reduce((progress, particle) => progress && (particle.x - particle.radius >= this.canvasWidth), true);
 		this.particles.forEach(particle => {
 			if (particle.x - particle.radius >= this.canvasWidth) {
-				this.particles[particle.id] = this.createParticle(particle.id, true);
+				this.particles[particle.id] = this.createParticle(particle.id, !mustRedrawAll);
 			}
 		});
 
