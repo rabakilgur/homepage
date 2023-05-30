@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact build",
     "serve": "sirv build --cors --single",
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch -p 8888",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch -p 8888 --refresh",
     "lint": "eslint src",
     "test": "jest"
   },
