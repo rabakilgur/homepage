@@ -1,0 +1,18 @@
+// @type
+
+.wrapper {
+	position: fixed;
+	z-index: 1000;
+	top: 10px;
+	right: 26px;
+	border-radius: var(--nextui-radii-sm);
+	backdrop-filter: blur(14px);
+	overflow: hidden;
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: var(--nextui-colors-background);
+		opacity: 0.5;
+	}
+}

@@ -8,6 +8,7 @@ import Timeline from "../Timeline/Timeline";
 import "../../style/index.scss";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import Tooltip from "../Tooltip/Tooltip";
+import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
 
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
@@ -16,16 +17,7 @@ const Homepage = () => {
 
 	return (
 		<>
-			<div style={{
-				position: "absolute",
-				zIndex: 1000,
-				top: 10,
-				right: 12,
-			}}>
-				<Tooltip tt={isDark ? "Zu Light Mode wechseln" : "Zu Dark Mode wechseln"} placement="left">
-					<DarkModeToggle />
-				</Tooltip>
-			</div>
+			<DarkModeToggleCornerWrapper />
 
 			<header>
 				<ParticleWave />

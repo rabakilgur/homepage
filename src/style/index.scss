@@ -37,7 +37,8 @@ a {
 	}
 }
 a > span {
-	color: #555555;
+	color: var(--nextui-colors-text);
+	opacity: 0.85;
 	-moz-transition: color 0.2s ease-in-out;
 	-webkit-transition: color 0.2s ease-in-out;
 	-o-transition: color 0.2s ease-in-out;
