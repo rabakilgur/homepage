@@ -23,7 +23,7 @@ const Homepage = () => {
 				<ParticleWave />
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
-			<Container fluid gap={0} css={{ maxWidth: 1000 }}>
+			<Container fluid gap={0} css={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
 				<Heading>Meine Erfahrung</Heading>
 				<Timeline>
 					<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - heute" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />

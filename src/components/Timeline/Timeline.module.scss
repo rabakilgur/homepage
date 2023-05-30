@@ -2,6 +2,7 @@
 
 $primary-color: #0088ff;
 $primary-color-hover: scale-color($primary-color, $lightness: 32%);
+$mutedColor: var(--nextui-colors-gray800, #7E868C);
 
 .timelineContainer {
 	display: flex;
@@ -50,7 +51,7 @@ TIMELINE
 	margin: 0 0 .5em 0;
 	text-transform: uppercase;
 	white-space: nowrap;
-	color: #768390;
+	color: $mutedColor;
 }
 /*----- TIMELINE MARKER -----*/
 
@@ -89,7 +90,7 @@ TIMELINE
 .timelineContent {
 	padding-bottom: 1.5em;
 	p {
-		color: #768390;
+		color: $mutedColor;
 		&:last-child {
 			margin-bottom: 0;
 		}
