@@ -41,35 +41,35 @@ const Homepage = () => {
 
 				<Heading>Projekte</Heading>
 
-				<ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.png" link="http://www.spargelhof-moenich.de/">
+				<ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.jpg" link="http://www.spargelhof-moenich.de/">
 					<ProjectCard.Title text="Spargelhof Mönich Webseite" />
 					<ProjectCard.Subtitle text="Die neue Webseite des Spargelhofs Mönich" />
 					<ProjectCard.Description text="Der Spargelhof Mönich aus Griesheim brauchte eine neue Webseite. Neben den üblichen Seiten habe ich hierfür noch eine intuitive und maßgeschneiderte Content-Management-Lösung mit PHP sowie einen Verkaufsstellen-Finder gebaut." />
 					<ProjectCard.Tags tags="Frontend, Bootstrap, PHP" />
 				</ProjectCard>
 
-				<ProjectCard color="orange" image="assets/proj/proj_RobotControlGUI.png" link="https://github.com/rabakilgur/ThorRobotGUI" right>
+				<ProjectCard color="orange" image="assets/proj/proj_RobotControlGUI.jpg" link="https://github.com/rabakilgur/ThorRobotGUI" right>
 					<ProjectCard.Title text="Thor Robot GUI" />
 					<ProjectCard.Subtitle text={<>Benutzeroberfläche zur Steuerung des <i>Thor</i> Roboters</>} />
 					<ProjectCard.Description text={<>Zusammen mit dem FabLab Darmstadt habe ich den 3D-gedruckten Open-Source 6-Achsen-Roboter <i>Thor</i> gebaut und modifiziert. Um ihn anzusteuern habe ich das <i>Thor Robot GUI</i> geschrieben: Eine Electron App mit der man den Roboter präsize steuern kann.</>} />
 					<ProjectCard.Tags tags="Node, Electron, Robotik" />
 				</ProjectCard>
 
-				<ProjectCard color="blue" image="assets/proj/proj_DiceProjectApp.png" link="https://robin-garbe.de/p/dice_project">
+				<ProjectCard color="blue" image="assets/proj/proj_DiceProjectApp.jpg" link="https://robin-garbe.de/p/dice_project">
 					<ProjectCard.Title text="Dice Project App" />
 					<ProjectCard.Subtitle text="Eine Würfel-App für iOS, Android, und das Web" />
 					<ProjectCard.Description text="Die Würfel-App die ich auf meinem Handy hatte wurde nach einer Softwareaktualisierung nicht mehr unterstützt, also habe ich mich entschieden, einfach meine eigene App zu schreiben. Dies war mein erstes Projekt in Richtung App-Development." />
 					<ProjectCard.Tags tags="PhoneGap, Hybrid App, Framework 7" />
 				</ProjectCard>
 
-				<ProjectCard color="grey" image="assets/proj/proj_OPCFactoryControlPanel.png" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
+				<ProjectCard color="grey" image="assets/proj/proj_OPCFactoryControlPanel.jpg" link="https://github.com/rabakilgur/OPC_Factory_Control_Panel" right>
 					<ProjectCard.Title text="OPC Factory Control Panel" />
 					<ProjectCard.Subtitle text="Ein Programm zur Steurung von Maschinen via OPC-UA" />
 					<ProjectCard.Description text={<>Im Rahmen meines Bachelorpraktikums am Institut <i>Datenverarbeitung in der Konstruktion</i> habe ich mit Kommolitonen ein Programm geschrieben um Aufträge dynamisch an industrielle Maschinen zu senden, das leicht zu benutzen und schnell um Maschinentypen zu erweitern ist.</>} />
 					<ProjectCard.Tags tags="Node, Electron, OPC-UA" />
 				</ProjectCard>
 
-				<Heading>Einige kleine Projekte</Heading>
+				{/* <Heading>Einige kleine Projekte</Heading>
 
 				<ProjectCard color="red" image="assets/proj/proj_SvgArcDiagram.png" link="https://codepen.io/rabakilgur/pen/oPxrLp" darkenImage>
 					<ProjectCard.Title text="Ringdiagramme mit konischem Farbverlauf" />
@@ -97,7 +97,7 @@ const Homepage = () => {
 					<ProjectCard.Subtitle text="Dynamischer Effekt beim Anzeigen / Verbergen" />
 					<ProjectCard.Description text={<>Auf Codepen experimentieren gerade viele Leute mit <i>Splitting.js</i>, und als ich dort auf die Idee gebracht wurde, dies auf ein Passwort-Textfeld anzuwenden, habe ich mich gleich daran gesetzt.</>} />
 					<ProjectCard.Tags tags="Splitting.js, CSS" />
-				</ProjectCard>
+				</ProjectCard> */}
 
 				<Heading>Links</Heading>
 				<div className="blob_box">
