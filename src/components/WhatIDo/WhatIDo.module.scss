@@ -21,10 +21,10 @@ $jitter: 15; // in pixels
 	translate: calc(var(--translate-x, 0px) - #{$half-jitter}) calc(var(--translate-y, 0px) - #{$half-jitter});
 	@for $i from 1 through 20 {
 		&:nth-child(#{$i}) {
-			--translate-x: calc(#{random($jitter)}px / var(--scale, 1));
-			--translate-y: calc(#{random($jitter)}px / var(--scale, 1));
+			--translate-x: calc(#{math.random($jitter)}px / var(--scale, 1));
+			--translate-y: calc(#{math.random($jitter)}px / var(--scale, 1));
 			.iconBox {
-				animation-delay: #{div(random($float-animation-duration * 10), 10)}s;
+				animation-delay: #{math.div(math.random($float-animation-duration * 10), 10)}s;
 			}
 		}
 	}
