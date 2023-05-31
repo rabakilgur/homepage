@@ -7,6 +7,7 @@ import ParticleWave from "../ParticleWave/ParticleWave";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import ScrambleText from "../TextScramble/TextScramble";
 import Timeline from "../Timeline/Timeline";
+import WhatIDo from "../WhatIDo/WhatIDo";
 
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
@@ -22,7 +23,14 @@ const Homepage = () => {
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
+				<Heading>Über mich</Heading>
+
+				<p style="text-align: justify">Hallo! Ich bin Robin, ein Softwareingenieur aus Darmstadt. Ich beschäftige mich hauptsächlich mit Frontend- und Fullstack-Entwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen App-Entwicklung oder APIs. Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über die Bereiche in denen ich tätig bin und einige Technologien die ich in letzter Zeit benutze:</p>
+
+				<WhatIDo />
+
 				<Heading>Meine Erfahrung</Heading>
+
 				<Timeline>
 					<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - heute" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
 					<Timeline.Item title="Master-Studium an der TU Darmstadt" info="Apr 2022 - heute" text="Student des Master of Science für Internet- und Web-basierte Systeme" marker="outlined" />
@@ -30,118 +38,6 @@ const Homepage = () => {
 					<Timeline.Item title="EKHN" info="Nov 2015 - Mär 2019" text="Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau" />
 					<Timeline.Item title="Bachelor-Studium an der TU Darmstadt" info="Okt 2015 - Mär 2022" text="Student im Bachelor of Science im Fachbereich Informatik mit abschließender Bachelorarbeit zum Thema „Potenzialanalyse von benutzergesteuerten Anpassungs- und Analysewerkzeugen für Wertschöpfungsketten“" marker="outlined" />
 				</Timeline>
-
-				<Heading>Über mich</Heading>
-				<p>Hi und willkommen auf meiner Webseite. Mein Name ist Robin Garbe und ich bin ein Softwareingenieur beim <a href="https://www.arz-darmstadt.de/" target="_blank" rel="noreferrer"><span>ARZ Darmstadt</span></a> und Informatikstudent an der <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noreferrer"><span>Technischen Universität Darmstadt</span></a>. Ich beschäftige mich hauptsächlich mit Webdesign und Webentwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen Grafikdesign oder Druckdesign. Weiter unten sind ein paar meiner Projekte verlinkt.</p>
-				<div className="whatido_box">
-					<div className="flex">
-						<div className="flex_el50">
-							<div className="flex_innerbox">
-								<div className="PcAnimation_box">
-									<div className="PcAnimation_innerbox">
-										<div className="PcAni_border">
-											<div className="PcAni_camSpeakerBox">
-												<div className="PcAni_cam"></div>
-												<div className="PcAni_speaker"></div>
-											</div>
-											<div className="PcAni_screen">
-												<div className="PcCon_header"></div>
-												<div className="PcCon_left"></div>
-												<div className="PcCon_r1"></div>
-												<div className="PcCon_r2"></div>
-												<div className="PcCon_r3"></div>
-												<div className="PcCon_r4"></div>
-												<div className="PcCon_r5"></div>
-												<div className="PcCon_r6"></div>
-												<div className="PcCon_r7"></div>
-												<div className="PcCon_r8"></div>
-											</div>
-										</div>
-										<div className="PcAni_stand"></div>
-										<div className="PcAni_multi"></div>
-									</div>
-								</div>
-							</div>
-							<div className="flex_innertextbox">
-								<h2>Webdesign</h2>
-							</div>
-						</div>
-						<div className="flex_el50">
-							<div className="flex_innerbox">
-								<div className="PriDes_box">
-									<div className="PriDes_innerbox">
-										<img src="../../assets/bilder/Doc.svg" alt="" />
-										<div className="PriDes_textbox">
-											<div className="PriDes_heading"></div>
-											<div className="PriDes_text PriDes_text_1"></div>
-											<div className="PriDes_text PriDes_text_2"></div>
-											<div className="PriDes_text PriDes_text_3"></div>
-											<div className="PriDes_text PriDes_text_4"></div>
-											<div className="PriDes_pilebox">
-												<div className="PriDes_pile PriDes_pile_1"></div>
-												<div className="PriDes_pile PriDes_pile_2"></div>
-												<div className="PriDes_pile PriDes_pile_3"></div>
-												<div className="PriDes_pile PriDes_pile_4"></div>
-												<div className="PriDes_pile PriDes_pile_5"></div>
-											</div>
-											<div className="PriDes_piebox">
-												<div className="PriDes_circle">
-													<div className="PriDes_pie" data-start="0" data-value="50"></div>
-													<div className="PriDes_pie" data-start="50" data-value="80"></div>
-													<div className="PriDes_pie" data-start="130" data-value="60"></div>
-													<div className="PriDes_pie" data-start="190" data-value="40"></div>
-													<div className="PriDes_pie" data-start="230" data-value="130"></div>
-													<div className="PriDes_line PriDes_line_1"></div>
-													<div className="PriDes_line PriDes_line_2"></div>
-													<div className="PriDes_line PriDes_line_3"></div>
-													<div className="PriDes_line PriDes_line_4"></div>
-													<div className="PriDes_line PriDes_line_5"></div>
-												</div>
-											</div>
-											<div className="PriDes_text PriDes_text_l1"></div>
-											<div className="PriDes_text PriDes_text_l2"></div>
-											<div className="PriDes_text PriDes_text_r1"></div>
-											<div className="PriDes_text PriDes_text_r2"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="flex_innertextbox">
-								<h2>Druckdesign</h2>
-							</div>
-						</div>
-						<div className="flex_el50">
-							<div className="flex_innerbox">
-								<div className="GraDes_box">
-									<div className="GraDes_innerbox">
-										<img src="../../assets/bilder/Dice_Project_Collection.svg" alt="" />
-										<div className="GraDes_box_border_box">
-											<div className="GraDes_box_border">
-												<div className="GraDes_box_corner1"></div>
-												<div className="GraDes_box_corner2"></div>
-												<div className="GraDes_box_corner3"></div>
-												<div className="GraDes_box_corner4"></div>
-												<div className="GraDes_box_corner5"></div>
-												<div className="GraDes_box_corner6"></div>
-												<div className="GraDes_box_corner7"></div>
-												<div className="GraDes_box_corner8"></div>
-											</div>
-										</div>
-										<div className="GraDes_box_cursor_box">
-											<div className="GraDes_box_cursor"></div>
-										</div>
-										<div className="GraDes_box_cursor2_box">
-											<div className="GraDes_box_cursor2"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="flex_innertextbox">
-								<h2>Grafikdesign</h2>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<Heading>Projekte</Heading>
 
@@ -238,7 +134,10 @@ const Homepage = () => {
 
 
 				<footer>
-					<p>Copyright © 2023<br />Made with ♥ by Robin Garbe</p>
+					<p>
+						Copyright © 2023<br />Made with ♥ by Robin Garbe
+						<div style="font-size: 0.8em; opacity: 0.5; margin-top: 1.5em;">Some icons made by <a href="https://www.flaticon.com/authors/justicon" title="justicon">justicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+					</p>
 				</footer>
 
 				{/* <between-logo shadow="standard" border-color="#ddd" z-index="20" scale="0.8"></between-logo> */}
