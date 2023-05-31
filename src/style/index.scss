@@ -20,6 +20,11 @@ body {
 	overflow-x: hidden;
 }
 body {
+	position: relative;
+	min-height: 100%;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
 	font-style: normal;
 	font-family: "Verdana", "sans-serif", "Arial";
 	font-size: 16px;
@@ -101,12 +106,29 @@ section {
 	position: relative;
 }
 
+p,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	letter-spacing: 0.4px;
+}
 
-body > p {
-	width: 1000px;
-	max-width: calc(100% - 20px);
-	margin: 20px auto;
-	color: #424242;
+p {
+	line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+	margin: 0 0 0.625rem 0;
 }
 
 div.flex {
@@ -273,18 +295,6 @@ footer > p {
 	padding: 60px 0 40px;
 }
 
-/* NextUI Overrides: */
-
-p,
-small,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	letter-spacing: 0.4px;
-}
 
 
 

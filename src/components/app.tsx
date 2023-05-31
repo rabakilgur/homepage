@@ -30,7 +30,7 @@ const App = () => {
 
 	return (
 		<div id="app">
-			<NextUIProvider theme={darkMode.value ? darkTheme : lightTheme}>
+			<NextUIProvider theme={darkMode.value ? darkTheme : lightTheme} disableBaseline>
 				{/* {globalStyles()} */}
 				<Homepage />
 			</NextUIProvider>
