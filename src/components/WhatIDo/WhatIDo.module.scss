@@ -53,17 +53,6 @@ $jitter: 15;
 		translate: 0 0px;
 	}
 }
-@keyframes floatOLD {
-	0% {
-		box-shadow: 0 5px 8px 0px rgb(104 112 118 / 0.16);
-		translate: 0 0px;
-	}
-	50% {
-		box-shadow: 0 #{5px + $float-amplitude} 15px 0px rgb(104 112 118 / 0.06);
-		translate: 0 #{0px - $float-amplitude};
-	}
-	100% {
-		box-shadow: 0 5px 8px 0px rgb(104 112 118 / 0.16);
-		translate: 0 0px;
-	}
+html:global(.dark-theme) .iconBox {
+	box-shadow: none !important;
 }

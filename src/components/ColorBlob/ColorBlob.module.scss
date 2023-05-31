@@ -2,6 +2,7 @@
 
 .colorBlob {
 	position: absolute;
+	z-index: -1;
 	top: var(--top, unset);
 	right: var(--right, unset);
 	bottom: var(--bottom, unset);

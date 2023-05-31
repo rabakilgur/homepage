@@ -20,8 +20,8 @@ const Homepage = () => {
 
 			<header>
 				<ParticleWave />
-				<ColorBlob color="#0170FE" size={425} bottom="5%" left="5%" />
-				<ColorBlob color="#0088FF" size={350} top="5%" right="5%" />
+				<ColorBlob color="#0170FE" size={425} right="70%" bottom="5%" />
+				<ColorBlob color="#0088FF" size={350} top="5%" left="70%" />
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
 			</header>
 

@@ -27,6 +27,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
+	isolation: isolate;
 	-webkit-font-smoothing: antialiased;
 }
 a {
@@ -48,7 +49,6 @@ a > span {
 a:hover > span {
 	color: #0088FF;
 }
-
 
 header {
 	display: block;

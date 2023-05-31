@@ -3,7 +3,6 @@ declare const styles: {
   readonly "iconWrapper": string;
   readonly "iconBox": string;
   readonly "float": string;
-  readonly "floatOLD": string;
 };
 export = styles;
 
