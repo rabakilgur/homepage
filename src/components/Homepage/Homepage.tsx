@@ -1,6 +1,7 @@
 import { Container, useTheme } from "@nextui-org/react";
 import { Fragment, h } from "preact";
 import "../../style/index.scss";
+import "../../style/colorBlobs.scss";
 import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
 import Heading from "../Heading/Heading";
 import ParticleWave from "../ParticleWave/ParticleWave";
@@ -12,7 +13,7 @@ import WhatIDo from "../WhatIDo/WhatIDo";
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
 
-	console.log(theme);
+	console.debug(theme);
 
 	return (
 		<>
@@ -21,6 +22,7 @@ const Homepage = () => {
 			<header>
 				<ParticleWave />
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
+				<div className="colorBlob" style="--color: #0088FF;" />
 			</header>
 			<Container fluid gap={0} css={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
 				<Heading>Über mich</Heading>
