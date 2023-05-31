@@ -1,14 +1,12 @@
+import { Container, useTheme } from "@nextui-org/react";
 import { Fragment, h } from "preact";
-import { Button, Card, Container, Switch, Text, useTheme } from "@nextui-org/react";
-import ProjectCard from "../ProjectCard/ProjectCard";
-import ParticleWave from "../ParticleWave/ParticleWave";
-import ScrambleText from "../TextScramble/TextScramble";
-import Heading from "../Heading/Heading";
-import Timeline from "../Timeline/Timeline";
 import "../../style/index.scss";
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
-import Tooltip from "../Tooltip/Tooltip";
 import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
+import Heading from "../Heading/Heading";
+import ParticleWave from "../ParticleWave/ParticleWave";
+import ProjectCard from "../ProjectCard/ProjectCard";
+import ScrambleText from "../TextScramble/TextScramble";
+import Timeline from "../Timeline/Timeline";
 
 const Homepage = () => {
 	const { theme, type, isDark } = useTheme();
@@ -72,7 +70,7 @@ const Homepage = () => {
 							<div className="flex_innerbox">
 								<div className="PriDes_box">
 									<div className="PriDes_innerbox">
-										<img src="https://robin-garbe.de/bilder/Doc.svg" alt="" />
+										<img src="../../assets/bilder/Doc.svg" alt="" />
 										<div className="PriDes_textbox">
 											<div className="PriDes_heading"></div>
 											<div className="PriDes_text PriDes_text_1"></div>
@@ -116,7 +114,7 @@ const Homepage = () => {
 							<div className="flex_innerbox">
 								<div className="GraDes_box">
 									<div className="GraDes_innerbox">
-										<img src="https://robin-garbe.de/bilder/Dice_Project_Collection.svg" alt="" />
+										<img src="../../assets/bilder/Dice_Project_Collection.svg" alt="" />
 										<div className="GraDes_box_border_box">
 											<div className="GraDes_box_border">
 												<div className="GraDes_box_corner1"></div>

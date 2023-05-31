@@ -9,6 +9,7 @@ export default function DarkModeToggle(props) {
 
 	return (
 		<Button
+			aria-label="Dark Mode Toggle"
 			onPress={darkMode.toggle}
 			auto
 			light
