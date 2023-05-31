@@ -1,9 +1,10 @@
 // @type
 
+@use "sass:math" as math;
 
 $float-amplitude: 15px;
-$float-animation-duration: 8s;
-$jitter: 15;
+$float-animation-duration: 8; // in seconds
+$jitter: 15; // in pixels
 
 .wrapper {
 	--scale: 1;
@@ -15,14 +16,15 @@ $jitter: 15;
 	contain: content;
 }
 .iconWrapper {
+	$half-jitter: math.div($jitter, 2) * 1px;
 	position: relative;
-	translate: calc(var(--translate-x, 0px) - #{$jitter / 2}px) calc(var(--translate-y, 0px) - #{$jitter / 2}px);
+	translate: calc(var(--translate-x, 0px) - #{$half-jitter}) calc(var(--translate-y, 0px) - #{$half-jitter});
 	@for $i from 1 through 20 {
 		&:nth-child(#{$i}) {
 			--translate-x: calc(#{random($jitter)}px / var(--scale, 1));
 			--translate-y: calc(#{random($jitter)}px / var(--scale, 1));
 			.iconBox {
-				animation-delay: #{random($float-animation-duration * 10) / 10}s;
+				animation-delay: #{div(random($float-animation-duration * 10), 10)}s;
 			}
 		}
 	}
@@ -34,7 +36,7 @@ $jitter: 15;
 	border-radius: var(--nextui-radii-md, 12px);
 	box-shadow: none;
 	background: var(--nextui-colors-backgroundContrast);
-	animation: float #{$float-animation-duration} ease-in-out infinite;
+	animation: float #{$float-animation-duration}s ease-in-out infinite;
 	img {
 		object-fit: contain;
 	}
