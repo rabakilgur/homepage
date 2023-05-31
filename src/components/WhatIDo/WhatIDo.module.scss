@@ -1,0 +1,66 @@
+// @type
+
+
+$float-amplitude: 15px;
+$float-animation-duration: 8s;
+$jitter: 15;
+
+.wrapper {
+	--scale: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-block: 1rem;
+	padding-top: $float-amplitude;
+	contain: content;
+}
+.iconWrapper {
+	position: relative;
+	translate: calc(var(--translate-x, 0px) - #{$jitter / 2}px) calc(var(--translate-y, 0px) - #{$jitter / 2}px);
+	@for $i from 1 through 20 {
+		&:nth-child(#{$i}) {
+			--translate-x: calc(#{random($jitter)}px / var(--scale, 1));
+			--translate-y: calc(#{random($jitter)}px / var(--scale, 1));
+			.iconBox {
+				animation-delay: #{random($float-animation-duration * 10) / 10}s;
+			}
+		}
+	}
+}
+.iconBox {
+	display: flex;
+	margin: 0.75rem;
+	padding: 1.5em;
+	border-radius: var(--nextui-radii-md, 12px);
+	box-shadow: none;
+	background: var(--nextui-colors-backgroundContrast);
+	animation: float #{$float-animation-duration} ease-in-out infinite;
+	// transition: box-shadow 0.4s ease-in-out,
+	// 				background 0.2s ease-in-out 0.15s,
+	// 				transform 0.3s ease-in-out;
+	// &:hover {
+	// 	box-shadow: var(--nextui-shadows-md, 0 12px 20px 6px rgb(104 112 118 / 0.08));
+	// 	background: var(--nextui-colors-backgroundContrast);
+	// 	transform: scale(1.1);
+	// 	transition: box-shadow 0.3s ease-in-out,
+	// 					background 0.15s ease-in-out,
+	// 					transform 0.225s ease-in-out;
+	// }
+	img {
+		object-fit: contain;
+	}
+}
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 8px 0px rgb(104 112 118 / 0.16);
+		translate: 0 0px;
+	}
+	50% {
+		box-shadow: 0 #{5px + $float-amplitude} 15px 0px rgb(104 112 118 / 0.06);
+		translate: 0 #{0px - $float-amplitude};
+	}
+	100% {
+		box-shadow: 0 5px 8px 0px rgb(104 112 118 / 0.16);
+		translate: 0 0px;
+	}
+}
