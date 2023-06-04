@@ -1,4 +1,6 @@
 import gsap, { Power2 } from "gsap";
+import isMobile from "../../lib/helper/isMobileHelpers";
+import { debounce, throttle } from "../../lib/helper/functionHelpers";
 
 type Particle = {
 	id: number;
@@ -23,6 +25,9 @@ type Particle = {
 // Helper function to get a random value from [low, high]
 const random = (low: number, high: number) => Math.random() * (high - low) + low;
 
+// Squeezes the sinus curve. Smaller values squeeze more.
+const sinSqueeze = isMobile ? 3 : 5;
+
 export default class Visual {
 	canvas: HTMLCanvasElement;
 	context: CanvasRenderingContext2D;
@@ -41,13 +46,13 @@ export default class Visual {
 		this.context = this.canvas.getContext("2d");
 		this.canvasWidth = 0;
 		this.canvasHeight = 0;
-		this.particleCount = 90;
+		this.particleCount = isMobile ? 35 : 90;
 		this.particles = [];
 		this.particleMinRadius = 2;
 		this.particleMaxRadius = 10;
 
-		this.handleMouseMoveBind = this.handleMouseMove.bind(this);
-		this.handleResizeBind = this.handleResize.bind(this);
+		this.handleMouseMoveBind = throttle((e: MouseEvent) => this.handleMouseMove.bind(this)(e), 100, "visualHandleMouseMove");
+		this.handleResizeBind = debounce(() => this.handleResize.bind(this)(), 200, "visualHandleMouseMove");
 
 		this.initialize();
 		this.render(0);
@@ -61,7 +66,7 @@ export default class Visual {
 		this.bind();
 	}
 
-	bind() {
+	bind() { // TODO: debounce this
 		document.body.addEventListener("mousemove", this.handleMouseMoveBind, false);
 		window.addEventListener("resize", this.handleResizeBind, false);
 	}
@@ -72,7 +77,7 @@ export default class Visual {
 	}
 
 	handleMouseMove(e: MouseEvent) {
-		this.enlargeParticle(e.clientX, e.clientY + document.body.scrollTop);
+		if (!isMobile) this.enlargeParticle(e.clientX, e.clientY + document.body.scrollTop);
 	}
 
 	handleResize() {
@@ -127,55 +132,57 @@ export default class Visual {
 
 	moveParticle(particle: Particle, tslf: DOMHighResTimeStamp) {
 		particle.x += particle.speed * tslf / 6;
-		particle.y = particle.startY + particle.amplitude * Math.sin(((particle.x / 5) * Math.PI) / 180);
+		particle.y = particle.startY + particle.amplitude * Math.sin(((particle.x / sinSqueeze) * Math.PI) / 180);
 	}
 
 	enlargeParticle(clientX: number, clientY: number) {
-		this.particles.forEach(particle => {
-			if (particle.isBurst) return;
+		if (clientY < this.canvasHeight + 100) {
+			this.particles.forEach(particle => {
+				if (particle.isBurst) return;
 
-			const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
+				const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
 
-			if (distance <= 100) {
-				// const scaling = (100 - distance) / 2.5;
-				const scaling = (100 - distance) / 4;
-				gsap.to(particle, {
-					radius: particle.defaultRadius + scaling,
-					ease: Power2.easeOut,
-					duration: 0.5
-				});
-			} else {
-				gsap.to(particle, {
-					radius: particle.defaultRadius,
-					ease: Power2.easeOut,
-					duration: 0.5
-				});
-			}
-		});
+				if (distance <= 100) {
+					const scaling = (100 - distance) / 4;
+					gsap.to(particle, {
+						radius: particle.defaultRadius + scaling,
+						ease: Power2.easeOut,
+						duration: 0.5
+					});
+				} else {
+					gsap.to(particle, {
+						radius: particle.defaultRadius,
+						ease: Power2.easeOut,
+						duration: 0.5
+					});
+				}
+			});
+		}
 	}
 
 	render(timestamp: DOMHighResTimeStamp) {
 		if (!this.lastFrameTimestamp) this.lastFrameTimestamp = timestamp;
-		let tslf = timestamp - this.lastFrameTimestamp;
+		let tslf = timestamp - this.lastFrameTimestamp; // elapsed time in ms since last frame
 
-		// console.log(timestamp, this.lastFrameTimestamp, tslf);
+		if (document.body.scrollTop < this.canvasHeight) {
+			// Clear the canvas:
+			this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
 
-		// Init canvas:
-		this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
+			// Draw/update particles:
+			this.drawParticles(tslf);
 
-		// Draw/update particles:
-		this.drawParticles(tslf);
+			// Recreate particles that moved off the screen:
+			const mustRedrawAll = this.particles.reduce((progress, particle) => progress && (particle.x - particle.radius >= this.canvasWidth), true);
+			this.particles.forEach(particle => {
+				if (particle.x - particle.radius >= this.canvasWidth) {
+					this.particles[particle.id] = this.createParticle(particle.id, !mustRedrawAll);
+				}
+			});
+		}
 
-		// Recreate particles that moved off the screen:
-		const mustRedrawAll = this.particles.reduce((progress, particle) => progress && (particle.x - particle.radius >= this.canvasWidth), true);
-		this.particles.forEach(particle => {
-			if (particle.x - particle.radius >= this.canvasWidth) {
-				this.particles[particle.id] = this.createParticle(particle.id, !mustRedrawAll);
-			}
-		});
+		this.lastFrameTimestamp = timestamp;
 
 		// Calculate next frame:
-		this.lastFrameTimestamp = timestamp;
 		requestAnimationFrame(this.render.bind(this));
 	}
 }

@@ -110,7 +110,7 @@ function SkillBox({ name, img, scale }) {
 		<div className={S.iconWrapper} style={`--scale: ${scale}`}>
 			<Tooltip tt={name}>
 				<div className={S.iconBox}>
-					<img src={img} width={iconSize * scale} height={iconSize * scale} />
+					<img src={img} width={iconSize * scale} height={iconSize * scale} alt="" />
 				</div>
 			</Tooltip>
 		</div>
