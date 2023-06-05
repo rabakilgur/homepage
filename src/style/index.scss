@@ -326,6 +326,9 @@ footer > p {
 @media only screen and (max-width: 600px) {
 	header > h1 > span {
 		display: block;
+		&:first-child {
+			font-size: 125%;
+		}
 	}
 }
 @media only screen and (max-width: 400px) {
