@@ -160,6 +160,11 @@ export default class Visual {
 		}
 	}
 
+	renderSkipFrame(timestamp: DOMHighResTimeStamp) {
+		// Calculate next frame (which actually renders):
+		requestAnimationFrame(this.render.bind(this));
+	}
+
 	render(timestamp: DOMHighResTimeStamp) {
 		if (!this.lastFrameTimestamp) this.lastFrameTimestamp = timestamp;
 		let tslf = timestamp - this.lastFrameTimestamp; // elapsed time in ms since last frame
@@ -182,7 +187,7 @@ export default class Visual {
 
 		this.lastFrameTimestamp = timestamp;
 
-		// Calculate next frame:
-		requestAnimationFrame(this.render.bind(this));
+		// Calculate next frame (which does nothing):
+		requestAnimationFrame(this.renderSkipFrame.bind(this));
 	}
 }
