@@ -11,8 +11,8 @@ import WhatIDo from "../WhatIDo/WhatIDo";
 import ColorBlob from "../ColorBlob/ColorBlob";
 
 const Homepage = () => {
-	const { theme, type, isDark } = useTheme();
-	console.debug(theme);
+	// const { theme, type, isDark } = useTheme();
+	// console.debug(theme);
 
 	return (
 		<>
