@@ -18,13 +18,13 @@ $jitter: 15; // in pixels
 .iconWrapper {
 	$half-jitter: math.div($jitter, 2) * 1px;
 	position: relative;
-	translate: calc(var(--translate-x, 0px) - #{$half-jitter}) calc(var(--translate-y, 0px) - #{$half-jitter});
+	transform: translate(calc(var(--translate-x, 0px) - #{$half-jitter}), calc(var(--translate-y, 0px) - #{$half-jitter}));
 	@for $i from 1 through 20 {
 		&:nth-child(#{$i}) {
 			--translate-x: calc(#{math.random($jitter)}px / var(--scale, 1));
 			--translate-y: calc(#{math.random($jitter)}px / var(--scale, 1));
 			.iconBox {
-				animation-delay: #{math.div(math.random($float-animation-duration * 10), 10)}s;
+				animation-delay: -#{math.div(math.random($float-animation-duration * 10), 10)}s;
 			}
 		}
 	}
@@ -43,13 +43,13 @@ $jitter: 15; // in pixels
 }
 @keyframes float {
 	0% {
-		translate: 0 0px;
+		transform: translateY(0px);
 	}
 	50% {
-		translate: 0 #{0px - $float-amplitude};
+		transform: translateY(#{0px - $float-amplitude});
 	}
 	100% {
-		translate: 0 0px;
+		transform: translateY(0px);
 	}
 }
 html:global(.dark-theme) .iconBox {
