@@ -75,10 +75,6 @@ header {
 		opacity: 1;
 		/*mix-blend-mode: difference;*/
 		--shadow_color: var(--nextui-colors-backgroundAlpha, #ffffffcc);
-		text-shadow: 0 0 6px var(--shadow_color),
-						0 0 12px var(--shadow_color),
-						0 0 18px var(--shadow_color),
-						0 0 24px var(--shadow_color);
 		> span {
 			display: inline-block;
 			text-align: center;
@@ -89,9 +85,27 @@ header {
 			}
 			&:not(:last-child) {
 				opacity: 0.9;
+				text-shadow: 0 0 6px var(--shadow_color),
+								0 0 12px var(--shadow_color),
+								0 0 18px var(--shadow_color),
+								0 0 24px var(--shadow_color);
 			}
-			&:last-child {
-				color: #0088FF;
+			&:last-child > span {
+				&:first-child {
+					position: absolute;
+					color: var(--nextui-colors-background, #FFF);
+					text-shadow: 0 0 6px var(--shadow_color),
+								0 0 12px var(--shadow_color),
+								0 0 18px var(--shadow_color),
+								0 0 24px var(--shadow_color);
+				}
+				&:last-child {
+					position: relative;
+					color: #0088FF;
+					background-image: linear-gradient(10deg, #1D63F0 25%, #1AD7FD 85%);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
 				&::before {
 					content: "";
 					display: inline-block;

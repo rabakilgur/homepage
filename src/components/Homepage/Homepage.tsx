@@ -22,7 +22,7 @@ const Homepage = () => {
 				<ParticleWave />
 				<ColorBlob color="#0170FE" size={425} right="70%" bottom="5%" />
 				<ColorBlob color="#0088FF" size={350} top="5%" left="70%" />
-				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span>Robin Garbe</span></h1>
+				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span><span>Robin Garbe</span><span>Robin Garbe</span></span></h1>
 			</header>
 
 			<Container fluid gap={0} css={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
