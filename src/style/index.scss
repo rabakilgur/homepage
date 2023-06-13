@@ -118,6 +118,9 @@ header {
 
 section {
 	position: relative;
+	&:not(:first-of-type) {
+		margin-top: 70px;
+	}
 }
 
 p,
@@ -143,6 +146,12 @@ h5,
 h6 {
 	color: inherit;
 	margin: 0 0 0.625rem 0;
+}
+
+hr {
+	background: var(--nextui-colors-gray200);
+	border: none;
+	height: 2px;
 }
 
 div.flex {
