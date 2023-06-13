@@ -54,7 +54,7 @@ const skills = [
 		scale: 1.0
 	},
 	{
-		name: "React & React Native",
+		name: "React & Next.js & React Native",
 		img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
 		scale: 1.5
 	},
