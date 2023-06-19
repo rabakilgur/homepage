@@ -1,6 +1,8 @@
-import { Button, Container, useTheme } from "@nextui-org/react";
+import { Container } from "@nextui-org/react";
 import { Fragment, h } from "preact";
 import "../../style/index.scss";
+import CVWrapper from "../CVWrapper/CVWrapper";
+import ColorBlob from "../ColorBlob/ColorBlob";
 import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
 import Heading from "../Heading/Heading";
 import ParticleWave from "../ParticleWave/ParticleWave";
@@ -8,7 +10,6 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import ScrambleText from "../TextScramble/TextScramble";
 import Timeline from "../Timeline/Timeline";
 import WhatIDo from "../WhatIDo/WhatIDo";
-import ColorBlob from "../ColorBlob/ColorBlob";
 
 const Homepage = () => {
 	// const { theme, type, isDark } = useTheme();
@@ -34,6 +35,8 @@ const Homepage = () => {
 					<p style="text-align: justify">Hallo! Ich bin Robin, ein Softwareingenieur aus Darmstadt. Ich beschäftige mich hauptsächlich mit Frontend- und Fullstack-Entwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen App-Entwicklung oder APIs. Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über die Bereiche in denen ich tätig bin und einige Technologien die ich in letzter Zeit benutze:</p>
 
 					<WhatIDo />
+
+					<CVWrapper />
 				</section>
 
 				<section id="experience">
@@ -153,7 +156,6 @@ const Homepage = () => {
 						</span>
 					</div>
 				</section>
-
 
 				<footer>
 					<p>
