@@ -19,6 +19,7 @@ export default function CVWrapper() {
 			<html>
 				<head>
 					<title>Robin Garbe – Lebenslauf</title>
+					<link href="https://fonts.cdnfonts.com/css/voces" rel="stylesheet">
 					${cvStyles}
 					<style>
 						html, body, .${S.content} {
@@ -39,11 +40,13 @@ export default function CVWrapper() {
 		printWindow.document.close(); // necessary for IE >= 10
 		printWindow.focus(); // necessary for IE >= 10
 
-		printWindow.print();
+		printWindow.addEventListener("load", () => {
+			printWindow.print();
 
-		setTimeout(() => {
-			// printWindow.close();
-		}, 700);
+			setTimeout(() => {
+				printWindow.close();
+			}, 700);
+		});
 
 		return true;
 	}
