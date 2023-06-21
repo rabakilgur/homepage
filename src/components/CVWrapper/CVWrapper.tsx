@@ -1,7 +1,7 @@
 import { Modal, useModal, Button, Text } from "@nextui-org/react";
 import { Fragment, h } from "preact";
 import S from "./CVWrapper.module.scss";
-import { useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 
 export default function CVWrapper() {
 	const { setVisible, bindings } = useModal();
@@ -50,6 +50,10 @@ export default function CVWrapper() {
 
 		return true;
 	}
+
+	useEffect(() => {
+		if (window.location.hash === "#cv") setVisible(true);
+	}, []);
 
 	return (
 		<>
