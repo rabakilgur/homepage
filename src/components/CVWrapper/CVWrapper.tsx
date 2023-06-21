@@ -8,14 +8,25 @@ export default function CVWrapper() {
 	const cvRef = useRef<HTMLDivElement>();
 
 	function printCV() {
-		const cvStyles = Array.from(document.head.children).find((tag) => tag.tagName === "STYLE" && tag.textContent.includes(S.header)).textContent;
+		// If developing locally and the style is inserted in the document, get it by string and insert it using a <style> tag; if the styles are bundled and linked, get all <link> tags and insert them as is into the print window:
+		const headNodes = Array.from(document.head.children);
+		const localCvStyle = headNodes.find((tag) => tag.tagName === "STYLE" && tag.textContent.includes(S.content))?.textContent;
+		const linkedCvStyles = headNodes.filter((tag) => tag.tagName === "LINK" && tag.getAttribute("rel") === "stylesheet" && tag.getAttribute("href").startsWith("/bundle."));
+		const cvStyles = localCvStyle ? `<style>${localCvStyle}</style>` : linkedCvStyles.reduce((string, link) => string + link.outerHTML, "");
 
 		const printWindow = window.open("", "PRINT", "height=650, width=1050");
 		printWindow.document.write(`
 			<html>
 				<head>
 					<title>Robin Garbe – Lebenslauf</title>
-					<style>${cvStyles}</style>
+					${cvStyles}
+					<style>
+						html, body, .${S.content} {
+							height: unset !important;
+							width: unset !important;
+							font-size: 11px !important;
+						}
+					</style>
 				</head>
 				<body>
 					<div class="${S.content}">
@@ -31,7 +42,7 @@ export default function CVWrapper() {
 		printWindow.print();
 
 		setTimeout(() => {
-			printWindow.close();
+			// printWindow.close();
 		}, 700);
 
 		return true;
