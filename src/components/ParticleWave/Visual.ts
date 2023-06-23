@@ -68,7 +68,7 @@ export default class Visual {
 		this.bind();
 	}
 
-	bind() { // TODO: debounce this
+	bind() {
 		document.body.addEventListener("mousemove", this.handleMouseMoveBind, false);
 		window.addEventListener("resize", this.handleResizeBind, false);
 	}

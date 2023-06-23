@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import S from "./TextScramble.module.scss";
 
 const chars = "!<>-_\\/[]{}—=+*^?#________";
@@ -10,9 +10,11 @@ export default function ScrambleText(
 	{ texts, timeout = 1700, speed = 50, ...props }:
 	{ texts: string, timeout?: number, speed?: number, [prop: string]: any }
 ) {
-	const scramblePhrases = texts.split(",").map((text: string) => text.trim());
-	const longestPhraseLength = Math.max(...scramblePhrases.map((phrase) => phrase.length));
-	const scrambleStates = scramblePhrases.map((phrase) => padArray(phrase.split(""), longestPhraseLength))
+	const scrambleStates = useMemo(() => {
+		const scramblePhrases = texts.split(",").map((text: string) => text.trim());
+		const longestPhraseLength = Math.max(...scramblePhrases.map((phrase) => phrase.length));
+		return scramblePhrases.map((phrase) => padArray(phrase.split(""), longestPhraseLength));
+	}, [texts]);
 	const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 	const targetChars = scrambleStates[(currentPhraseIndex + 1) % scrambleStates.length];
 	const [currentChars, setCurrentChars] = useState(scrambleStates[0]);
@@ -21,26 +23,24 @@ export default function ScrambleText(
 	let animationFrame: number;
 
 	const render = () => {
-		if (render === renderRef.current) {
-			const possibleIndexes: number[] = [];
-			currentChars.forEach((char, i) => {if (char !== targetChars[i]) possibleIndexes.push(i)});
-			const index = possibleIndexes[Math.floor(Math.random() * possibleIndexes.length)];
-			let newChars: Array<string | object> = [];
+		const possibleIndexes: number[] = [];
+		currentChars.forEach((char, i) => {if (char !== targetChars[i]) possibleIndexes.push(i)});
+		const index = possibleIndexes[Math.floor(Math.random() * possibleIndexes.length)];
+		let newChars: Array<string | object> = [];
 
-			if (currentChars[index] !== targetChars[index]) {
-				const newChar = (currentChars[index] === null) || (typeof currentChars[index] === "string")
-					? <span className={S.dud}>{randomChar()}</span>
-					: targetChars[index];
-				newChars = Object.assign([], currentChars, { [index]: newChar });
-				setCurrentChars(newChars);
-			}
-			if (newChars.join("") !== targetChars.join("")) {
-				intermediateTimeout = setTimeout(() => {
-					animationFrame = requestAnimationFrame(renderRef.current)
-				}, speed);
-			} else {
-				setCurrentPhraseIndex((oldIndex) => (oldIndex + 1) % scrambleStates.length);
-			}
+		if (currentChars[index] !== targetChars[index]) {
+			const newChar = (currentChars[index] === null) || (typeof currentChars[index] === "string")
+				? <span className={S.dud}>{randomChar()}</span>
+				: targetChars[index];
+			newChars = Object.assign([], currentChars, { [index]: newChar });
+			setCurrentChars(newChars);
+		}
+		if (newChars.join("") !== targetChars.join("")) {
+			intermediateTimeout = setTimeout(() => {
+				animationFrame = requestAnimationFrame(renderRef.current)
+			}, speed);
+		} else {
+			setCurrentPhraseIndex((oldIndex) => (oldIndex + 1) % scrambleStates.length);
 		}
 	};
 
