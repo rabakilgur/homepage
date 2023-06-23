@@ -6,3 +6,8 @@
 	top: 10px;
 	right: 26px;
 }
+.toggle {
+	background-color: hsl(var(--nextui-default-300) / 0.5);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+}

@@ -19,6 +19,7 @@
 		font-weight: bold;
 		transform: translate(-50%, -50%);
 		opacity: 1;
+		contain: content;
 		/*mix-blend-mode: difference;*/
 		--shadow-color: hsl(var(--nextui-background) / var(--nextui-backgroundAlpha, 1));
 		.shadow {
@@ -29,6 +30,7 @@
 				font-size: 150%;
 				font-family: monospace;
 				height: 1.5em;
+				contain: content;
 			}
 			&:not(:last-child) {
 				opacity: 0.9;

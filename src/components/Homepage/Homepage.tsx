@@ -18,7 +18,7 @@ const Homepage = () => {
 			<Header />
 
 			<div className="container mx-auto" style={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
-				<section id="about">
+				<section className="section" id="about">
 					<ColorBlob color="#DB00FF" size={325} top="40%" right="5%" />
 
 					<Heading>Über mich</Heading>
@@ -30,7 +30,7 @@ const Homepage = () => {
 					<CVWrapper />
 				</section>
 
-				<section id="experience">
+				<section className="section" id="experience">
 					<ColorBlob color="#F1C40F" size={400} bottom="40%" left="5%" />
 
 					<Heading>Meine Erfahrung</Heading>
@@ -44,7 +44,7 @@ const Homepage = () => {
 					</Timeline>
 				</section>
 
-				<section id="projects">
+				<section className="section" id="projects">
 					<Heading>Projekte</Heading>
 
 					<ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.jpg" link="http://www.spargelhof-moenich.de/">
@@ -106,7 +106,7 @@ const Homepage = () => {
 					<ProjectCard.Tags tags="Splitting.js, CSS" />
 				</ProjectCard> */}
 
-				<section id="links">
+				<section className="section" id="links">
 					<Heading>Links</Heading>
 
 					<div className="blob_box">
@@ -125,7 +125,7 @@ const Homepage = () => {
 					</div>
 				</section>
 
-				<section id="contact">
+				<section className="section" id="contact">
 					<ColorBlob color="#00D65D" size={325} top="5%" right="5%" />
 
 					<Heading>Kontakt</Heading>
