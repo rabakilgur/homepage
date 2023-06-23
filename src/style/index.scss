@@ -35,7 +35,8 @@ body {
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
-	height: 100vh;
+	height: 100vh; // fallback if dvh is not supported
+	height: 100dvh;
 	isolation: isolate;
 	-webkit-font-smoothing: antialiased;
 }

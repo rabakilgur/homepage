@@ -116,6 +116,7 @@
 	}
 	ul {
 		padding-left: 0;
+		list-style: disc;
 		li {
 			break-inside: avoid;
 			&:not(:first-child) {
@@ -133,6 +134,23 @@
 		display: flex;
 		justify-content: space-between;
 		margin-top: 2.0em;
+	}
+}
+
+@media not print {
+	@media (max-width: 600px) {
+		.content {
+			grid-gap: 4.33em 2.1em;
+			.category {
+				position: relative;
+				padding-right: 0;
+				h3 {
+					position: absolute;
+					margin-top: -1.85em;
+					margin-left: -1px;
+				}
+			}
+		}
 	}
 }
 
