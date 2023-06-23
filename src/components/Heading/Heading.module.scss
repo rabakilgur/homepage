@@ -6,7 +6,7 @@
 	> h2 {
 		font-family: Voces, Arial, sans-serif;
 		font-weight: bold;
-		font-size: 36px;
+		font-size: min(3vw + 20px, 36px);
 		text-align: center;
 	}
 	> h2 {
