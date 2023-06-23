@@ -47,7 +47,7 @@ export default function CVWrapper() {
 				printWindow.print();
 
 				setTimeout(() => {
-					// printWindow.close();
+					printWindow.close();
 				}, 700);
 			});
 		} else {
@@ -55,9 +55,29 @@ export default function CVWrapper() {
 		}
 	}
 
+	// This is a dirty workaround to fix a bug where touch-scrolling wasn't working:
+	let prevYPos: number;
+	let prevYPosTimestamp: number;
+	const handleTouchMove = (e: TouchEvent) => {
+		e.preventDefault();
+		const bodyElement = document.getElementsByClassName(S.body)[0] as HTMLDivElement;
+		const newYPos = e.changedTouches[0].pageY;
+		if (prevYPos && e.timeStamp - prevYPosTimestamp < 100) bodyElement.scrollTop += prevYPos - newYPos;
+		prevYPos = newYPos;
+		prevYPosTimestamp = e.timeStamp;
+	}
+
 	useEffect(() => {
 		if (window.location.hash === "#cv") onOpen();
 	}, []);
+
+	useEffect(() => {
+		const bodyElement = document.getElementsByClassName(S.body)[0] as HTMLDivElement;
+		bodyElement?.addEventListener("touchmove", handleTouchMove);
+		return () => {
+			bodyElement?.removeEventListener("touchmove", handleTouchMove);
+		}
+	});
 
 	return (
 		<>
