@@ -37,19 +37,21 @@ export default class Visual {
 	particles: Particle[];
 	particleMinRadius: number;
 	particleMaxRadius: number;
+	lastFrameTimestamp: DOMHighResTimeStamp | undefined;
 	handleMouseMoveBind: typeof this.handleMouseMove;
 	handleResizeBind: typeof this.handleResize;
-	lastFrameTimestamp: DOMHighResTimeStamp;
 
 	constructor(canvas: HTMLCanvasElement) {
 		this.canvas = canvas;
-		this.context = this.canvas.getContext("2d");
+		this.context = this.canvas.getContext("2d")!;
 		this.canvasWidth = 0;
 		this.canvasHeight = 0;
 		this.particleCount = isMobile ? 35 : 90;
 		this.particles = [];
 		this.particleMinRadius = 2;
 		this.particleMaxRadius = 10;
+
+		this.lastFrameTimestamp = undefined;
 
 		this.handleMouseMoveBind = throttle((e: MouseEvent) => this.handleMouseMove.bind(this)(e), 100, "visualHandleMouseMove");
 		this.handleResizeBind = debounce(() => this.handleResize.bind(this)(), 200, "visualHandleMouseMove");
@@ -89,7 +91,7 @@ export default class Visual {
 		this.canvasHeight = this.canvas.offsetHeight;
 		this.canvas.width = this.canvasWidth * window.devicePixelRatio;
 		this.canvas.height = this.canvasHeight * window.devicePixelRatio;
-		this.context = this.canvas.getContext("2d");
+		this.context = this.canvas.getContext("2d")!;
 		this.context.scale(window.devicePixelRatio, window.devicePixelRatio);
 	}
 
@@ -160,7 +162,7 @@ export default class Visual {
 		}
 	}
 
-	renderSkipFrame(timestamp: DOMHighResTimeStamp) {
+	renderSkipFrame() {
 		// Calculate next frame (which actually renders):
 		requestAnimationFrame(this.render.bind(this));
 	}

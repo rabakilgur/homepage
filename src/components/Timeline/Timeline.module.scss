@@ -2,7 +2,7 @@
 
 $primary-color: #0088ff;
 $primary-color-hover: scale-color($primary-color, $lightness: 32%);
-$mutedColor: var(--nextui-colors-gray800, #7E868C);
+$mutedColor: hsl(var(--nextui-gray-500, 240 4% 46%));
 
 .timelineContainer {
 	display: flex;
@@ -29,6 +29,12 @@ TIMELINE
 		margin-bottom: 10px;
 		font-weight: 500;
 	}
+}
+
+/*----- TIMELINE TITLE -----*/
+
+.timelineTitle {
+	font-size: 1.17em;
 }
 
 /*----- TIMELINE ITEM -----*/

@@ -1,10 +1,11 @@
 // @types
 
 .body {
-	padding: 0 calc(var(--nextui-space-10) - 0.71em) var(--nextui-space-sm) var(--nextui-space-10);
+	padding: 2em 10px 2em 20px;
 	margin: 0.86em 0.14em 0 0;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	justify-content: unset !important;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { // Trick to only apply in webkit
@@ -42,10 +43,11 @@
 	grid-template-columns: 0fr 1fr;
 	grid-gap: 1.33em 2.1em;
 	width: 55em;
+	max-width: 100%;
 	font-size: 14px;
 	line-height: 1.55;
 	margin: 0 auto;
-	color: var(--nextui-colors-text, #11181C);
+	color: hsl(var(--nextui-foreground));
 	text-rendering: optimizelegibility;
 	font-style: normal;
 	font-family: "Verdana", "sans-serif", "Arial";
@@ -62,7 +64,7 @@
 	.header {
 		margin-bottom: 0.5em;
 		h2 {
-			color: var(--nextui-colors-primary, #0088FF);
+			color: hsl(var(--nextui-primary, 208 100% 50%));
 			font-family: Voces, Arial, sans-serif;
 			font-size: 2.25em;
 			margin-bottom: -0.125em;
@@ -72,18 +74,19 @@
 		}
 		a {
 			color: inherit;
-			&:not(:hover) {
-				text-decoration: none;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}
 	.category {
-		border-right: 1px solid var(--nextui-colors-gray400, #D7DBDF);
+		border-right: 1px solid hsl(var(--nextui-gray-400, 240 5% 65%));
 		text-align: right;
 		padding-right: 1em;
 		h3 {
 			text-transform: uppercase;
-			color: var(--nextui-colors-gray700, #7E868C);
+			color: hsl(var(--nextui-gray-700, 240 5% 26%));
 			font-weight: normal;
 			font-family: Voces, Arial, sans-serif;
 			font-size: 1.2em;
@@ -94,7 +97,7 @@
 		margin-bottom: 0.35em;
 		font-size: inherit;
 		font-weight: normal;
-		color: var(--nextui-colors-primary, #0088FF);
+		color: hsl(var(--nextui-primary, 208 100% 50%));
 		break-after: avoid;
 		&:not(:first-child) {
 			margin-top: 1.5em;
@@ -102,7 +105,8 @@
 	}
 	h5 {
 		font-size: inherit;
-		color: var(--nextui-colors-gray900, #11181C);
+		font-weight: bold;
+		color: hsl(var(--nextui-gray-900, 240 6% 10%));
 		break-after: avoid;
 	}
 	h6 {
@@ -118,7 +122,7 @@
 				margin-top: 0.25em;
 			}
 			&::marker {
-				color: var(--nextui-colors-gray700, #7E868C);
+				color: hsl(var(--nextui-gray-700, 240 5% 26%));
 			}
 		}
 	}

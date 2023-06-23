@@ -1,5 +1,3 @@
-import { Container } from "@nextui-org/react";
-import { Fragment, h } from "preact";
 import "../../style/index.scss";
 import CVWrapper from "../CVWrapper/CVWrapper";
 import ColorBlob from "../ColorBlob/ColorBlob";
@@ -12,9 +10,6 @@ import Timeline from "../Timeline/Timeline";
 import WhatIDo from "../WhatIDo/WhatIDo";
 
 const Homepage = () => {
-	// const { theme, type, isDark } = useTheme();
-	// console.debug(theme);
-
 	return (
 		<>
 			<DarkModeToggleCornerWrapper />
@@ -26,7 +21,7 @@ const Homepage = () => {
 				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span><span>Robin Garbe</span><span>Robin Garbe</span></span></h1>
 			</header>
 
-			<Container fluid gap={0} css={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
+			<div className="container mx-auto" style={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
 				<section id="about">
 					<ColorBlob color="#DB00FF" size={325} top="40%" right="5%" />
 
@@ -165,7 +160,26 @@ const Homepage = () => {
 				</footer>
 
 				{/* <between-logo shadow="standard" border-color="#ddd" z-index="20" scale="0.8"></between-logo> */}
-			</Container>
+
+				{/* {Array.from(new Set([...document.head.querySelector("style[type='text/css']")!.innerHTML.matchAll(/--nextui-(\w|\d|-)+/g)].map(x => x[0]))).map(x =>
+					<div style={`
+						display: inline-block;
+						width: 300px;
+						height: 50px;
+						margin: 25px 5px;
+						border: 1px solid #999;
+						background-color: hsl(var(${x}) / 100%);
+					`}>
+						<span class="cssVarTestValue" data-val={`${x}`} style={`
+							position: absolute;
+							transform: translateY(-2em);
+						`}>
+							{x}
+						</span>
+					</div>
+				)} */}
+
+			</div>
 		</>
 	);
 };

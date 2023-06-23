@@ -1,4 +1,3 @@
-import { h } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import S from "./TextScramble.module.scss";
 
@@ -26,7 +25,7 @@ export default function ScrambleText({ texts, timeout = 1700, ...props }: { text
 			const end = start + Math.floor(Math.random() * 40);
 			queue.push({ from, to, start, end });
 		}
-		cancelAnimationFrame(frameRequestRef.current);
+		cancelAnimationFrame(frameRequestRef.current!);
 		frame = 0;
 		update();
 		return promise;
@@ -60,7 +59,7 @@ export default function ScrambleText({ texts, timeout = 1700, ...props }: { text
 	}
 
 	useEffect(() => {
-		let timeoutId: string | number | NodeJS.Timeout;
+		let timeoutId: number;
 		const scrambleNext = () => {
 			updateText(scramblePhrases[scrambleCounter]).then(() => {
 				timeoutId = setTimeout(scrambleNext, timeout ?? 1500);
@@ -69,7 +68,7 @@ export default function ScrambleText({ texts, timeout = 1700, ...props }: { text
 		};
 		scrambleNext();
 		return () => {
-			cancelAnimationFrame(frameRequestRef.current);
+			cancelAnimationFrame(frameRequestRef.current!);
 			clearTimeout(timeoutId);
 		}
 	}, []);

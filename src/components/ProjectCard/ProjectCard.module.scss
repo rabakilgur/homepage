@@ -1,12 +1,12 @@
 // @types
 
 .projcard {
-	--projcard-innerBg: var(--nextui-colors-backgroundContrast, #FFFFFF);
-	--projcard-border: var(--nextui-colors-neutralBorder, #DDDDDD);
-	--projcard-textGray1: var(--nextui-colors-gray900, #11181C);
-	--projcard-textGray2: var(--nextui-colors-gray700, #7E868C);
-	--projcard-tagBg: var(--nextui-colors-gray300, #DFE3E6);
-	--projcard-tagText: var(--nextui-colors-gray800, #DFE3E6);
+	--projcard-innerBg: hsl(var(--nextui-backgroundContrast));
+	--projcard-border: hsl(var(--nextui-default, 240 5% 84%));
+	--projcard-textGray1: hsl(var(--nextui-gray-900, 240 6% 10%));
+	--projcard-textGray2: hsl(var(--nextui-gray-700, 240 5% 26%));
+	--projcard-tagBg: hsl(var(--nextui-gray-300, 240 5% 84%));
+	--projcard-tagText: hsl(var(--nextui-gray-800, 240 4% 16%));
 	position: relative;
 	width: 100%;
 	height: 300px;

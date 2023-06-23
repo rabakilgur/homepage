@@ -1,23 +1,35 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
+		"target": "ES2020",
+		"useDefineForClassFields": true,
 		"module": "ESNext",
-		"moduleResolution": "Node",
-		"esModuleInterop": true,
-		"jsx": "react",
-		"jsxFactory": "h",
-		"jsxFragmentFactory": "Fragment",
-		"noEmit": true,
-		"allowJs": true,
-		"checkJs": false,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"skipLibCheck": true,
-		"noImplicitAny": false,
-		"noImplicitThis": false,
-		"baseUrl": "./",
-		"paths": {
+
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowJs": true, // changed (added)
+		"checkJs": false, // changed (added)
+		"noImplicitAny": false, // changed (added)
+		"noImplicitThis": false, // changed (added)
+		"baseUrl": "./", // changed (added)
+		"paths": { // changed (added)
 			"react": ["./node_modules/preact/compat"],
 			"react-dom": ["./node_modules/preact/compat"]
 		}
 	},
-	"include": ["types/*.d.ts", "src/**/*.ts", "src/**/*.tsx"]
+	"include": ["src/types/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

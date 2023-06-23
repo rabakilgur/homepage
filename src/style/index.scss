@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	-webkit-overflow-scrolling: touch;
 	-webkit-font-smoothing: antialiased;
@@ -43,7 +47,7 @@ a {
 	}
 }
 a > span {
-	color: var(--nextui-colors-text);
+	color: hsl(var(--nextui-foreground));
 	opacity: 0.85;
 	-moz-transition: color 0.2s ease-in-out;
 	-webkit-transition: color 0.2s ease-in-out;
@@ -71,10 +75,11 @@ header {
 		margin: 0;
 		text-align: center;
 		font-size: 250%;
+		font-weight: bold;
 		transform: translate(-50%, -50%);
 		opacity: 1;
 		/*mix-blend-mode: difference;*/
-		--shadow_color: var(--nextui-colors-backgroundAlpha, #ffffffcc);
+		--shadow-color: hsl(var(--nextui-background) / var(--nextui-backgroundAlpha, 1));
 		> span {
 			display: inline-block;
 			text-align: center;
@@ -85,24 +90,24 @@ header {
 			}
 			&:not(:last-child) {
 				opacity: 0.9;
-				text-shadow: 0 0 6px var(--shadow_color),
-								0 0 12px var(--shadow_color),
-								0 0 18px var(--shadow_color),
-								0 0 24px var(--shadow_color);
+				text-shadow: 0 0 6px var(--shadow-color),
+								0 0 12px var(--shadow-color),
+								0 0 18px var(--shadow-color),
+								0 0 24px var(--shadow-color);
 			}
 			&:last-child > span {
 				&:first-child {
 					position: absolute;
-					color: var(--nextui-colors-background, #FFF);
-					text-shadow: 0 0 6px var(--shadow_color),
-								0 0 12px var(--shadow_color),
-								0 0 18px var(--shadow_color),
-								0 0 24px var(--shadow_color);
+					color: hsl(var(--nextui-background));
+					text-shadow: 0 0 6px var(--shadow-color),
+								0 0 12px var(--shadow-color),
+								0 0 18px var(--shadow-color),
+								0 0 24px var(--shadow-color);
 				}
 				&:last-child {
 					position: relative;
 					color: #0088FF;
-					background-image: linear-gradient(10deg, #1D63F0 25%, #1AD7FD 85%);
+					background-image: linear-gradient(8deg, #1D63F0 25%, #1AD7FD 85%);
 					background-clip: text;
 					-webkit-text-fill-color: transparent;
 				}
@@ -149,7 +154,7 @@ h6 {
 }
 
 hr {
-	background: var(--nextui-colors-gray200);
+	background: hsl(var(--nextui-gray-200, 240 6% 90%));
 	border: none;
 	height: 2px;
 }
@@ -191,7 +196,7 @@ center.whatido_box {
 	float: left;
 	margin: 20px;
 	border-radius: 35%;
-	background-color: var(--nextui-colors-backgroundAlpha);
+	background-color: hsl(var(--nextui-backgroundContrast));
 	box-shadow: var(--backlight);
 	cursor: pointer;
 	&::after {
@@ -243,7 +248,7 @@ center.whatido_box {
 		text-align: center;
 		font-family: Voces, Arial, sans-serif;
 		pointer-events: none;
-		color: var(--nextui-colors-text);
+		color: hsl(var(--nextui-foreground));
 		font-size: 150%;
 		opacity: 0;
 		transform: translateY(20%);
@@ -251,12 +256,12 @@ center.whatido_box {
 						transform 0.2s ease-in-out;
 	}
 	&:hover > span {
-		color: var(--nextui-colors-text);
+		color: hsl(var(--nextui-foreground));
 		opacity: 1;
 		transform: translateY(0%);
 	}
 }
-html.light-theme .blob::after {
+html.light .blob::after {
 	filter: invert(0.9);
 }
 
@@ -276,7 +281,7 @@ html.light-theme .blob::after {
 			align-content: center;
 			svg {
 				width: 2rem;
-				fill: var(--nextui-colors-gray600);
+				fill: hsl(var(--nextui-gray-600, 240 5% 34%));
 				margin-right: 2rem;
 			}
 		}

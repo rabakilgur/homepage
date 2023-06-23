@@ -11,8 +11,7 @@ $jitter: 15; // in pixels
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-block: 1rem;
-	padding-top: $float-amplitude;
+	padding-block: calc(#{$float-amplitude} + 1em) 1em;
 	contain: content;
 }
 .iconWrapper {
@@ -35,7 +34,8 @@ $jitter: 15; // in pixels
 	padding: 1.5em;
 	border-radius: var(--nextui-radii-md, 12px);
 	box-shadow: var(--nextui-shadows-md, 0 12px 20px 6px rgb(104 112 118 / 0.08));
-	background: var(--nextui-colors-backgroundContrast);
+	background: hsl(var(--nextui-backgroundContrast));
+	aspect-ratio: 1;
 	animation: float #{$float-animation-duration}s ease-in-out infinite;
 	img {
 		object-fit: contain;
@@ -52,6 +52,6 @@ $jitter: 15; // in pixels
 		transform: translateY(0px);
 	}
 }
-html:global(.dark-theme) .iconBox {
+html:global(.dark) .iconBox {
 	box-shadow: none !important;
 }

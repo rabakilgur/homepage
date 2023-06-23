@@ -1,26 +1,22 @@
-import { h } from "preact";
-import { Button, useTheme } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 import { HiSun } from "react-icons/hi";
 import { HiMoon } from "react-icons/hi2";
 import useDarkMode from "../../vendor/hooks/useDarkMode";
 
-export default function DarkModeToggle(props) {
+export default function DarkModeToggle({ style }: { style?: any }) {
 	const darkMode = useDarkMode(false);
-	const { isDark } = useTheme();
 
 	return (
 		<Button
-			aria-label="Dark Mode Toggle"
+			aria-label="Dark/Light Mode Toggle"
 			onPress={darkMode.toggle}
-			auto
-			light
+			isIconOnly
 			style={{
-				...props.style,
-				aspectRatio: "1",
+				...style,
 				fontSize: "1.4em",
 			}}
 		>
-			{isDark ? <HiSun /> : <HiMoon />}
+			{darkMode.value ? <HiSun /> : <HiMoon />}
 		</Button>
 	);
 }

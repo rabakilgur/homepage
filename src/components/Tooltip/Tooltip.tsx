@@ -1,4 +1,3 @@
-import { Fragment, h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import { createPortal } from "preact/compat";
 import C from "classnames";
@@ -12,7 +11,7 @@ export default function Tooltip({
 	distance,
 	...props
 }: {
-	tt: string | JSX.Element,
+	tt: string | Element,
 	placement?: "auto" | "auto-start" | "auto-end" | "top" | "top-start" | "top-end" | "bottom" | "bottom-start" | "bottom-end" | "right" | "right-start" | "right-end" | "left" | "left-start" | "left-end",
 	delay?: number,
 	distance?: number,
@@ -55,7 +54,8 @@ export default function Tooltip({
 	});
 
 	useEffect(() => {
-		let renderedTimeout, actuallyVisibleTimeout;
+		let renderedTimeout: number;
+		let actuallyVisibleTimeout: number;
 		if (visible) {
 			setRendered(true);
 			actuallyVisibleTimeout = setTimeout(() => setActuallyVisible(true), Math.max(delay ?? 100, 1));

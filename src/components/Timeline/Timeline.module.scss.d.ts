@@ -1,6 +1,7 @@
 declare const styles: {
   readonly "timelineContainer": string;
   readonly "timeline": string;
+  readonly "timelineTitle": string;
   readonly "timelineItem": string;
   readonly "timelineInfo": string;
   readonly "timelineMarker": string;
@@ -8,7 +9,6 @@ declare const styles: {
   readonly "timelineSplit": string;
   readonly "timelineCentered": string;
   readonly "period": string;
-  readonly "timelineTitle": string;
   readonly "markerOutline": string;
 };
 export = styles;

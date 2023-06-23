@@ -1,21 +1,24 @@
-import { h } from "preact";
 import { useEffect, useRef } from "preact/hooks";
-import { styled } from "@nextui-org/react";
 import Visual from "./Visual";
 
-const Canvas = styled("canvas", {
-	position: "absolute",
-	zIndex: 1,
-	display: "block",
-	width: "100%",
-	height: "80vh",
-	minHeight: "400px",
-});
-
 export default function ParticleWave() {
-	const canvasRef = useRef<HTMLCanvasElement>(null);
+	const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
 	useEffect(() => {
-		new Visual(canvasRef.current);
+		new Visual(canvasRef.current!);
 	}, []);
-	return <Canvas ref={canvasRef}></Canvas>;
+
+	return (
+		<canvas
+			ref={canvasRef}
+			style={{
+				position: "absolute",
+				zIndex: 1,
+				display: "block",
+				width: "100%",
+				height: "80vh",
+				minHeight: "400px",
+			}}
+		></canvas>
+	);
 }

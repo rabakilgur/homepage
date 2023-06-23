@@ -20,7 +20,7 @@ export function throttle(callback: Function, delay: number, id: string) {
 }
 
 
-const debounceMap = new Map<string, NodeJS.Timeout>();
+const debounceMap = new Map<string, number>();
 
 /**
  * Debounce the given callback function so that its execution is delayed for the given time, and if a subsequent call happens inside of the delay time window, forget the first call and debounce the new one. In other words, this delays the function from being executed for (at least) the given delay and if multiple calls happen in that time, only the most recent will be executed.

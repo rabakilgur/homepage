@@ -1,4 +1,3 @@
-import { h } from "preact";
 import S from "./Heading.module.scss";
 
 export default function Heading(props) {

@@ -18,7 +18,7 @@ const mockElement = {
 
 const preferDarkQuery = "(prefers-color-scheme: dark)";
 
-const initialize = (storageKey, storageProvider, glbl = global) => {
+const initialize = (storageKey, storageProvider, glbl = globalThis) => {
 	const usePersistedDarkModeState = storageKey
 		? createPersistedState(storageKey, storageProvider)
 		: useState;
@@ -37,15 +37,16 @@ const initialize = (storageKey, storageProvider, glbl = global) => {
 	);
 
 	// Mock element if SSR else real body element.
-	const defaultElement = (glbl.document && glbl.document.body) || mockElement;
+	const defaultElement = (glbl.document && glbl.document.documentElement) || mockElement;
 
 	const getDefaultOnChange = (
 		element = defaultElement,
-		classNameDark = "dark-mode",
-		classNameLight = "light-mode"
-	) => (val) => {
-		element.classList.add(val ? classNameDark : classNameLight);
-		element.classList.remove(val ? classNameLight : classNameDark);
+		classNameDark = "dark",
+		classNameLight = "light"
+	) => (isDark: boolean) => {
+		element.classList.add(isDark ? classNameDark : classNameLight);
+		element.classList.remove(isDark ? classNameLight : classNameDark);
+		element.style.colorScheme = isDark ? "dark" : "light";
 	};
 
 	return {

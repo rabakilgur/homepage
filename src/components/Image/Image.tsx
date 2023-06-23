@@ -1,6 +1,4 @@
-import { h } from "preact";
 import useImage from "src/lib/hooks/useImage";
-
 
 const Image = ({
 	src,

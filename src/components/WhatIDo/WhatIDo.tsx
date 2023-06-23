@@ -1,4 +1,3 @@
-import { Fragment, h } from "preact";
 import Tooltip from "../Tooltip/Tooltip";
 import S from "./WhatIDo.module.scss";
 

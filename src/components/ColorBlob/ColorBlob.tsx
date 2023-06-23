@@ -1,4 +1,3 @@
-import { Fragment, h } from "preact";
 import S from "./ColorBlob.module.scss";
 
 export default function ColorBlob({

@@ -1,0 +1,16 @@
+{
+	"name": "Robin Garbe - Webseite",
+	"short_name": "Robin Garbe Webseite",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#fff",
+	"theme_color": "#0088ff",
+	"icons": [
+		{
+			"src": "/assets/favicons/apple-touch-icon.png",
+			"type": "image/png",
+			"sizes": "152x152"
+		}
+	]
+}

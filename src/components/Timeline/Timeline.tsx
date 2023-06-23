@@ -1,4 +1,3 @@
-import { h } from "preact";
 import S from "./Timeline.module.scss";
 import C from "classnames";
 

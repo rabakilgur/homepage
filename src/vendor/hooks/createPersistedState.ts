@@ -36,8 +36,8 @@ const createGlobalState = (key, thisCallback, initialValue) => {
 
 /* ----------  usePersistedState:  ---------- */
 
-const usePersistedState = (initialState, key, { get, set }) => {
-	const globalState = useRef(null);
+const usePersistedState = (initialState: any, key: string, { get, set }) => {
+	const globalState = useRef<any>(null);
 	const [state, setState] = useState(() => get(key, initialState));
 
 	// subscribe to `storage` change events
@@ -60,7 +60,7 @@ const usePersistedState = (initialState, key, { get, set }) => {
 		};
 	}, [initialState, key]);
 
-	const persistentSetState = useCallback((newState) => {
+	const persistentSetState = useCallback((newState: any) => {
 		const newStateValue =
 			typeof newState === "function" ? newState(state) : newState;
 
@@ -78,8 +78,8 @@ const usePersistedState = (initialState, key, { get, set }) => {
 
 /* ----------  createStorage:  ---------- */
 
-const createStorage = (provider) => ({
-	get(key, defaultValue) {
+const createStorage = (provider: Storage) => ({
+	get(key: string, defaultValue: any) {
 		const json = provider.getItem(key);
 		// eslint-disable-next-line no-nested-ternary
 		return json === null || typeof json === "undefined"
@@ -88,7 +88,7 @@ const createStorage = (provider) => ({
 			: defaultValue
 			: JSON.parse(json);
 	},
-	set(key, value) {
+	set(key: string, value: any) {
 		provider.setItem(key, JSON.stringify(value));
 	},
 });
@@ -96,8 +96,8 @@ const createStorage = (provider) => ({
 /* ----------  createPersistentState hook:  ---------- */
 
 const getProvider = () => {
-	if (typeof global !== "undefined" && global.localStorage) {
-		return global.localStorage;
+	if (typeof globalThis !== "undefined" && globalThis.localStorage) {
+		return globalThis.localStorage;
 	}
 	// eslint-disable-next-line no-undef
 	if (typeof globalThis !== "undefined" && globalThis.localStorage) {
@@ -113,10 +113,10 @@ const getProvider = () => {
 	return null;
 };
 
-const createPersistedState = (key, provider = getProvider()) => {
+const createPersistedState = (key: string, provider = getProvider()) => {
 	if (provider) {
 		const storage = createStorage(provider);
-		return (initialState) => usePersistedState(initialState, key, storage);
+		return (initialState: any) => usePersistedState(initialState, key, storage);
 	}
 	return useState;
 };

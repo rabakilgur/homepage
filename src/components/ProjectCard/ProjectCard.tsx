@@ -1,4 +1,4 @@
-import { Fragment, h } from "preact";
+import { h } from "preact";
 import S from "./ProjectCard.module.scss";
 
 const ProjectCard = ({ color, image, link, item, darkenImage, right, ...props }: { color?: string, image?: string, link?: string, item?: any, darkenImage?: Boolean, right?: Boolean, [prop: string]: any }) => {
@@ -18,21 +18,18 @@ const ProjectCard = ({ color, image, link, item, darkenImage, right, ...props }:
 };
 
 ProjectCard.Title = Object.assign(({ text, ...props }: { text: string | Element | h.JSX.Element, [prop: string]: any }) => {
-	return <div className={S.projcardTitle}>{text}</div>;
+	return <div className={S.projcardTitle} {...props}>{text}</div>;
 }, { displayName: "ProjectCardTitle" });
 
 ProjectCard.Subtitle = Object.assign(({ text, ...props }: { text: string | Element | h.JSX.Element, [prop: string]: any }) => {
-	return <div className={S.projcardSubtitle}>{text}</div>;
+	return <div className={S.projcardSubtitle} {...props}>{text}</div>;
 }, { displayName: "ProjectCardSubitle" });
 
 ProjectCard.Description = Object.assign(({ text, ...props }: { text: string | Element | h.JSX.Element, [prop: string]: any }) => {
-
-	// TODO add ellipsis to description
-
 	return (
 		<>
 			<div className={S.projcardBar}></div>
-			<div className={S.projcardDescription}>{text}</div>
+			<div className={S.projcardDescription} {...props}>{text}</div>
 		</>
 	);
 }, { displayName: "ProjectCardDescription" });
@@ -40,7 +37,7 @@ ProjectCard.Description = Object.assign(({ text, ...props }: { text: string | El
 ProjectCard.Tags = Object.assign(({ tags, ...props }: { tags: string, [prop: string]: any }) => {
 	const tagArray = tags.split(",").map((tag: string) => tag.trim());
 	return (
-		<div className={S.projcardTagbox}>
+		<div className={S.projcardTagbox} {...props}>
 			{tagArray.map((tag: string) => <span className={S.projcardTag} key={tag}>{tag}</span>)}
 		</div>
 	);
