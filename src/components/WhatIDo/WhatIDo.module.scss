@@ -32,8 +32,8 @@ $jitter: 15; // in pixels
 	display: flex;
 	margin: 0.75rem;
 	padding: 1.5em;
-	border-radius: var(--nextui-radii-md, 12px);
-	box-shadow: var(--nextui-shadows-md, 0 12px 20px 6px rgb(104 112 118 / 0.08));
+	border-radius: 12px;
+	box-shadow: 0 12px 20px 6px rgb(104 112 118 / 0.08);
 	background: hsl(var(--nextui-backgroundContrast));
 	aspect-ratio: 1;
 	animation: float #{$float-animation-duration}s ease-in-out infinite;
