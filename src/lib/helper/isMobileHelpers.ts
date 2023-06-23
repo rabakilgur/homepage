@@ -12,3 +12,8 @@ const isMobile = typeof window !== "undefined"
 	||  navigator.userAgent.match(/BlackBerry/i)
 	||  navigator.userAgent.match(/Windows Phone/i));
 export default isMobile;
+
+export const isMobileSafari = typeof window !== "undefined"
+	&&  navigator.userAgent.match(/iPhone/i)
+	||  navigator.userAgent.match(/iPad/i)
+	||  navigator.userAgent.match(/iPod/i);

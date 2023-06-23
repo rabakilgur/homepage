@@ -2,6 +2,7 @@ import "../../style/index.scss";
 import CVWrapper from "../CVWrapper/CVWrapper";
 import ColorBlob from "../ColorBlob/ColorBlob";
 import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
+import Header from "../Header/Header";
 import Heading from "../Heading/Heading";
 import ParticleWave from "../ParticleWave/ParticleWave";
 import ProjectCard from "../ProjectCard/ProjectCard";
@@ -14,12 +15,7 @@ const Homepage = () => {
 		<>
 			<DarkModeToggleCornerWrapper />
 
-			<header>
-				<ParticleWave />
-				<ColorBlob color="#0170FE" size={425} right="70%" bottom="5%" />
-				<ColorBlob color="#0088FF" size={350} top="5%" left="70%" />
-				<h1><ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" /><span>ich bin</span><span><span>Robin Garbe</span><span>Robin Garbe</span></span></h1>
-			</header>
+			<Header />
 
 			<div className="container mx-auto" style={{ maxWidth: 1000, paddingInline: "1.2rem" }}>
 				<section id="about">
@@ -27,7 +23,7 @@ const Homepage = () => {
 
 					<Heading>Über mich</Heading>
 
-					<p style="text-align: justify">Hallo! Ich bin Robin, ein Softwareingenieur aus Darmstadt. Ich beschäftige mich hauptsächlich mit Frontend- und Fullstack-Entwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen App-Entwicklung oder APIs. Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über die Bereiche in denen ich tätig bin und einige Technologien die ich in letzter Zeit benutze:</p>
+					<p style="text-align: justify; margin-bottom: 1em;">Hallo! Ich bin Robin, ein Softwareingenieur aus Darmstadt. Ich beschäftige mich hauptsächlich mit Frontend- und Fullstack-Entwicklung, arbeite aber auch häufig an anderen Projekten; zum Beispiel in den Bereichen App-Entwicklung oder APIs. Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über die Bereiche in denen ich tätig bin und einige Technologien die ich in letzter Zeit benutze:</p>
 
 					<WhatIDo />
 
