@@ -1,3 +1,4 @@
+import { isMobileSafari } from "../../lib/helper/isMobileHelpers";
 import ColorBlob from "../ColorBlob/ColorBlob";
 import ParticleWave from "../ParticleWave/ParticleWave";
 import ScrambleText from "../TextScramble/TextScramble";
@@ -11,7 +12,7 @@ export default function Header() {
 			<ColorBlob color="#0088FF" size={350} top="5%" left="70%" />
 			<h1>
 				<span className={S.shadow}>
-					<ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" />
+					{isMobileSafari ? "Hallo" : <ScrambleText texts="Hallo, Hi, Bonjour, Hello, Hola, Moshimoshi" />}
 				</span>
 				<span className={S.shadow}>ich bin</span>
 				<span className={S.shadow}>

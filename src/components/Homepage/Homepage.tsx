@@ -4,9 +4,7 @@ import ColorBlob from "../ColorBlob/ColorBlob";
 import DarkModeToggleCornerWrapper from "../DarkModeToggle/DarkModeToggleCornerWrapper";
 import Header from "../Header/Header";
 import Heading from "../Heading/Heading";
-import ParticleWave from "../ParticleWave/ParticleWave";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import ScrambleText from "../TextScramble/TextScramble";
 import Timeline from "../Timeline/Timeline";
 import WhatIDo from "../WhatIDo/WhatIDo";
 
