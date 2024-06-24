@@ -4,7 +4,7 @@ import { Modal, ModalContent, ModalBody, ModalFooter } from "@nextui-org/modal";
 import S from "./CVWrapper.module.scss";
 import { useEffect, useRef } from "preact/hooks";
 
-export default function CVWrapper() {
+export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { style?: any; label?: string; [prop: string]: any }) {
 	// const { setVisible, bindings } = useModal();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	const cvRef = useRef<HTMLDivElement | null>(null);
@@ -65,6 +65,15 @@ export default function CVWrapper() {
 		if (prevYPos && e.timeStamp - prevYPosTimestamp < 100) bodyElement.scrollTop += prevYPos - newYPos;
 		prevYPos = newYPos;
 		prevYPosTimestamp = e.timeStamp;
+	};
+
+	function Expertise({ label, duration }: { label: string; duration?: string }) {
+		return (
+			<div>
+				{label}
+				{duration && <span className={S.expertiseDuration}> – {duration}</span>}
+			</div>
+		);
 	}
 
 	useEffect(() => {
@@ -76,22 +85,24 @@ export default function CVWrapper() {
 		bodyElement?.addEventListener("touchmove", handleTouchMove);
 		return () => {
 			bodyElement?.removeEventListener("touchmove", handleTouchMove);
-		}
+		};
 	});
 
 	return (
 		<>
-			<Button color="secondary" style="display: block; margin: auto;" onPress={onOpen}>
-				CV anzeigen
+			<Button
+				style={{
+					...style,
+					display: "block",
+					margin: "auto",
+					minWidth: "unset",
+				}}
+				onPress={onOpen}
+				{...props}>
+				{label}
 			</Button>
 
-			<Modal
-				size="full"
-				aria-labelledby="modal-title"
-				aria-describedby="modal-description"
-				isOpen={isOpen}
-				onOpenChange={onOpenChange}
-			>
+			<Modal size="full" aria-labelledby="modal-title" aria-describedby="modal-description" isOpen={isOpen} onOpenChange={onOpenChange}>
 				{/* <ModalHeader>
 					<Text id="modal-title" size={18}>
 						Lebenslauf
@@ -106,14 +117,30 @@ export default function CVWrapper() {
 									<div className={S.header}>
 										<h2>Robin Garbe</h2>
 										{/* <span>Anschrift: Adelungstraße 28, 64283 Darmstadt</span> */}
-										<span>E-Mail: <a href="mailto:arbeit@robin-garbe.de">arbeit@robin-garbe.de</a></span>
-										<span>Telefon: <a href="tel:+4915902450748">+49 159 / 0245 0758</a></span>
+										<span>
+											E-Mail: <a href="mailto:arbeit@robin-garbe.de">arbeit@robin-garbe.de</a>
+										</span>
+										<span>
+											Telefon: <a href="tel:+4915902450748">+49 159 / 0245 0758</a>
+										</span>
 										<span>Geboren am 24.02.1997</span>
-										<span>Webseite: <a href="https://robin-garbe.de" target="_blank" rel="noreferrer">robin-garbe.de</a></span>
-										<span>LinkedIn: <a href="https://www.linkedin.com/in/robin-garbe/" target="_blank" rel="noreferrer">linkedin.com/in/robin-garbe</a></span>
+										<span>
+											Webseite:{" "}
+											<a href="https://robin-garbe.de" target="_blank" rel="noreferrer">
+												robin-garbe.de
+											</a>
+										</span>
+										<span>
+											LinkedIn:{" "}
+											<a href="https://www.linkedin.com/in/robin-garbe/" target="_blank" rel="noreferrer">
+												linkedin.com/in/robin-garbe
+											</a>
+										</span>
 									</div>
 
-									<div className={S.category}><h3>Erfahrung</h3></div>
+									<div className={S.category}>
+										<h3>Erfahrung</h3>
+									</div>
 									<div>
 										<h4>04/2022 - heute</h4>
 										<h5>Softwareingenieur im Bereich Management Information Systems</h5>
@@ -144,7 +171,9 @@ export default function CVWrapper() {
 										</ul>
 									</div>
 
-									<div className={S.category}><h3>Bildungsweg</h3></div>
+									<div className={S.category}>
+										<h3>Bildungsweg</h3>
+									</div>
 									<div>
 										<h4>04/2022 - heute</h4>
 										<h5>Master of Science in Internet- und Web-basierte Systeme</h5>
@@ -166,7 +195,9 @@ export default function CVWrapper() {
 										</ul>
 									</div>
 
-									<div className={S.category}><h3>Sonstige Erfahrung</h3></div>
+									<div className={S.category}>
+										<h3>Sonstige Erfahrung</h3>
+									</div>
 									<div>
 										<h4>03/2020 – 10/2020</h4>
 										<h5>Praktikum Embedded Systems</h5>
@@ -194,69 +225,77 @@ export default function CVWrapper() {
 										</ul>
 									</div>
 
-									<div className={S.category}><h3>Auslandserfahrung</h3></div>
+									<div className={S.category}>
+										<h3>Auslandserfahrung</h3>
+									</div>
 									<div>
 										<h4>2009</h4>
 										<h5>England-Austausch zum Impington Village College</h5>
 									</div>
 
-									<div className={S.category}><h3>Kenntnisse</h3></div>
+									<div className={S.category}>
+										<h3>Kenntnisse</h3>
+									</div>
 									<div className={S.expertiseWrapper}>
 										<h5>Sprachen:</h5>
-										<span>Deutsch – Muttersprache</span>
-										<span>Englisch – Verhandlungssicher</span>
+										<Expertise label="Deutsch" duration="Muttersprache (C2)" />
+										<Expertise label="Englisch" duration="Verhandlungssicher (C1)" />
 
 										<h5>Programmiersprachen:</h5>
-										<span>JavaScript und TypeScript – Zehn Jahre, sehr regelmäßig</span>
-										<span>PHP – Sieben Jahre</span>
-										<span>Ruby – Drei Jahre, regelmäßig</span>
-										<span>Kotlin – Zwei Jahre</span>
-										<span>VBA – Zwei Jahre</span>
-										<span>C / C++ – Ein Jahr</span>
-										<span>Python – Ein Jahr</span>
-										<span>Java – Zwei Jahre</span>
+										<Expertise label="JavaScript & TypeScript" duration="Elf Jahre, sehr regelmäßig" />
+										<Expertise label="PHP" duration="Sieben Jahre" />
+										<Expertise label="Ruby" duration="Drei Jahre, regelmäßig" />
+										<Expertise label="Java & Kotlin" duration="Zwei Jahre" />
+										<Expertise label="VBA" duration="Zwei Jahre" />
+										<Expertise label="C / C++" duration="Ein Jahr" />
+										<Expertise label="Python" duration="Ein Jahr" />
 
 										<h5>Frameworks:</h5>
-										<span>React, Next.js und Preact – Drei Jahre, sehr regelmäßig</span>
-										<span>Ruby on Rails – Drei Jahre, regelmäßig</span>
-										<span>Node und Deno – Drei Jahre</span>
-										<span>React Native und PhoneGap / Cordova – Zwei Jahre</span>
-										<span>Electron – Ein Jahr</span>
-										<span>Bootstrap – Fünf Jahre</span>
-										<span>jQuery – Fünf Jahre</span>
+										<Expertise label="React, Next.js & Preact" duration="Drei Jahre, sehr regelmäßig" />
+										<Expertise label="Vue & Nuxt" duration="Ein Jahr, sehr regelmäßig" />
+										<Expertise label="Node & Deno" duration="Vier Jahre" />
+										<Expertise label="Ruby on Rails" duration="Drei Jahre, regelmäßig" />
+										<Expertise label="React Native & PhoneGap / Cordova" duration="Zwei Jahre" />
+										<Expertise label="Electron" duration="Zwei Jahre" />
+										<Expertise label="Bootstrap" duration="Fünf Jahre" />
+										<Expertise label="jQuery" duration="Fünf Jahre" />
 
 										<h5>Datenbanken:</h5>
-										<span>SQLite, MySQL, PostgreSQL</span>
+										<Expertise label="PostgreSQL, SQLite, MySQL" duration="Sieben Jahre" />
 
 										<h5>DevOps:</h5>
-										<span>Git, GitHub, GitLab und Gitea</span>
-										<span>Jira und Trello</span>
-										<span>Docker</span>
+										<Expertise label="Git, GitHub, GitLab, Gitea" />
+										<Expertise label="Jira, Trello" />
+										<Expertise label="Docker" />
+										<Expertise label="AWS" />
 
 										<h5>Betriebssysteme:</h5>
-										<span>Windows, Linux</span>
+										<Expertise label="Windows, Linux" />
 
 										<h5>Nennenswertes:</h5>
-										<span>JWT, JSON, HTML, CSS, SCSS, REST, XML, YAML, SVG, SQL, JamStack</span>
+										<Expertise label="JWT, JSON, HTML, CSS, SCSS, REST, XML, YAML, SVG, SQL, JamStack" />
 
 										<h5>Software:</h5>
-										<span>Photoshop, Illustrator, InDesign, Acrobat</span>
-										<span>Teams, Word, Excel, PowerPoint, Outlook, OneNote</span>
-										<span>WordPress</span>
-										<span>Postman</span>
-										<span>XAMPP Server, WAMP Server, Puma, Nginx</span>
-										<span>OPC-UA</span>
+										<Expertise label="Photoshop, Illustrator, InDesign, Acrobat" />
+										<Expertise label="Teams, Word, Excel, PowerPoint, Outlook, OneNote, Sharepoint, etc." />
+										<Expertise label="WordPress" />
+										<Expertise label="Postman" />
+										<Expertise label="Nginx, Puma, XAMPP, WAMP" />
+										<Expertise label="OPC-UA" />
 									</div>
 
 									<div></div>
-									<div className={S.footer}><span>Darmstadt, 12.05.2023</span><span>Robin Garbe</span></div>
+									<div className={S.footer}>
+										<span>Darmstadt, 24.06.2024</span>
+										<span>Robin Garbe</span>
+									</div>
 								</div>
 							</ModalBody>
 							<ModalFooter>
-								<Button auto flat color="error" onPress={onClose}>
+								<Button auto flat variant="light" onPress={onClose}>
 									Schließen
 								</Button>
-								<Button auto onPress={() => printCV()}>
+								<Button auto onPress={printCV}>
 									Drucken
 								</Button>
 							</ModalFooter>
