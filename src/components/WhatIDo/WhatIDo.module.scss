@@ -41,6 +41,9 @@ $jitter: 15; // in pixels
 		object-fit: contain;
 	}
 }
+.ttTitle {
+	font-weight: bold;
+}
 @keyframes float {
 	0% {
 		transform: translateY(0px);

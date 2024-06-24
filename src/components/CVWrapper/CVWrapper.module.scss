@@ -8,7 +8,8 @@
 	justify-content: unset !important;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { // Trick to only apply in webkit
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	// Trick to only apply in webkit
 	.body {
 		border-color: rgba(0, 0, 0, 0);
 		transition: border-color 0.5s 1.5s ease-in;
@@ -54,7 +55,14 @@
 	* {
 		box-sizing: border-box;
 	}
-	p, small, h1, h2, h3, h4, h5, h6 {
+	p,
+	small,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		letter-spacing: 0.025em;
 		margin: 0;
 	}
@@ -81,12 +89,12 @@
 		}
 	}
 	.category {
-		border-right: 1px solid hsl(var(--nextui-gray-400, 240 5% 65%));
+		border-right: 1px solid hsl(var(--nextui-default-400, 240 5% 65%));
 		text-align: right;
 		padding-right: 1em;
 		h3 {
 			text-transform: uppercase;
-			color: hsl(var(--nextui-gray-700, 240 5% 26%));
+			color: hsl(var(--nextui-default-700, 240 5% 26%));
 			font-weight: normal;
 			font-family: Voces, Arial, sans-serif;
 			font-size: 1.2em;
@@ -106,7 +114,7 @@
 	h5 {
 		font-size: inherit;
 		font-weight: bold;
-		color: hsl(var(--nextui-gray-900, 240 6% 10%));
+		color: hsl(var(--nextui-default-900, 240 6% 10%));
 		break-after: avoid;
 	}
 	h6 {
@@ -123,17 +131,20 @@
 				margin-top: 0.25em;
 			}
 			&::marker {
-				color: hsl(var(--nextui-gray-700, 240 5% 26%));
+				color: hsl(var(--nextui-default-700, 240 5% 26%));
 			}
 		}
 	}
 	.expertiseWrapper h5:not(:first-child) {
 		margin-top: 0.75em;
 	}
+	.expertiseDuration {
+		color: hsl(var(--nextui-default-600, 240 5% 34%));
+	}
 	.footer {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 2.0em;
+		margin-top: 2em;
 	}
 }
 

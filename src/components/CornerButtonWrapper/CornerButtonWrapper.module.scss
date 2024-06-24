@@ -3,6 +3,8 @@
 .wrapper {
 	position: fixed;
 	z-index: 40; // behind modals which are at z-index 50
+	display: flex;
+	gap: 0.25em;
 	top: 10px;
 	right: 26px;
 }

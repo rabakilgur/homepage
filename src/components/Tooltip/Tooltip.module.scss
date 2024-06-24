@@ -8,19 +8,25 @@
 	position: absolute;
 	z-index: var(--tooltipZIndex);
 	opacity: 0;
-	transition: opacity 0.2s ease-in,
-	transform 0.2s ease-in;
-	&[data-tt-placement^="top"] { transform: translate(0px, 5px); }
-	&[data-tt-placement^="bottom"] { transform: translate(0px, -5px);}
+	transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+	&[data-tt-placement^="top"] {
+		transform: translate(0px, 5px);
+	}
+	&[data-tt-placement^="bottom"] {
+		transform: translate(0px, -5px);
+	}
 	&[data-tt-placement^="right"],
-	&[data-tt-placement^="end"] { transform: translate(-5px, 0px); }
+	&[data-tt-placement^="end"] {
+		transform: translate(-5px, 0px);
+	}
 	&[data-tt-placement^="left"],
-	&[data-tt-placement^="start"] { transform: translate(5px, 0px); }
+	&[data-tt-placement^="start"] {
+		transform: translate(5px, 0px);
+	}
 	&.visible {
 		opacity: 1;
 		transform: translate(0px, 0px);
-		transition: opacity 0.15s ease-out,
-			transform 0.15s ease-out;
+		transition: opacity 0.15s ease-out, transform 0.15s ease-out;
 	}
 }
 
@@ -58,7 +64,6 @@
 		height: 0;
 		margin: auto;
 		width: 0;
-
 	}
 	&::after {
 		position: absolute;
@@ -67,7 +72,7 @@
 
 .container[data-popper-placement*="bottom"] .arrow {
 	left: 0;
-	margin-top: -0.4rem;
+	margin-top: -0.3rem;
 	top: 0;
 	&::before {
 		border-color: transparent transparent var(--tooltipBorder) transparent;

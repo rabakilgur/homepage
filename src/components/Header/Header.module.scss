@@ -16,6 +16,7 @@
 		margin: 0;
 		text-align: center;
 		font-size: 250%;
+		font-family: monospace;
 		font-weight: bold;
 		transform: translate(-50%, -50%);
 		opacity: 1;
@@ -28,7 +29,6 @@
 			&:first-child{
 				display: block;
 				font-size: 150%;
-				font-family: monospace;
 				height: 1.5em;
 				contain: content;
 			}

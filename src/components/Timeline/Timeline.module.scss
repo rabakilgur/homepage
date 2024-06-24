@@ -2,7 +2,7 @@
 
 $primary-color: #0088ff;
 $primary-color-hover: scale-color($primary-color, $lightness: 32%);
-$mutedColor: hsl(var(--nextui-gray-500, 240 4% 46%));
+$mutedColor: hsl(var(--nextui-default-500, 240 4% 46%));
 
 .timelineContainer {
 	display: flex;
@@ -23,7 +23,12 @@ TIMELINE
 	margin: 0;
 	padding: 1em 0 0 0;
 	max-width: 1000px;
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		line-height: inherit;
 		margin-top: 0;
 		margin-bottom: 10px;
@@ -54,7 +59,7 @@ TIMELINE
 	font-size: 12px;
 	font-weight: 700;
 	letter-spacing: 3px;
-	margin: 0 0 .5em 0;
+	margin: 0 0 0.5em 0;
 	text-transform: uppercase;
 	white-space: nowrap;
 	color: $mutedColor;
@@ -63,7 +68,9 @@ TIMELINE
 
 .timelineMarker {
 	position: absolute;
-	top: 0; bottom: 0; left: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
 	width: 15px;
 	&:before {
 		background: $primary-color;
@@ -73,18 +80,20 @@ TIMELINE
 		display: block;
 		height: 15px;
 		position: absolute;
-		top: 4px; left: 0;
+		top: 4px;
+		left: 0;
 		width: 15px;
-		transition: background 0.3s ease-in-out,
-			border 0.3s ease-in-out;
+		transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
 	}
 	&::after {
 		content: "";
 		width: 3px;
-		background: #CCD5DB;
+		background: #ccd5db;
 		display: block;
 		position: absolute;
-		top: 24px; bottom: 0; left: 6px;
+		top: 24px;
+		bottom: 0;
+		left: 6px;
 	}
 	.timelineItem:last-child &::after {
 		content: none;
@@ -224,4 +233,3 @@ MOD: MARKER OUTLINE
 		background: $primary-color;
 	}
 }
-

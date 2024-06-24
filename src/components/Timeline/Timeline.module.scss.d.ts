@@ -1,15 +1,15 @@
 declare const styles: {
-  readonly "timelineContainer": string;
-  readonly "timeline": string;
-  readonly "timelineTitle": string;
-  readonly "timelineItem": string;
-  readonly "timelineInfo": string;
-  readonly "timelineMarker": string;
-  readonly "timelineContent": string;
-  readonly "timelineSplit": string;
-  readonly "timelineCentered": string;
-  readonly "period": string;
   readonly "markerOutline": string;
+  readonly "period": string;
+  readonly "timeline": string;
+  readonly "timelineCentered": string;
+  readonly "timelineContainer": string;
+  readonly "timelineContent": string;
+  readonly "timelineInfo": string;
+  readonly "timelineItem": string;
+  readonly "timelineMarker": string;
+  readonly "timelineSplit": string;
+  readonly "timelineTitle": string;
 };
 export = styles;
 

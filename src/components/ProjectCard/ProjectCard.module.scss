@@ -1,28 +1,30 @@
 // @types
 
 .projcard {
-	--projcard-innerBg: hsl(var(--nextui-backgroundContrast));
-	--projcard-border: hsl(var(--nextui-default, 240 5% 84%));
-	--projcard-textGray1: hsl(var(--nextui-gray-900, 240 6% 10%));
-	--projcard-textGray2: hsl(var(--nextui-gray-700, 240 5% 26%));
-	--projcard-tagBg: hsl(var(--nextui-gray-300, 240 5% 84%));
-	--projcard-tagText: hsl(var(--nextui-gray-800, 240 4% 16%));
+	--projcard-innerBg: hsl(var(--nextui-default-200) / 0.2);
+	--projcard-borderColor: hsl(var(--nextui-default-100) / var(--nextui-default-100-opacity, var(--tw-border-opacity, 1)));
+	--projcard-borderWidth: 1px;
+	--projcard-border: var(--projcard-borderWidth) solid var(--projcard-borderColor);
+	--projcard-textGray1: hsl(var(--nextui-default-900, 240 6% 10%));
+	--projcard-textGray2: hsl(var(--nextui-default-700, 240 5% 26%));
+	--projcard-tagBg: hsl(var(--nextui-default-300, 240 5% 84%));
+	--projcard-tagText: hsl(var(--nextui-default-800, 240 4% 16%));
 	position: relative;
 	width: 100%;
-	height: 300px;
+	height: calc(300px + 2 * var(--projcard-borderWidth));
 	margin-bottom: 40px;
 	border-radius: 10px;
 	background-color: var(--projcard-innerBg);
 	box-sizing: border-box;
-	border: 2px solid var(--projcard-border);
+	border: var(--projcard-border);
 	font-size: 18px;
 	overflow: hidden;
 	cursor: pointer;
-	box-shadow: 0 4px 21px -12px rgba(0, 0, 0, .66);
+	box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
 	transition: box-shadow 0.2s ease, transform 0.2s ease;
 	counter-increment: projcardCounter;
 	&:hover {
-		box-shadow: 0 34px 32px -33px rgba(0, 0, 0, .18);
+		box-shadow: 0 34px 32px -33px rgba(0, 0, 0, 0.18);
 		transform: translate(0px, -3px);
 	}
 	* {
@@ -50,33 +52,87 @@
 		background-color: #424242;
 		transition: width 0.2s ease;
 	}
-	&:global(.projcard-blue) .projcardBar { background-color: #0088FF; }
-	&:global(.projcard-blue)::before { background-image: linear-gradient(-70deg, #0088FF, transparent 50%); }
-	&:global(.projcard-blue).projcardRight::before { background-image: linear-gradient(-250deg, #0088FF, transparent 50%); }
-	&:global(.projcard-red) .projcardBar { background-color: #D62F1F; }
-	&:global(.projcard-red)::before { background-image: linear-gradient(-70deg, #D62F1F, transparent 50%); }
-	&:global(.projcard-red).projcardRight::before { background-image: linear-gradient(-250deg, #D62F1F, transparent 50%); }
-	&:global(.projcard-green) .projcardBar { background-color: #40BD00; }
-	&:global(.projcard-green)::before { background-image: linear-gradient(-70deg, #40BD00, transparent 50%); }
-	&:global(.projcard-green).projcardRight::before { background-image: linear-gradient(-250deg, #40BD00, transparent 50%); }
-	&:global(.projcard-yellow) .projcardBar { background-color: #F5AF41; }
-	&:global(.projcard-yellow)::before { background-image: linear-gradient(-70deg, #F5AF41, transparent 50%); }
-	&:global(.projcard-yellow).projcardRight::before { background-image: linear-gradient(-250deg, #F5AF41, transparent 50%); }
-	&:global(.projcard-orange) .projcardBar { background-color: #FF5722; }
-	&:global(.projcard-orange)::before { background-image: linear-gradient(-70deg, #FF5722, transparent 50%); }
-	&:global(.projcard-orange).projcardRight::before { background-image: linear-gradient(-250deg, #FF5722, transparent 50%); }
-	&:global(.projcard-brown) .projcardBar { background-color: #C49863; }
-	&:global(.projcard-brown)::before { background-image: linear-gradient(-70deg, #C49863, transparent 50%); }
-	&:global(.projcard-brown).projcardRight::before { background-image: linear-gradient(-250deg, #C49863, transparent 50%); }
-	&:global(.projcard-purple) .projcardBar { background-color: #5C4084; }
-	&:global(.projcard-purple)::before { background-image: linear-gradient(-70deg, #5C4084, transparent 50%); }
-	&:global(.projcard-purple).projcardRight::before { background-image: linear-gradient(-250deg, #5C4084, transparent 50%); }
-	&:global(.projcard-grey) .projcardBar { background-color: #424242; }
-	&:global(.projcard-grey)::before { background-image: linear-gradient(-70deg, #424242, transparent 50%); }
-	&:global(.projcard-grey).projcardRight::before { background-image: linear-gradient(-250deg, #424242, transparent 50%); }
-	&:global(.projcard-customcolor) .projcardBar { background-color: var(--projcard-color); }
-	&:global(.projcard-customcolor)::before { background-image: linear-gradient(-70deg, var(--projcard-color), transparent 50%); }
-	&:global(.projcard-customcolor).projcardRight::before { background-image: linear-gradient(-250deg, var(--projcard-color), transparent 50%); }
+	&:global(.projcard-blue) .projcardBar {
+		background-color: #0088ff;
+	}
+	&:global(.projcard-blue)::before {
+		background-image: linear-gradient(-70deg, #0088ff, transparent 50%);
+	}
+	&:global(.projcard-blue).projcardRight::before {
+		background-image: linear-gradient(-250deg, #0088ff, transparent 50%);
+	}
+	&:global(.projcard-red) .projcardBar {
+		background-color: #d62f1f;
+	}
+	&:global(.projcard-red)::before {
+		background-image: linear-gradient(-70deg, #d62f1f, transparent 50%);
+	}
+	&:global(.projcard-red).projcardRight::before {
+		background-image: linear-gradient(-250deg, #d62f1f, transparent 50%);
+	}
+	&:global(.projcard-green) .projcardBar {
+		background-color: #40bd00;
+	}
+	&:global(.projcard-green)::before {
+		background-image: linear-gradient(-70deg, #40bd00, transparent 50%);
+	}
+	&:global(.projcard-green).projcardRight::before {
+		background-image: linear-gradient(-250deg, #40bd00, transparent 50%);
+	}
+	&:global(.projcard-yellow) .projcardBar {
+		background-color: #f5af41;
+	}
+	&:global(.projcard-yellow)::before {
+		background-image: linear-gradient(-70deg, #f5af41, transparent 50%);
+	}
+	&:global(.projcard-yellow).projcardRight::before {
+		background-image: linear-gradient(-250deg, #f5af41, transparent 50%);
+	}
+	&:global(.projcard-orange) .projcardBar {
+		background-color: #ff5722;
+	}
+	&:global(.projcard-orange)::before {
+		background-image: linear-gradient(-70deg, #ff5722, transparent 50%);
+	}
+	&:global(.projcard-orange).projcardRight::before {
+		background-image: linear-gradient(-250deg, #ff5722, transparent 50%);
+	}
+	&:global(.projcard-brown) .projcardBar {
+		background-color: #c49863;
+	}
+	&:global(.projcard-brown)::before {
+		background-image: linear-gradient(-70deg, #c49863, transparent 50%);
+	}
+	&:global(.projcard-brown).projcardRight::before {
+		background-image: linear-gradient(-250deg, #c49863, transparent 50%);
+	}
+	&:global(.projcard-purple) .projcardBar {
+		background-color: #5c4084;
+	}
+	&:global(.projcard-purple)::before {
+		background-image: linear-gradient(-70deg, #5c4084, transparent 50%);
+	}
+	&:global(.projcard-purple).projcardRight::before {
+		background-image: linear-gradient(-250deg, #5c4084, transparent 50%);
+	}
+	&:global(.projcard-grey) .projcardBar {
+		background-color: #424242;
+	}
+	&:global(.projcard-grey)::before {
+		background-image: linear-gradient(-70deg, #424242, transparent 50%);
+	}
+	&:global(.projcard-grey).projcardRight::before {
+		background-image: linear-gradient(-250deg, #424242, transparent 50%);
+	}
+	&:global(.projcard-customcolor) .projcardBar {
+		background-color: var(--projcard-color);
+	}
+	&:global(.projcard-customcolor)::before {
+		background-image: linear-gradient(-70deg, var(--projcard-color), transparent 50%);
+	}
+	&:global(.projcard-customcolor).projcardRight::before {
+		background-image: linear-gradient(-250deg, var(--projcard-color), transparent 50%);
+	}
 }
 .projcardCodepen::after,
 .projcardCodepenWhite::after {
@@ -107,12 +163,19 @@
 	bottom: 0;
 	left: 0;
 }
-.projcardImg {
+.projcardImgWrapper {
 	position: absolute;
 	height: 300px;
 	width: 400px;
 	top: 0;
 	left: 0;
+	clip-path: polygon(0% 0%, 99% 0%, 89% 100%, 0% 100%);
+	overflow: hidden;
+}
+.projcardImg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -129,11 +192,12 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(0,0,0,0.04);
+	background: rgba(0, 0, 0, 0.04);
 }
-.projcard.projcardRight .projcardImg {
+.projcard.projcardRight .projcardImgWrapper {
 	left: initial;
 	right: 0;
+	clip-path: polygon(11% 0%, 100% 0%, 100% 100%, 1% 100%);
 }
 .projcard:hover .projcardImg {
 	transform: scale(1.05) rotate(1deg);
@@ -152,29 +216,6 @@
 .projcard.projcardRight .projcardTextbox {
 	left: initial;
 	right: 430px;
-}
-.projcardTextbox::before,
-.projcardTextbox::after {
-	content: "";
-	position: absolute;
-	display: block;
-	background: var(--projcard-innerBg);
-	top: -20%;
-	left: -55px;
-	height: 140%;
-	width: 60px;
-	transform: rotate(8deg);
-}
-.projcard.projcardRight .projcardTextbox::before {
-	display: none;
-}
-.projcardTextbox::after {
-	display: none;
-	left: initial;
-	right: -55px;
-}
-.projcard.projcardRight .projcardTextbox::after {
-	display: block;
 }
 .projcardTextbox * {
 	position: relative;
