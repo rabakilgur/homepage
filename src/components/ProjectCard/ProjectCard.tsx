@@ -19,8 +19,9 @@ const ProjectCard = ({
 	[prop: string]: any;
 }) => {
 	item = typeof item === "string" ? <span>{item}</span> : item;
+	const { children, ...otherProps } = props;
 	return (
-		<div className={`${S.projcard} ${color ? `projcard-${color}` : ""} ${right ? S.projcardRight : ""}`} onClick={() => (link ? window.open(link) : null)}>
+		<div className={`${S.projcard} ${color ? `projcard-${color}` : ""} ${right ? S.projcardRight : ""}`} onClick={() => (link ? window.open(link) : null)} {...otherProps}>
 			<div className={S.projcardInnerbox}>
 				<div className={S.projcardImgWrapper}>
 					<div className={S.projcardImg + (darkenImage ? ` ${S["projcardImgDarker"]}` : "")} style={image ? { backgroundImage: `url("${image}")` } : {}}>

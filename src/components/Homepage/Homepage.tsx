@@ -60,6 +60,26 @@ const Homepage = () => {
 				<section className="section" id="projects">
 					<Heading>Projekte</Heading>
 
+					<ProjectCard
+						color="customcolor"
+						style="--projcard-color: #e4441d"
+						image="assets/proj/proj_ApojetAndroidApp.png"
+						link="https://play.google.com/store/apps/details?id=de.cida.mobile.apojet"
+						right>
+						<ProjectCard.Title text="Apojet App" />
+						<ProjectCard.Subtitle text="React Native Apojet App für Android" />
+						<ProjectCard.Description
+							text={
+								<>
+									Für das ARZ habe ich die bestehende Apojet App erweitert und eine komplett neue Android App mit React Native entwickelt.
+									<br />
+									Mit der App können Kunden Produkte in ihrer Apotheke bestellen, mit den Apothekern chatten, und mehr.
+								</>
+							}
+						/>
+						<ProjectCard.Tags tags="App, React Native, Android" />
+					</ProjectCard>
+
 					<ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.jpg" link="http://www.spargelhof-moenich.de/">
 						<ProjectCard.Title text="Spargelhof Mönich Webseite" />
 						<ProjectCard.Subtitle text="Die neue Webseite des Spargelhofs Mönich" />
