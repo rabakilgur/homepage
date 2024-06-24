@@ -4,7 +4,7 @@ import { Modal, ModalContent, ModalBody, ModalFooter } from "@nextui-org/modal";
 import S from "./CVWrapper.module.scss";
 import { useEffect, useRef } from "preact/hooks";
 
-export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { style?: any; label?: string; [prop: string]: any }) {
+export default function CVWrapper({ style, label = "CV anzeigen", useHash = false, ...props }: { style?: any; label?: string; useHash?: boolean; [prop: string]: any }) {
 	// const { setVisible, bindings } = useModal();
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	const cvRef = useRef<HTMLDivElement | null>(null);
@@ -77,7 +77,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { 
 	}
 
 	useEffect(() => {
-		if (window.location.hash === "#cv") onOpen();
+		if (useHash && window.location.hash === "#cv") onOpen();
 	}, []);
 
 	useEffect(() => {

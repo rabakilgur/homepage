@@ -29,7 +29,7 @@ const Homepage = () => {
 
 					<WhatIDo />
 
-					<CVWrapper />
+					<CVWrapper useHash />
 				</section>
 
 				<section className="section" id="experience">
