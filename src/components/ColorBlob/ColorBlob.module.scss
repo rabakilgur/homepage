@@ -1,18 +1,28 @@
 // @type
 
-.colorBlob {
+.wrapper {
 	position: absolute;
 	z-index: -1;
 	top: var(--top, unset);
 	right: var(--right, unset);
 	bottom: var(--bottom, unset);
 	left: var(--left, unset);
-	background: var(--color, #0088FF);
 	width: calc(1px * var(--size));
 	height: calc(1px * var(--size));
-	border-radius: 65% 35% 45% 55%/34% 40% 60% 66%;
 	opacity: 0.6;
-	filter: blur(250px);
+	filter: blur(100px);
+}
+.inner {
+	width: 100%;
+	height: 100%;
+	filter: blur(100px);
+}
+.blob {
+	width: 100%;
+	height: 100%;
+	background: var(--color, #0088ff);
+	border-radius: 65% 35% 45% 55%/34% 40% 60% 66%;
+	filter: blur(100px);
 }
 html:global(.light-theme) .colorBlob {
 	opacity: 0.25;
