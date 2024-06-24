@@ -142,13 +142,25 @@ export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { 
 										<h3>Erfahrung</h3>
 									</div>
 									<div>
-										<h4>04/2022 - heute</h4>
+										<h4>02/2024 - heute</h4>
+										<h5>Senior DevOps/Cloud/Software Engineer</h5>
+										<h6>Solarnative GmbH (Kriftel)</h6>
+										<ul>
+											<li>
+												Entwickelung einer vielseitigen Electron-Anwendung für Forschung und Entwicklung, Fertigung und Cloud-Engineering, die AWS-APIs integriert und über Schnittstellen
+												mit Hardware-Komponenten kommuniziert
+											</li>
+											<li>Entwicklung am AWS-Backend, das robuste APIs und Time-Series-Datenbanken für verbesserte Datenhandhabung und -zugriff verwendet</li>
+											<li>Arbeit mit Vue/Nuxt, Electron, Typescript, AWS, Git, etc.</li>
+										</ul>
+
+										<h4>04/2022 - 01/2024</h4>
 										<h5>Softwareingenieur im Bereich Management Information Systems</h5>
 										<h6>Apotheken-Rechen-Zentrum GmbH (Darmstadt)</h6>
 										<ul>
 											<li>Agile Softwareentwicklung</li>
 											<li>Testgetriebene Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Typescript, Docker, Git, PostgreSQL, SQLite</li>
+											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Typescript, Docker, Git, PostgreSQL, SQLite, etc.</li>
 											<li>Android App-Entwicklung mit Java, Kotlin und React Native</li>
 										</ul>
 
@@ -158,7 +170,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { 
 										<ul>
 											<li>Agile Softwareentwicklung</li>
 											<li>Testgetriebene Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Git, PostgreSQL, SQLite</li>
+											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Git, PostgreSQL, SQLite, etc.</li>
 											<li>Android App-Entwicklung mit Java und Kotlin</li>
 										</ul>
 
@@ -166,8 +178,9 @@ export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { 
 										<h5>Entwickler als Werksstudent</h5>
 										<h6>Evangelische Kirche in Hessen und Nassau (Darmstadt)</h6>
 										<ul>
-											<li>Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, HTML, CSS, JavaScript, PHP</li>
 											<li>Analyse und automatisierte Datenverarbeitung mit Excel und VBA</li>
+											<li>Entwicklung einer webbasierten Auswertungsplatzform</li>
+											<li>Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, HTML, CSS, JavaScript, PHP, etc.</li>
 										</ul>
 									</div>
 
@@ -242,7 +255,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", ...props }: { 
 										<Expertise label="Englisch" duration="Verhandlungssicher (C1)" />
 
 										<h5>Programmiersprachen:</h5>
-										<Expertise label="JavaScript & TypeScript" duration="Elf Jahre, sehr regelmäßig" />
+										<Expertise label="TypeScript & JavaScript" duration="Elf Jahre, sehr regelmäßig" />
 										<Expertise label="PHP" duration="Sieben Jahre" />
 										<Expertise label="Ruby" duration="Drei Jahre, regelmäßig" />
 										<Expertise label="Java & Kotlin" duration="Zwei Jahre" />

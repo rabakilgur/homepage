@@ -38,8 +38,14 @@ const Homepage = () => {
 					<Heading>Meine Erfahrung</Heading>
 
 					<Timeline>
-						<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - heute" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
-						<Timeline.Item title="Master-Studium an der TU Darmstadt" info="Apr 2022 - heute" text="Student des Master of Science für Internet- und Web-basierte Systeme" marker="outlined" />
+						<Timeline.Item title="Solarnative" info="Feb 2024 - heute" text="Senior DevOps/Cloud/Software Engineer bei Solarnative GmbH" />
+						<Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - Jan 2024" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
+						<Timeline.Item
+							title="Master-Studium an der TU Darmstadt"
+							info="Apr 2022 - heute"
+							text="Informatik Master Student (ehem. Master of Science für Internet- und Web-basierte Systeme)"
+							marker="outlined"
+						/>
 						<Timeline.Item title="ARZ Darmstadt" info="Mär 2020 - Mär 2022" text="Entwickler im Bereich Management Information Systems als Werksstudent bei Apotheken-Rechen-Zentrum GmbH" />
 						<Timeline.Item title="EKHN" info="Nov 2015 - Mär 2019" text="Entwickler als Werksstudent bei der Kirchenverwaltung der Evangelischen Kirche in Hessen und Nassau" />
 						<Timeline.Item

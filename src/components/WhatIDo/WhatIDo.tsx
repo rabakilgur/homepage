@@ -123,10 +123,15 @@ const skills = [
 		scale: 1.0,
 	},
 	{
-		name: "SASS/SCSS & CSS",
-		img: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
-		scale: 1.4,
+		name: "Vue & Nuxt",
+		img: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+		scale: 1.1,
 	},
+	// {
+	// 	name: "SASS/SCSS & CSS",
+	// 	img: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
+	// 	scale: 1.4,
+	// },
 	// {
 	// 	name: "Bootstrap",
 	// 	img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
