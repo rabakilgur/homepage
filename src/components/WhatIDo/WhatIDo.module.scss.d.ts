@@ -1,9 +1,9 @@
 declare const styles: {
-  readonly "wrapper": string;
-  readonly "iconWrapper": string;
-  readonly "iconBox": string;
   readonly "float": string;
+  readonly "iconBox": string;
+  readonly "iconWrapper": string;
   readonly "ttTitle": string;
+  readonly "wrapper": string;
 };
 export = styles;
 

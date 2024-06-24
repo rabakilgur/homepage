@@ -34,7 +34,7 @@ $jitter: 15; // in pixels
 	padding: 1.5em;
 	border-radius: 12px;
 	box-shadow: 0 12px 20px 6px rgb(104 112 118 / 0.08);
-	background: hsl(var(--nextui-backgroundContrast));
+	background: hsl(var(--nextui-default-200) / 0.2);
 	aspect-ratio: 1;
 	animation: float #{$float-animation-duration}s ease-in-out infinite;
 	img {
