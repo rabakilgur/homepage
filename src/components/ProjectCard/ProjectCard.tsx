@@ -22,6 +22,9 @@ const ProjectCard = ({
 	const { children, ...otherProps } = props;
 	return (
 		<div className={`${S.projcard} ${color ? `projcard-${color}` : ""} ${right ? S.projcardRight : ""}`} onClick={() => (link ? window.open(link) : null)} {...otherProps}>
+			<div className={S.projcardBorder}></div>
+			<div className={S.projcardGradient}></div>
+			<div className={S.projcardNoise}></div>
 			<div className={S.projcardInnerbox}>
 				<div className={S.projcardImgWrapper}>
 					<div className={S.projcardImg + (darkenImage ? ` ${S["projcardImgDarker"]}` : "")} style={image ? { backgroundImage: `url("${image}")` } : {}}>

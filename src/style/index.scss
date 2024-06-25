@@ -198,8 +198,14 @@ center.whatido_box {
 		transform: translateY(0%);
 	}
 }
-html.light .blob::after {
-	filter: invert(0.9);
+html.light {
+	--bg-contrast: #fafafa;
+	.blob::after {
+		filter: invert(0.9);
+	}
+}
+html.dark {
+	--bg-contrast: #0d0d0e;
 }
 
 #contact_section {
