@@ -123,7 +123,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
 										<span>
 											Telefon: <a href="tel:+4915902450748">+49 159 / 0245 0758</a>
 										</span>
-										<span>Geboren am 24.02.1997</span>
+										{/* <span>Geboren am 24.02.1997</span> */}
 										<span>
 											Webseite:{" "}
 											<a href="https://robin-garbe.de" target="_blank" rel="noreferrer">
@@ -151,7 +151,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
 												mit Hardware-Komponenten kommuniziert
 											</li>
 											<li>Entwicklung am AWS-Backend, das robuste APIs und Time-Series-Datenbanken für verbesserte Datenhandhabung und -zugriff verwendet</li>
-											<li>Arbeit mit Vue/Nuxt, Electron, Typescript, AWS, Git, etc.</li>
+											<li>Arbeit mit Vue/Nuxt, Ionic, Electron, Typescript, AWS, OpenAPI, Git</li>
 										</ul>
 
 										<h4>04/2022 - 01/2024</h4>
@@ -160,7 +160,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
 										<ul>
 											<li>Agile Softwareentwicklung</li>
 											<li>Testgetriebene Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Typescript, Docker, Git, PostgreSQL, SQLite, etc.</li>
+											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Typescript, Docker, Git, PostgreSQL, SQLite</li>
 											<li>Android App-Entwicklung mit Java, Kotlin und React Native</li>
 										</ul>
 
@@ -170,7 +170,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
 										<ul>
 											<li>Agile Softwareentwicklung</li>
 											<li>Testgetriebene Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Git, PostgreSQL, SQLite, etc.</li>
+											<li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Git, PostgreSQL, SQLite</li>
 											<li>Android App-Entwicklung mit Java und Kotlin</li>
 										</ul>
 
@@ -180,7 +180,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
 										<ul>
 											<li>Analyse und automatisierte Datenverarbeitung mit Excel und VBA</li>
 											<li>Entwicklung einer webbasierten Auswertungsplatzform</li>
-											<li>Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, HTML, CSS, JavaScript, PHP, etc.</li>
+											<li>Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, HTML, CSS, JavaScript, PHP</li>
 										</ul>
 									</div>
 

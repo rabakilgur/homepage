@@ -10,6 +10,7 @@ const whatIDo = [
 			<>
 				<h4 className={S.ttTitle}>Frontend</h4>
 				<div>React & Next.js & Preact</div>
+				<div>Vue & Nuxt</div>
 				<div>Bootstrap</div>
 			</>
 		),
@@ -33,6 +34,7 @@ const whatIDo = [
 				<h4 className={S.ttTitle}>Mobile</h4>
 				<div>React Native</div>
 				<div>Native Android</div>
+				<div>Ionic Framework</div>
 				<div>Cordova / PhoneGap</div>
 			</>
 		),
