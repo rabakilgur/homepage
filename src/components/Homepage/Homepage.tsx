@@ -39,7 +39,8 @@ const Homepage = () => {
           <Heading>Meine Erfahrung</Heading>
 
           <Timeline>
-            <Timeline.Item title="Solarnative" info="Feb 2024 - heute" text="Senior DevOps/Cloud/Software Engineer bei Solarnative GmbH" />
+            <Timeline.Item title="FlexHome.Energy" info="Okt 2024 - heute" text="Senior Cloud/Software Architect bei FlexHome.Energy" marker="outlined" />
+            <Timeline.Item title="Solarnative" info="Feb 2024 - Sep 2024" text="Senior DevOps/Cloud/Software Engineer bei Solarnative GmbH" />
             <Timeline.Item title="ARZ Darmstadt" info="Apr 2022 - Jan 2024" text="Softwareingenieur im Bereich Management Information Systems bei Apotheken-Rechen-Zentrum GmbH" />
             <Timeline.Item
               title="Master-Studium an der TU Darmstadt"
