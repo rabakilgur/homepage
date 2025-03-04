@@ -21,11 +21,13 @@
   border: var(--projcard-border);
   font-size: 18px;
   overflow: hidden;
-  cursor: pointer;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   transform: translate(0px, 0px);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   counter-increment: projcardCounter;
+  &.projcardLink {
+    cursor: pointer;
+  }
   &:hover {
     box-shadow: 0 34px 32px -33px rgba(0, 0, 0, 0.18);
     transform: translate(0px, -3px);

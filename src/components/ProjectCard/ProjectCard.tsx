@@ -2,91 +2,94 @@ import { h } from "preact";
 import S from "./ProjectCard.module.scss";
 
 const ProjectCard = ({
-	color,
-	image,
-	link,
-	item,
-	darkenImage,
-	right,
-	...props
+  color,
+  image,
+  link,
+  item,
+  darkenImage,
+  right,
+  ...props
 }: {
-	color?: string;
-	image?: string;
-	link?: string;
-	item?: any;
-	darkenImage?: Boolean;
-	right?: Boolean;
-	[prop: string]: any;
+  color?: string;
+  image?: string;
+  link?: string;
+  item?: any;
+  darkenImage?: Boolean;
+  right?: Boolean;
+  [prop: string]: any;
 }) => {
-	item = typeof item === "string" ? <span>{item}</span> : item;
-	const { children, ...otherProps } = props;
-	return (
-		<div className={`${S.projcard} ${color ? `projcard-${color}` : ""} ${right ? S.projcardRight : ""}`} onClick={() => (link ? window.open(link) : null)} {...otherProps}>
-			<div className={S.projcardBorder}></div>
-			<div className={S.projcardGradient}></div>
-			<div className={S.projcardNoise}></div>
-			<div className={S.projcardInnerbox}>
-				<div className={S.projcardImgWrapper}>
-					<div className={S.projcardImg + (darkenImage ? ` ${S["projcardImgDarker"]}` : "")} style={image ? { backgroundImage: `url("${image}")` } : {}}>
-						{image || !item ? "" : item}
-					</div>
-				</div>
-				<div className={S.projcardTextbox}>{props.children}</div>
-			</div>
-		</div>
-	);
+  item = typeof item === "string" ? <span>{item}</span> : item;
+  const { children, ...otherProps } = props;
+  return (
+    <div
+      className={`${S.projcard} ${color ? `projcard-${color}` : ""} ${link ? S.projcardLink : ""} ${right ? S.projcardRight : ""}`}
+      onClick={() => (link ? window.open(link) : null)}
+      {...otherProps}>
+      <div className={S.projcardBorder}></div>
+      <div className={S.projcardGradient}></div>
+      <div className={S.projcardNoise}></div>
+      <div className={S.projcardInnerbox}>
+        <div className={S.projcardImgWrapper}>
+          <div className={S.projcardImg + (darkenImage ? ` ${S["projcardImgDarker"]}` : "")} style={image ? { backgroundImage: `url("${image}")` } : {}}>
+            {image || !item ? "" : item}
+          </div>
+        </div>
+        <div className={S.projcardTextbox}>{props.children}</div>
+      </div>
+    </div>
+  );
 };
 
 ProjectCard.Title = Object.assign(
-	({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
-		return (
-			<div className={S.projcardTitle} {...props}>
-				{text}
-			</div>
-		);
-	},
-	{ displayName: "ProjectCardTitle" }
+  ({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
+    return (
+      <div className={S.projcardTitle} {...props}>
+        {text}
+      </div>
+    );
+  },
+  { displayName: "ProjectCardTitle" }
 );
 
 ProjectCard.Subtitle = Object.assign(
-	({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
-		return (
-			<div className={S.projcardSubtitle} {...props}>
-				{text}
-			</div>
-		);
-	},
-	{ displayName: "ProjectCardSubitle" }
+  ({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
+    return (
+      <div className={S.projcardSubtitle} {...props}>
+        {text}
+      </div>
+    );
+  },
+  { displayName: "ProjectCardSubitle" }
 );
 
 ProjectCard.Description = Object.assign(
-	({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
-		return (
-			<>
-				<div className={S.projcardBar}></div>
-				<div className={S.projcardDescription} {...props}>
-					{text}
-				</div>
-			</>
-		);
-	},
-	{ displayName: "ProjectCardDescription" }
+  ({ text, ...props }: { text: string | Element | h.JSX.Element; [prop: string]: any }) => {
+    return (
+      <>
+        <div className={S.projcardBar}></div>
+        <div className={S.projcardDescription} {...props}>
+          {text}
+        </div>
+      </>
+    );
+  },
+  { displayName: "ProjectCardDescription" }
 );
 
 ProjectCard.Tags = Object.assign(
-	({ tags, ...props }: { tags: string; [prop: string]: any }) => {
-		const tagArray = tags.split(",").map((tag: string) => tag.trim());
-		return (
-			<div className={S.projcardTagbox} {...props}>
-				{tagArray.map((tag: string) => (
-					<span className={S.projcardTag} key={tag}>
-						{tag}
-					</span>
-				))}
-			</div>
-		);
-	},
-	{ displayName: "ProjectCardTags" }
+  ({ tags, ...props }: { tags: string; [prop: string]: any }) => {
+    const tagArray = tags.split(",").map((tag: string) => tag.trim());
+    return (
+      <div className={S.projcardTagbox} {...props}>
+        {tagArray.map((tag: string) => (
+          <span className={S.projcardTag} key={tag}>
+            {tag}
+          </span>
+        ))}
+      </div>
+    );
+  },
+  { displayName: "ProjectCardTags" }
 );
 
 export default ProjectCard;

@@ -22,10 +22,17 @@ const Homepage = () => {
 
           <Heading>Über mich</Heading>
 
+          <p style="max-width: 65ch; text-align: center; margin: 0 auto 0.7em auto; line-height: 1.9;">
+            Hi! Ich bin Robin, ein Softwareingenieur/-architekt aus Darmstadt. Ich beschäftige mich hauptsächlich mit Cloud- und Fullstack-Entwicklung, arbeite aber auch gelegentlich an anderen
+            Projekten, zum Beispiel in den Bereichen App-Entwicklung oder Design. Aktuell entwickle ich bei{" "}
+            <a href="https://flexhome.energy" target="_blank" rel="noreferrer">
+              FlexHome.Energy
+            </a>{" "}
+            eine Platform für die Zukunft von Energiespeichern im Niedrigspannungsnetz, für eine fairere, nachhaltigere Energieversorgung. 🌳⚡🔋
+          </p>
+
           <p style="max-width: 65ch; text-align: center; margin: 0 auto 1em auto; line-height: 1.9;">
-            Hallo! Ich bin Robin, ein Softwareingenieur aus Darmstadt. Ich beschäftige mich hauptsächlich mit Frontend- und Fullstack-Entwicklung, arbeite aber auch häufig an anderen Projekten; zum
-            Beispiel in den Bereichen App-Entwicklung oder APIs. Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über die Bereiche in denen ich tätig bin und
-            einige Technologien die ich in letzter Zeit benutze:
+            Weiter unten sind ein paar meiner (Hobby-)Projekte verlinkt. Hier ist eine Übersicht über ein paar der Bereiche in denen ich tätig bin und einige Technologien mit denen ich arbeite:
           </p>
 
           <WhatIDo />
@@ -62,6 +69,13 @@ const Homepage = () => {
         <section className="section" id="projects">
           <Heading>Projekte</Heading>
 
+          <ProjectCard color="purple" image="assets/proj/proj_FabApp.jpg">
+            <ProjectCard.Title text="FabApp" />
+            <ProjectCard.Subtitle text="Interne App für R&D, Fertigung und Cloud-Engineering" />
+            <ProjectCard.Description text="Bei Solarnative habe ich eine vielseitige Electron-Anwendung für Forschung und Entwicklung, Fertigung, Support und Cloud-Engineering entwickelt, die AWS-APIs integriert und über Schnittstellen mit Hardware-Komponenten kommuniziert oder Firmware aufspielt." />
+            <ProjectCard.Tags tags="Electron, Vue, Node.js, AWS" />
+          </ProjectCard>
+
           <ProjectCard
             color="customcolor"
             style="--projcard-color: #e4441d"
@@ -85,7 +99,7 @@ const Homepage = () => {
           <ProjectCard color="yellow" image="assets/proj/proj_MoenichWebsite.jpg" link="http://www.spargelhof-moenich.de/">
             <ProjectCard.Title text="Spargelhof Mönich Webseite" />
             <ProjectCard.Subtitle text="Die neue Webseite des Spargelhofs Mönich" />
-            <ProjectCard.Description text="Der Spargelhof Mönich aus Griesheim brauchte eine neue Webseite. Neben den üblichen Seiten habe ich hierfür noch eine intuitive und maßgeschneiderte Content-Management-Lösung mit PHP sowie einen Verkaufsstellen-Finder gebaut." />
+            <ProjectCard.Description text="Der Spargelhof Mönich aus Griesheim brauchte eine neue Webseite. Neben den üblichen Seiten habe ich hierfür noch eine maßgeschneiderte Content-Management-Lösung mit PHP sowie einen Verkaufsstellen-Finder mit OpenStreetMap-Integration gebaut." />
             <ProjectCard.Tags tags="Frontend, Bootstrap, PHP" />
           </ProjectCard>
 
@@ -225,10 +239,10 @@ const Homepage = () => {
 
         <footer>
           <p>
-            Copyright © 2024
+            Copyright © 2025
             <br />
             Made with ♥ by Robin Garbe
-            <div style="font-size: 0.8em; opacity: 0.5; margin-top: 1.5em;">
+            {/* <div style="font-size: 0.8em; opacity: 0.5; margin-top: 1.5em;">
               Some icons made by{" "}
               <a href="https://www.flaticon.com/authors/justicon" title="justicon">
                 justicon
@@ -237,7 +251,7 @@ const Homepage = () => {
               <a href="https://www.flaticon.com/" title="Flaticon">
                 www.flaticon.com
               </a>
-            </div>
+            </div> */}
           </p>
         </footer>
 

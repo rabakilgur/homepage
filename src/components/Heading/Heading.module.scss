@@ -1,33 +1,35 @@
 // @types
 
 .heading {
-	margin: 40px 0 25px 0;
-	&,
-	> h2 {
-		font-family: Voces, Arial, sans-serif;
-		font-weight: bold;
-		font-size: min(3vw + 20px, 36px);
-		text-align: center;
-	}
-	> h2 {
-		display: inline;
-		margin: 0;
-		&::after {
-			content: "/";
-			display: inline-block;
-			margin: 0 0.075em;
-			color: #0088FF;
-		}
-	}
-	&::before,
-	&::after {
-		display: inline-block;
-		margin: 0 0.03em;
-	}
-	&::before {
-		content: "<";
-	}
-	&::after {
-		content: ">";
-	}
+  margin: 40px 0 25px 0;
+  &,
+  > h2 {
+    font-family: "Cascadia Code", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: bold;
+    font-size: min(3vw + 20px, 36px);
+    text-align: center;
+  }
+  > h2 {
+    display: inline;
+    margin: 0;
+    &::after {
+      content: "/";
+      display: inline-block;
+      margin: 0 0.075em 0 0.1em;
+      color: #0088ff;
+    }
+  }
+  &::before,
+  &::after {
+    display: inline-block;
+    margin: 0 0.03em;
+  }
+  &::before {
+    content: "<";
+    display: inline-block;
+    margin-right: 0.15em;
+  }
+  &::after {
+    content: ">";
+  }
 }
