@@ -1,3 +1,5 @@
+@use "./helpers" as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,6 +41,9 @@ body {
   height: 100dvh;
   isolation: isolate;
   -webkit-font-smoothing: antialiased;
+}
+#app {
+  position: relative;
 }
 a {
   color: #0088ff;
@@ -207,7 +212,16 @@ html.light {
 html.dark {
   --bg-contrast: #0d0d0e;
   body {
-    background-color: #09090b;
+    background-color: #0d0d10;
+  }
+  #app::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    @include noise-bg;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    pointer-events: none;
   }
 }
 
