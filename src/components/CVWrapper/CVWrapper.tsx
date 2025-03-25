@@ -142,7 +142,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                     <h3>Erfahrung</h3>
                   </div>
                   <div>
-                    <h4>10/2024 - heute</h4>
+                    <h4>10/2024 – heute</h4>
                     <h5>Senior Cloud/Software Architect</h5>
                     <h6>FlexHome.Energy (Darmstadt)</h6>
                     <ul>
@@ -152,7 +152,7 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                       <li>Arbeit mit Vue/Nuxt, InfluxDB, TypeScript, AWS, EEBus, etc.</li>
                     </ul>
 
-                    <h4>02/2024 - 09/2024</h4>
+                    <h4>02/2024 – 09/2024</h4>
                     <h5>Senior DevOps/Cloud/Software Engineer</h5>
                     <h6>Solarnative GmbH (Kriftel)</h6>
                     <ul>
@@ -165,34 +165,34 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                         Hardware-Komponenten kommuniziert
                       </li>
                       <li>Ausbau des AWS-Backends, das robuste APIs und Time-Series-Datenbanken für verbesserte Datenhandhabung und -zugriff verwendet</li>
-                      <li>Arbeit mit Vue/Nuxt, Ionic, Electron, TypeScript, AWS, OpenAPI, Git, etc.</li>
+                      <li>Arbeit mit Vue/Nuxt, Ionic, Electron, TypeScript, AWS, OpenAPI, etc.</li>
                     </ul>
 
-                    <h4>04/2022 - 01/2024</h4>
+                    <h4>04/2022 – 01/2024</h4>
                     <h5>Softwareingenieur im Bereich Management Information Systems</h5>
                     <h6>Apotheken-Rechen-Zentrum GmbH (Darmstadt)</h6>
                     <ul>
                       <li>Testgetriebene und agile Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-                      <li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, TypeScript, Docker, Git, PostgreSQL, SQLite, etc.</li>
+                      <li>Arbeit mit TypeScript, Next.js, Angular, Ruby, Rails, HTML, CSS, SCSS, Docker, Kubernetes, PostgreSQL, SQLite, etc.</li>
                       <li>Android App-Entwicklung mit Java, Kotlin und React Native</li>
                     </ul>
 
-                    <h4>03/2020 - 03/2022</h4>
+                    <h4>03/2020 – 03/2022</h4>
                     <h5>Entwickler im Bereich Management Information Systems als Werksstudent</h5>
                     <h6>Apotheken-Rechen-Zentrum GmbH (Darmstadt)</h6>
                     <ul>
                       <li>Testgetriebene und agile Full-Stack Entwicklung (TDD) von Web-Applikationen</li>
-                      <li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Git, PostgreSQL, SQLite, etc.</li>
+                      <li>Arbeit mit Ruby, Rails, HTML, CSS, SCSS, JavaScript, Docker, Kubernetes, PostgreSQL, SQLite, etc.</li>
                       <li>Android App-Entwicklung mit Java und Kotlin</li>
                     </ul>
 
-                    <h4>11/2015 - 03/2019</h4>
+                    <h4>11/2015 – 03/2019</h4>
                     <h5>Entwickler als Werksstudent</h5>
                     <h6>Evangelische Kirche in Hessen und Nassau (Darmstadt)</h6>
                     <ul>
                       <li>Entwicklung einer webbasierten Auswertungsplatzform</li>
                       <li>Analyse und automatisierte Datenverarbeitung mit Excel und VBA</li>
-                      <li>Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, HTML, CSS, JavaScript, PHP, etc.</li>
+                      <li>JavaScript, PHP, HTML, CSS, Print- und Web-Design mit Photoshop, Illustrator, InDesign, Word, etc.</li>
                     </ul>
                   </div>
 
@@ -200,24 +200,27 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                     <h3>Bildungsweg</h3>
                   </div>
                   <div>
-                    <h4>04/2022 - heute</h4>
-                    <h5>Master of Science in Internet- und Web-basierte Systeme</h5>
+                    <h4>04/2022 – heute</h4>
+                    <h5>Master of Science in Informatik</h5>
                     <h6>Technische Universität Darmstadt</h6>
+                    <ul>
+                      <li>Schwerpunkt auf Internet- und Web-basierte Systeme und KI/ML</li>
+                    </ul>
 
-                    <h4>10/2016 - 03/2022</h4>
+                    <h4>10/2016 – 03/2022</h4>
                     <h5>Bachelor of Science in Informatik</h5>
                     <h6>Technische Universität Darmstadt</h6>
                     <ul>
-                      <li>Bachelorarbeit: „Potenzialanalyse von benutzergesteuerten Anpassungs- und Analysewerkzeugen für Wertschöpfungsketten“ (gerade in Arbeit)</li>
-                      <li>Bachelorpraktikum: „Mojito, Caipirinha, Sex on the Beach - Die Rezepte des BAR-Robots müssen auf eine Plattform“</li>
+                      <li>Bachelorarbeit: „Potenzialanalyse von benutzergesteuerten Anpassungs- und Analysewerkzeugen für Wertschöpfungsketten“</li>
+                      {/* <li>Bachelorpraktikum: „Mojito, Caipirinha, Sex on the Beach - Die Rezepte des BAR-Robots müssen auf eine Plattform“</li> */}
                     </ul>
 
-                    <h4>08/2007 - 07/2015</h4>
+                    {/* <h4>08/2007 - 07/2015</h4>
                     <h5>Abitur</h5>
                     <h6>Gymnasium Gernsheim</h6>
                     <ul>
                       <li>Leistungsfächer Mathematik und Physik</li>
-                    </ul>
+                    </ul> */}
                   </div>
 
                   <div className={S.category}>
@@ -245,8 +248,8 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                     <h5>Bachelor-Praktikum</h5>
                     <h6>TU Darmstadt & Fachgebiet Datenverarbeitung in der Konstruktion</h6>
                     <ul>
-                      <li>Entwicklung einer Applikation zur Erkennung und Visualisierung von Nutzerpräferenzen in multidimensionalen Umgebungen mittels Machine Learning</li>
-                      <li>JavaScript, TypeScript, React, BrainJS, HTML, CSS, Node, Electron</li>
+                      <li>Entwicklung einer Applikation zur Auftragsverwaltung und Steuerung von PLC/SPS-Systemen</li>
+                      <li>JavaScript, TypeScript, React, OPC-UA, HTML, CSS, Node, Electron</li>
                     </ul>
                   </div>
 
@@ -278,11 +281,12 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                     <h5>Frameworks:</h5>
                     <Expertise label="React, Next.js & Preact" duration="Drei Jahre, sehr regelmäßig" />
                     <Expertise label="Vue & Nuxt" duration="Ein Jahr, sehr regelmäßig" />
-                    <Expertise label="Node & Deno" duration="Vier Jahre" />
+                    <Expertise label="Angular" duration="Ein Jahr" />
+                    <Expertise label="Node & Deno" duration="Vier Jahre, sehr regelmäßig" />
                     <Expertise label="Ruby on Rails" duration="Drei Jahre, regelmäßig" />
+                    <Expertise label="Electron" duration="Drei Jahre, regelmäßig" />
                     <Expertise label="React Native & PhoneGap / Cordova" duration="Zwei Jahre" />
-                    <Expertise label="Electron" duration="Zwei Jahre" />
-                    <Expertise label="Bootstrap" duration="Fünf Jahre" />
+                    <Expertise label="Tailwind, Bootstrap" duration="Fünf Jahre" />
                     <Expertise label="jQuery" duration="Fünf Jahre" />
 
                     <h5>Datenbanken:</h5>
@@ -291,27 +295,27 @@ export default function CVWrapper({ style, label = "CV anzeigen", useHash = fals
                     <h5>DevOps:</h5>
                     <Expertise label="Git, GitHub, GitLab, Gitea" />
                     <Expertise label="Jira, Trello, MS Planner" />
-                    <Expertise label="Docker" />
+                    <Expertise label="Docker, Kubernetes" />
                     <Expertise label="AWS" />
 
                     <h5>Betriebssysteme:</h5>
                     <Expertise label="Windows, Linux" />
 
                     <h5>Nennenswertes:</h5>
-                    <Expertise label="JWT, JSON, HTML, CSS, SCSS, REST, XML, YAML, SVG, SQL, JamStack" />
+                    <Expertise label="JWT, JSON, HTML, CSS, SCSS, REST, Protocol Buffers, XML, YAML, SVG, SQL, JamStack" />
 
                     <h5>Software:</h5>
                     <Expertise label="Teams, Word, Excel, PowerPoint, Outlook, OneNote, Sharepoint, etc." />
                     <Expertise label="Photoshop, Illustrator, InDesign, Acrobat" />
                     <Expertise label="WordPress" />
                     <Expertise label="Postman" />
-                    <Expertise label="Nginx, Puma, XAMPP, WAMP" />
-                    <Expertise label="OPC-UA, WS, MQTT, EEBus, Serial" />
+                    <Expertise label="Nginx, Traefik, Puma, XAMPP, WAMP" />
+                    <Expertise label="WS, MQTT, EEBus, OPC-UA, Serial" />
                   </div>
 
                   <div></div>
                   <div className={S.footer}>
-                    <span>Darmstadt, 04.03.2025</span>
+                    <span>Darmstadt, 25.03.2025</span>
                     <span>Robin Garbe</span>
                   </div>
                 </div>
